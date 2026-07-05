@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+
+.quiz-container {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.question {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.answer {
+    color: green;
+    font-weight: bold;
+    display: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+let currentPage = 0;
+let perPage = 5;
+let questions;
+
+window.onload = function() {
+    questions = document.getElementsByClassName("question");
+    showPage(); // 👈 ab yahan call hoga (DOM load ke baad)
+};
+
+function showPage() {
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].style.display = "none";
+    }
+
+    let start = currentPage * perPage;
+
+    for (let i = start; i < start + perPage; i++) {
+        if (questions[i]) {
+            questions[i].style.display = "block";
+        }
+    }
+}
+
+function goNext() {
+    if ((currentPage + 1) * perPage < questions.length) {
+        currentPage++;
+        showPage();
+    }
+}
+
+function prevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        showPage();
+    }
+}
+
+function toggleAnswers(btn) {
+    let answers = document.querySelectorAll(".answer");
+
+    if (btn.innerText === "Show Answers") {
+        answers.forEach(ans => ans.style.display = "block");
+        btn.innerText = "Hide Answers";
+    } else {
+        answers.forEach(ans => ans.style.display = "none");
+        btn.innerText = "Show Answers";
+    }
+}
+</script>
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">EduSite</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Hindi</a></li>
+        <li><a href="mcqenglish.html">English</a></li>
+        <li><a href="mcqmaths.html">Maths</a></li>
+        <li><a href="mcqscience.html">Science</a></li>
+        <li><a href="mcqgk.html">general knowledge</a></li>
+        <li><a href="mcqcggk.html">Cg Gk</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+<div class="quiz-container">
+    # 200 Science Questions in HTML Format
+
+```html
+<div class="question">
+    <p>1. जल का रासायनिक सूत्र क्या है?</p>
+    <div class="options">
+        <label>A) CO₂</label>
+        <label>B) H₂O</label>
+        <label>C) O₂</label>
+        <label>D) NaCl</label>
+    </div>
+    <p class="answer">Ans: B) H₂O</p>
+</div>
+
+<div class="question">
+    <p>2. मनुष्य के शरीर में रक्त को शुद्ध कौन करता है?</p>
+    <div class="options">
+        <label>A) हृदय</label>
+        <label>B) फेफड़े</label>
+        <label>C) गुर्दे</label>
+        <label>D) यकृत</label>
+    </div>
+    <p class="answer">Ans: C) गुर्दे</p>
+</div>
+
+<div class="question">
+    <p>3. सूर्य एक क्या है?</p>
+    <div class="options">
+        <label>A) ग्रह</label>
+        <label>B) उपग्रह</label>
+        <label>C) तारा</label>
+        <label>D) धूमकेतु</label>
+    </div>
+    <p class="answer">Ans: C) तारा</p>
+</div>
+
+<div class="question">
+    <p>4. पौधे भोजन किस प्रक्रिया से बनाते हैं?</p>
+    <div class="options">
+        <label>A) श्वसन</label>
+        <label>B) प्रकाश संश्लेषण</label>
+        <label>C) वाष्पीकरण</label>
+        <label>D) पाचन</label>
+    </div>
+    <p class="answer">Ans: B) प्रकाश संश्लेषण</p>
+</div>
+
+<div class="question">
+    <p>5. पृथ्वी का उपग्रह कौन है?</p>
+    <div class="options">
+        <label>A) मंगल</label>
+        <label>B) सूर्य</label>
+        <label>C) चंद्रमा</label>
+        <label>D) शुक्र</label>
+    </div>
+    <p class="answer">Ans: C) चंद्रमा</p>
+</div>
+
+<div class="question">
+    <p>6. मानव शरीर में सबसे बड़ी हड्डी कौन सी है?</p>
+    <div class="options">
+        <label>A) फीमर</label>
+        <label>B) टिबिया</label>
+        <label>C) रीढ़</label>
+        <label>D) खोपड़ी</label>
+    </div>
+    <p class="answer">Ans: A) फीमर</p>
+</div>
+
+<div class="question">
+    <p>7. ऑक्सीजन गैस का प्रतीक क्या है?</p>
+    <div class="options">
+        <label>A) O</label>
+        <label>B) Ox</label>
+        <label>C) O₂</label>
+        <label>D) Og</label>
+    </div>
+    <p class="answer">Ans: C) O₂</p>
+</div>
+
+<div class="question">
+    <p>8. ध्वनि किस माध्यम में नहीं चल सकती?</p>
+    <div class="options">
+        <label>A) ठोस</label>
+        <label>B) द्रव</label>
+        <label>C) गैस</label>
+        <label>D) निर्वात</label>
+    </div>
+    <p class="answer">Ans: D) निर्वात</p>
+</div>
+
+<div class="question">
+    <p>9. मनुष्य के शरीर में कितने दांत होते हैं?</p>
+    <div class="options">
+        <label>A) 28</label>
+        <label>B) 30</label>
+        <label>C) 32</label>
+        <label>D) 34</label>
+    </div>
+    <p class="answer">Ans: C) 32</p>
+</div>
+
+<div class="question">
+    <p>10. सबसे कठोर प्राकृतिक पदार्थ कौन सा है?</p>
+    <div class="options">
+        <label>A) लोहा</label>
+        <label>B) सोना</label>
+        <label>C) हीरा</label>
+        <label>D) चांदी</label>
+    </div>
+    <p class="answer">Ans: C) हीरा</p>
+</div>
+
+<!-- Questions 11 to 200 continue in same format -->
+
+<div class="question">
+    <p>11. हरे पौधों में पाया जाने वाला वर्णक क्या कहलाता है?</p>
+    <div class="options">
+        <label>A) हीमोग्लोबिन</label>
+        <label>B) क्लोरोफिल</label>
+        <label>C) मेलानिन</label>
+        <label>D) कैरोटीन</label>
+    </div>
+    <p class="answer">Ans: B) क्लोरोफिल</p>
+</div>
+
+<div class="question">
+    <p>12. विद्युत धारा की SI इकाई क्या है?</p>
+    <div class="options">
+        <label>A) वोल्ट</label>
+        <label>B) ओम</label>
+        <label>C) एम्पियर</label>
+        <label>D) वाट</label>
+    </div>
+    <p class="answer">Ans: C) एम्पियर</p>
+</div>
+
+<div class="question">
+    <p>13. सबसे हल्की गैस कौन सी है?</p>
+    <div class="options">
+        <label>A) ऑक्सीजन</label>
+        <label>B) नाइट्रोजन</label>
+        <label>C) हाइड्रोजन</label>
+        <label>D) हीलियम</label>
+    </div>
+    <p class="answer">Ans: C) हाइड्रोजन</p>
+</div>
+
+<div class="question">
+    <p>14. पृथ्वी सूर्य के चारों ओर घूमने में कितना समय लेती है?</p>
+    <div class="options">
+        <label>A) 24 घंटे</label>
+        <label>B) 30 दिन</label>
+        <label>C) 365 दिन</label>
+        <label>D) 12 घंटे</label>
+    </div>
+    <p class="answer">Ans: C) 365 दिन</p>
+</div>
+
+<div class="question">
+    <p>15. मानव शरीर में रक्त का लाल रंग किसके कारण होता है?</p>
+    <div class="options">
+        <label>A) प्लाज्मा</label>
+        <label>B) हीमोग्लोबिन</label>
+        <label>C) कैल्शियम</label>
+        <label>D) आयोडीन</label>
+    </div>
+    <p class="answer">Ans: B) हीमोग्लोबिन</p>
+</div>
+```html
+<div class="question">
+    <p>16. पौधों को हरा रंग किस कारण मिलता है?</p>
+    <div class="options">
+        <label>A) क्लोरोफिल</label>
+        <label>B) कार्बन</label>
+        <label>C) जल</label>
+        <label>D) ऑक्सीजन</label>
+    </div>
+    <p class="answer">Ans: A) क्लोरोफिल</p>
+</div>
+
+<div class="question">
+    <p>17. बिजली का अच्छा चालक कौन है?</p>
+    <div class="options">
+        <label>A) लकड़ी</label>
+        <label>B) प्लास्टिक</label>
+        <label>C) तांबा</label>
+        <label>D) रबर</label>
+    </div>
+    <p class="answer">Ans: C) तांबा</p>
+</div>
+
+<div class="question">
+    <p>18. मानव शरीर में सबसे छोटी हड्डी कौन सी है?</p>
+    <div class="options">
+        <label>A) स्टेप्स</label>
+        <label>B) फीमर</label>
+        <label>C) रीढ़</label>
+        <label>D) टिबिया</label>
+    </div>
+    <p class="answer">Ans: A) स्टेप्स</p>
+</div>
+
+<div class="question">
+    <p>19. जल का क्वथनांक कितना होता है?</p>
+    <div class="options">
+        <label>A) 50°C</label>
+        <label>B) 75°C</label>
+        <label>C) 100°C</label>
+        <label>D) 150°C</label>
+    </div>
+    <p class="answer">Ans: C) 100°C</p>
+</div>
+
+<div class="question">
+    <p>20. पृथ्वी पर जीवन के लिए आवश्यक गैस कौन सी है?</p>
+    <div class="options">
+        <label>A) कार्बन डाइऑक्साइड</label>
+        <label>B) ऑक्सीजन</label>
+        <label>C) हीलियम</label>
+        <label>D) नाइट्रोजन</label>
+    </div>
+    <p class="answer">Ans: B) ऑक्सीजन</p>
+</div>
+<div class="question">
+    <p>21. सूर्य से पृथ्वी तक प्रकाश पहुँचने में कितना समय लगता है?</p>
+    <div class="options">
+        <label>A) 5 मिनट</label>
+        <label>B) 8 मिनट 20 सेकंड</label>
+        <label>C) 10 मिनट</label>
+        <label>D) 15 मिनट</label>
+    </div>
+    <p class="answer">Ans: B) 8 मिनट 20 सेकंड</p>
+</div>
+
+<div class="question">
+    <p>22. मानव शरीर में सबसे बड़ा अंग कौन सा है?</p>
+    <div class="options">
+        <label>A) हृदय</label>
+        <label>B) त्वचा</label>
+        <label>C) यकृत</label>
+        <label>D) फेफड़ा</label>
+    </div>
+    <p class="answer">Ans: B) त्वचा</p>
+</div>
+
+<div class="question">
+    <p>23. किस ग्रह को लाल ग्रह कहा जाता है?</p>
+    <div class="options">
+        <label>A) शुक्र</label>
+        <label>B) मंगल</label>
+        <label>C) शनि</label>
+        <label>D) बुध</label>
+    </div>
+    <p class="answer">Ans: B) मंगल</p>
+</div>
+
+<div class="question">
+    <p>24. विद्युत बल्ब का आविष्कार किसने किया?</p>
+    <div class="options">
+        <label>A) न्यूटन</label>
+        <label>B) एडिसन</label>
+        <label>C) आइंस्टीन</label>
+        <label>D) ग्राहम बेल</label>
+    </div>
+    <p class="answer">Ans: B) एडिसन</p>
+</div>
+
+<div class="question">
+    <p>25. भोजन का पाचन मुख्यतः कहाँ होता है?</p>
+    <div class="options">
+        <label>A) पेट</label>
+        <label>B) छोटी आंत</label>
+        <label>C) बड़ी आंत</label>
+        <label>D) मुंह</label>
+    </div>
+    <p class="answer">Ans: B) छोटी आंत</p>
+</div>
+
+<div class="question">
+    <p>26. पौधों में जल का परिवहन किसके द्वारा होता है?</p>
+    <div class="options">
+        <label>A) फ्लोएम</label>
+        <label>B) जाइलम</label>
+        <label>C) ऊतक</label>
+        <label>D) कोशिका</label>
+    </div>
+    <p class="answer">Ans: B) जाइलम</p>
+</div>
+
+<div class="question">
+    <p>27. बल की SI इकाई क्या है?</p>
+    <div class="options">
+        <label>A) जूल</label>
+        <label>B) न्यूटन</label>
+        <label>C) वाट</label>
+        <label>D) पास्कल</label>
+    </div>
+    <p class="answer">Ans: B) न्यूटन</p>
+</div>
+
+<div class="question">
+    <p>28. सबसे अधिक मात्रा में वायुमंडल में कौन सी गैस है?</p>
+    <div class="options">
+        <label>A) ऑक्सीजन</label>
+        <label>B) कार्बन डाइऑक्साइड</label>
+        <label>C) नाइट्रोजन</label>
+        <label>D) हाइड्रोजन</label>
+    </div>
+    <p class="answer">Ans: C) नाइट्रोजन</p>
+</div>
+
+<div class="question">
+    <p>29. मानव शरीर में रक्त को पंप कौन करता है?</p>
+    <div class="options">
+        <label>A) फेफड़ा</label>
+        <label>B) हृदय</label>
+        <label>C) यकृत</label>
+        <label>D) गुर्दा</label>
+    </div>
+    <p class="answer">Ans: B) हृदय</p>
+</div>
+
+<div class="question">
+    <p>30. ध्वनि किस माध्यम में सबसे तेज चलती है?</p>
+    <div class="options">
+        <label>A) गैस</label>
+        <label>B) द्रव</label>
+        <label>C) ठोस</label>
+        <label>D) निर्वात</label>
+    </div>
+    <p class="answer">Ans: C) ठोस</p>
+</div>
+
+<div class="question">
+    <p>31. विटामिन C का रासायनिक नाम क्या है?</p>
+    <div class="options">
+        <label>A) एस्कॉर्बिक अम्ल</label>
+        <label>B) साइट्रिक अम्ल</label>
+        <label>C) लैक्टिक अम्ल</label>
+        <label>D) फोलिक अम्ल</label>
+    </div>
+    <p class="answer">Ans: A) एस्कॉर्बिक अम्ल</p>
+</div>
+
+<div class="question">
+    <p>32. पृथ्वी की सबसे बाहरी परत कौन सी है?</p>
+    <div class="options">
+        <label>A) मेंटल</label>
+        <label>B) कोर</label>
+        <label>C) क्रस्ट</label>
+        <label>D) मैग्मा</label>
+    </div>
+    <p class="answer">Ans: C) क्रस्ट</p>
+</div>
+
+<div class="question">
+    <p>33. कंप्यूटर का मस्तिष्क किसे कहा जाता है?</p>
+    <div class="options">
+        <label>A) RAM</label>
+        <label>B) CPU</label>
+        <label>C) हार्ड डिस्क</label>
+        <label>D) मॉनिटर</label>
+    </div>
+    <p class="answer">Ans: B) CPU</p>
+</div>
+
+<div class="question">
+    <p>34. सबसे बड़ा ग्रह कौन सा है?</p>
+    <div class="options">
+        <label>A) पृथ्वी</label>
+        <label>B) शनि</label>
+        <label>C) बृहस्पति</label>
+        <label>D) मंगल</label>
+    </div>
+    <p class="answer">Ans: C) बृहस्पति</p>
+</div>
+
+<div class="question">
+    <p>35. मनुष्य के शरीर में कितनी हड्डियाँ होती हैं?</p>
+    <div class="options">
+        <label>A) 206</label>
+        <label>B) 210</label>
+        <label>C) 300</label>
+        <label>D) 105</label>
+    </div>
+    <p class="answer">Ans: A) 206</p>
+</div>
+
+<div class="question">
+    <p>36. विद्युत धारा की SI इकाई क्या है?</p>
+    <div class="options">
+        <label>A) वोल्ट</label>
+        <label>B) ओम</label>
+        <label>C) एम्पियर</label>
+        <label>D) वाट</label>
+    </div>
+    <p class="answer">Ans: C) एम्पियर</p>
+</div>
+
+<div class="question">
+    <p>37. पानी का जमाव बिंदु क्या है?</p>
+    <div class="options">
+        <label>A) 0°C</label>
+        <label>B) 50°C</label>
+        <label>C) 100°C</label>
+        <label>D) -10°C</label>
+    </div>
+    <p class="answer">Ans: A) 0°C</p>
+</div>
+
+<div class="question">
+    <p>38. DNA का पूरा नाम क्या है?</p>
+    <div class="options">
+        <label>A) Deoxyribonucleic Acid</label>
+        <label>B) Dynamic Acid</label>
+        <label>C) Double Nucleic Acid</label>
+        <label>D) Digital Acid</label>
+    </div>
+    <p class="answer">Ans: A) Deoxyribonucleic Acid</p>
+</div>
+
+<div class="question">
+    <p>39. सबसे हल्की गैस कौन सी है?</p>
+    <div class="options">
+        <label>A) ऑक्सीजन</label>
+        <label>B) नाइट्रोजन</label>
+        <label>C) हाइड्रोजन</label>
+        <label>D) हीलियम</label>
+    </div>
+    <p class="answer">Ans: C) हाइड्रोजन</p>
+</div>
+
+<div class="question">
+    <p>40. पृथ्वी सूर्य के चारों ओर घूमने में कितना समय लेती है?</p>
+    <div class="options">
+        <label>A) 24 घंटे</label>
+        <label>B) 30 दिन</label>
+        <label>C) 365 दिन</label>
+        <label>D) 12 महीने</label>
+    </div>
+    <p class="answer">Ans: C) 365 दिन</p>
+</div>
+<div class="question">
+    <p>61. रक्त का तरल भाग क्या कहलाता है?</p>
+    <div class="options">
+        <label>A) प्लेटलेट्स</label>
+        <label>B) प्लाज्मा</label>
+        <label>C) RBC</label>
+        <label>D) WBC</label>
+    </div>
+    <p class="answer">Ans: B) प्लाज्मा</p>
+</div>
+
+<div class="question">
+    <p>62. थर्मामीटर का उपयोग किसे मापने में किया जाता है?</p>
+    <div class="options">
+        <label>A) दाब</label>
+        <label>B) तापमान</label>
+        <label>C) लंबाई</label>
+        <label>D) भार</label>
+    </div>
+    <p class="answer">Ans: B) तापमान</p>
+</div>
+
+<div class="question">
+    <p>63. मनुष्य के शरीर में रक्त की कमी से कौन सा रोग होता है?</p>
+    <div class="options">
+        <label>A) मधुमेह</label>
+        <label>B) एनीमिया</label>
+        <label>C) मलेरिया</label>
+        <label>D) क्षय रोग</label>
+    </div>
+    <p class="answer">Ans: B) एनीमिया</p>
+</div>
+
+<div class="question">
+    <p>64. चंद्रमा पर सबसे पहले कदम रखने वाले व्यक्ति कौन थे?</p>
+    <div class="options">
+        <label>A) यूरी गागरिन</label>
+        <label>B) नील आर्मस्ट्रांग</label>
+        <label>C) कल्पना चावला</label>
+        <label>D) राकेश शर्मा</label>
+    </div>
+    <p class="answer">Ans: B) नील आर्मस्ट्रांग</p>
+</div>
+
+<div class="question">
+    <p>65. बैरोमीटर किसे मापने के लिए प्रयोग किया जाता है?</p>
+    <div class="options">
+        <label>A) तापमान</label>
+        <label>B) वायु दाब</label>
+        <label>C) आर्द्रता</label>
+        <label>D) ध्वनि</label>
+    </div>
+    <p class="answer">Ans: B) वायु दाब</p>
+</div>
+
+<div class="question">
+    <p>66. किस ग्रह के चारों ओर वलय पाए जाते हैं?</p>
+    <div class="options">
+        <label>A) पृथ्वी</label>
+        <label>B) मंगल</label>
+        <label>C) शनि</label>
+        <label>D) बुध</label>
+    </div>
+    <p class="answer">Ans: C) शनि</p>
+</div>
+
+<div class="question">
+    <p>67. जल का शुद्ध रूप कौन सा है?</p>
+    <div class="options">
+        <label>A) समुद्री जल</label>
+        <label>B) आसुत जल</label>
+        <label>C) नल का जल</label>
+        <label>D) वर्षा जल</label>
+    </div>
+    <p class="answer">Ans: B) आसुत जल</p>
+</div>
+
+<div class="question">
+    <p>68. विद्युत बल्ब में कौन सी गैस भरी जाती है?</p>
+    <div class="options">
+        <label>A) ऑक्सीजन</label>
+        <label>B) नाइट्रोजन</label>
+        <label>C) आर्गन</label>
+        <label>D) हाइड्रोजन</label>
+    </div>
+    <p class="answer">Ans: C) आर्गन</p>
+</div>
+
+<div class="question">
+    <p>69. सबसे छोटा ग्रह कौन सा है?</p>
+    <div class="options">
+        <label>A) बुध</label>
+        <label>B) मंगल</label>
+        <label>C) शुक्र</label>
+        <label>D) पृथ्वी</label>
+    </div>
+    <p class="answer">Ans: A) बुध</p>
+</div>
+
+<div class="question">
+    <p>70. हृदय की धड़कन को नियंत्रित कौन करता है?</p>
+    <div class="options">
+        <label>A) फेफड़े</label>
+        <label>B) मस्तिष्क</label>
+        <label>C) गुर्दा</label>
+        <label>D) यकृत</label>
+    </div>
+    <p class="answer">Ans: B) मस्तिष्क</p>
+</div>
+
+<div class="question">
+    <p>71. किस धातु का उपयोग तार बनाने में अधिक होता है?</p>
+    <div class="options">
+        <label>A) सोना</label>
+        <label>B) चांदी</label>
+        <label>C) तांबा</label>
+        <label>D) लोहा</label>
+    </div>
+    <p class="answer">Ans: C) तांबा</p>
+</div>
+
+<div class="question">
+    <p>72. सौरमंडल का सबसे गर्म ग्रह कौन सा है?</p>
+    <div class="options">
+        <label>A) बुध</label>
+        <label>B) मंगल</label>
+        <label>C) शुक्र</label>
+        <label>D) शनि</label>
+    </div>
+    <p class="answer">Ans: C) शुक्र</p>
+</div>
+
+<div class="question">
+    <p>73. मानव शरीर में भोजन ऊर्जा में कहाँ बदलता है?</p>
+    <div class="options">
+        <label>A) कोशिकाओं में</label>
+        <label>B) हड्डियों में</label>
+        <label>C) रक्त में</label>
+        <label>D) त्वचा में</label>
+    </div>
+    <p class="answer">Ans: A) कोशिकाओं में</p>
+</div>
+
+<div class="question">
+    <p>74. किस विटामिन की कमी से रतौंधी होती है?</p>
+    <div class="options">
+        <label>A) विटामिन A</label>
+        <label>B) विटामिन B</label>
+        <label>C) विटामिन C</label>
+        <label>D) विटामिन D</label>
+    </div>
+    <p class="answer">Ans: A) विटामिन A</p>
+</div>
+
+<div class="question">
+    <p>75. मानव शरीर में कितने कक्ष वाला हृदय होता है?</p>
+    <div class="options">
+        <label>A) 2</label>
+        <label>B) 3</label>
+        <label>C) 4</label>
+        <label>D) 5</label>
+    </div>
+    <p class="answer">Ans: C) 4</p>
+</div>
+
+<div class="question">
+    <p>76. वायु में उपस्थित ऑक्सीजन का प्रतिशत कितना होता है?</p>
+    <div class="options">
+        <label>A) 21%</label>
+        <label>B) 50%</label>
+        <label>C) 78%</label>
+        <label>D) 10%</label>
+    </div>
+    <p class="answer">Ans: A) 21%</p>
+</div>
+
+<div class="question">
+    <p>77. सबसे लंबी कोशिका कौन सी है?</p>
+    <div class="options">
+        <label>A) रक्त कोशिका</label>
+        <label>B) तंत्रिका कोशिका</label>
+        <label>C) त्वचा कोशिका</label>
+        <label>D) मांसपेशी कोशिका</label>
+    </div>
+    <p class="answer">Ans: B) तंत्रिका कोशिका</p>
+</div>
+
+<div class="question">
+    <p>78. किस ग्रह को सुबह का तारा कहा जाता है?</p>
+    <div class="options">
+        <label>A) मंगल</label>
+        <label>B) बुध</label>
+        <label>C) शुक्र</label>
+        <label>D) शनि</label>
+    </div>
+    <p class="answer">Ans: C) शुक्र</p>
+</div>
+
+<div class="question">
+    <p>79. ओज़ोन परत किसे रोकती है?</p>
+    <div class="options">
+        <label>A) धूल</label>
+        <label>B) पराबैंगनी किरणें</label>
+        <label>C) वर्षा</label>
+        <label>D) धुआं</label>
+    </div>
+    <p class="answer">Ans: B) पराबैंगनी किरणें</p>
+</div>
+
+<div class="question">
+    <p>80. शरीर में इंसुलिन कहाँ बनता है?</p>
+    <div class="options">
+        <label>A) यकृत</label>
+        <label>B) अग्न्याशय</label>
+        <label>C) गुर्दा</label>
+        <label>D) फेफड़ा</label>
+    </div>
+    <p class="answer">Ans: B) अग्न्याशय</p>
+</div><div class="question">
+    <p>81. मानव शरीर में सबसे छोटी ग्रंथि कौन सी है?</p>
+    <div class="options">
+        <label>A) थायरॉइड</label>
+        <label>B) पिट्यूटरी</label>
+        <label>C) एड्रिनल</label>
+        <label>D) पीनियल</label>
+    </div>
+    <p class="answer">Ans: D) पीनियल</p>
+</div>
+
+<div class="question">
+    <p>82. किस गैस को हंसाने वाली गैस कहा जाता है?</p>
+    <div class="options">
+        <label>A) नाइट्रस ऑक्साइड</label>
+        <label>B) ऑक्सीजन</label>
+        <label>C) कार्बन मोनोऑक्साइड</label>
+        <label>D) सल्फर डाइऑक्साइड</label>
+    </div>
+    <p class="answer">Ans: A) नाइट्रस ऑक्साइड</p>
+</div>
+
+<div class="question">
+    <p>83. सूर्य के सबसे निकट कौन सा ग्रह है?</p>
+    <div class="options">
+        <label>A) शुक्र</label>
+        <label>B) पृथ्वी</label>
+        <label>C) बुध</label>
+        <label>D) मंगल</label>
+    </div>
+    <p class="answer">Ans: C) बुध</p>
+</div>
+
+<div class="question">
+    <p>84. मनुष्य के शरीर में कितने लीटर रक्त होता है?</p>
+    <div class="options">
+        <label>A) 2-3 लीटर</label>
+        <label>B) 4-5 लीटर</label>
+        <label>C) 7-8 लीटर</label>
+        <label>D) 10 लीटर</label>
+    </div>
+    <p class="answer">Ans: B) 4-5 लीटर</p>
+</div>
+
+<div class="question">
+    <p>85. सबसे भारी धातु कौन सी है?</p>
+    <div class="options">
+        <label>A) सोना</label>
+        <label>B) लोहा</label>
+        <label>C) ओस्मियम</label>
+        <label>D) चांदी</label>
+    </div>
+    <p class="answer">Ans: C) ओस्मियम</p>
+</div>
+
+<div class="question">
+    <p>86. कौन सा अंग शरीर में रक्त को फ़िल्टर करता है?</p>
+    <div class="options">
+        <label>A) हृदय</label>
+        <label>B) फेफड़ा</label>
+        <label>C) गुर्दा</label>
+        <label>D) मस्तिष्क</label>
+    </div>
+    <p class="answer">Ans: C) गुर्दा</p>
+</div>
+
+<div class="question">
+    <p>87. कौन सा ग्रह सबसे बड़ा उपग्रह रखता है?</p>
+    <div class="options">
+        <label>A) पृथ्वी</label>
+        <label>B) मंगल</label>
+        <label>C) बृहस्पति</label>
+        <label>D) शुक्र</label>
+    </div>
+    <p class="answer">Ans: C) बृहस्पति</p>
+</div>
+
+<div class="question">
+    <p>88. किस विटामिन की कमी से स्कर्वी रोग होता है?</p>
+    <div class="options">
+        <label>A) विटामिन A</label>
+        <label>B) विटामिन B</label>
+        <label>C) विटामिन C</label>
+        <label>D) विटामिन D</label>
+    </div>
+    <p class="answer">Ans: C) विटामिन C</p>
+</div>
+
+<div class="question">
+    <p>89. सबसे हल्की धातु कौन सी है?</p>
+    <div class="options">
+        <label>A) लिथियम</label>
+        <label>B) सोडियम</label>
+        <label>C) एल्यूमिनियम</label>
+        <label>D) मैग्नीशियम</label>
+    </div>
+    <p class="answer">Ans: A) लिथियम</p>
+</div>
+
+<div class="question">
+    <p>90. पृथ्वी अपने अक्ष पर घूमने में कितना समय लेती है?</p>
+    <div class="options">
+        <label>A) 12 घंटे</label>
+        <label>B) 24 घंटे</label>
+        <label>C) 48 घंटे</label>
+        <label>D) 30 घंटे</label>
+    </div>
+    <p class="answer">Ans: B) 24 घंटे</p>
+</div>
+
+<div class="question">
+    <p>91. ध्वनि की चाल हवा में लगभग कितनी होती है?</p>
+    <div class="options">
+        <label>A) 150 m/s</label>
+        <label>B) 343 m/s</label>
+        <label>C) 500 m/s</label>
+        <label>D) 1000 m/s</label>
+    </div>
+    <p class="answer">Ans: B) 343 m/s</p>
+</div>
+
+<div class="question">
+    <p>92. किस तत्व का रासायनिक प्रतीक Fe है?</p>
+    <div class="options">
+        <label>A) फ्लोरीन</label>
+        <label>B) फ्रांसियम</label>
+        <label>C) लोहा</label>
+        <label>D) फॉस्फोरस</label>
+    </div>
+    <p class="answer">Ans: C) लोहा</p>
+</div>
+
+<div class="question">
+    <p>93. शरीर का संतुलन कौन सा अंग बनाए रखता है?</p>
+    <div class="options">
+        <label>A) हृदय</label>
+        <label>B) सेरिबेलम</label>
+        <label>C) फेफड़े</label>
+        <label>D) गुर्दा</label>
+    </div>
+    <p class="answer">Ans: B) सेरिबेलम</p>
+</div>
+
+<div class="question">
+    <p>94. कौन सा ग्रह नीला ग्रह कहलाता है?</p>
+    <div class="options">
+        <label>A) मंगल</label>
+        <label>B) पृथ्वी</label>
+        <label>C) शुक्र</label>
+        <label>D) बुध</label>
+    </div>
+    <p class="answer">Ans: B) पृथ्वी</p>
+</div>
+
+<div class="question">
+    <p>95. रक्त का थक्का जमाने में कौन सहायता करता है?</p>
+    <div class="options">
+        <label>A) RBC</label>
+        <label>B) WBC</label>
+        <label>C) प्लेटलेट्स</label>
+        <label>D) प्लाज्मा</label>
+    </div>
+    <p class="answer">Ans: C) प्लेटलेट्स</p>
+</div>
+
+<div class="question">
+    <p>96. सबसे अधिक कठोर धातु कौन सी है?</p>
+    <div class="options">
+        <label>A) लोहा</label>
+        <label>B) क्रोमियम</label>
+        <label>C) सोना</label>
+        <label>D) तांबा</label>
+    </div>
+    <p class="answer">Ans: B) क्रोमियम</p>
+</div>
+
+<div class="question">
+    <p>97. किस ग्रह को गैस दानव कहा जाता है?</p>
+    <div class="options">
+        <label>A) मंगल</label>
+        <label>B) पृथ्वी</label>
+        <label>C) बृहस्पति</label>
+        <label>D) बुध</label>
+    </div>
+    <p class="answer">Ans: C) बृहस्पति</p>
+</div>
+
+<div class="question">
+    <p>98. मानव शरीर में सबसे मजबूत मांसपेशी कौन सी है?</p>
+    <div class="options">
+        <label>A) जीभ</label>
+        <label>B) जबड़ा</label>
+        <label>C) हाथ</label>
+        <label>D) पैर</label>
+    </div>
+    <p class="answer">Ans: B) जबड़ा</p>
+</div>
+
+<div class="question">
+    <p>99. किस यंत्र से भूकंप मापा जाता है?</p>
+    <div class="options">
+        <label>A) थर्मामीटर</label>
+        <label>B) बैरोमीटर</label>
+        <label>C) सिस्मोग्राफ</label>
+        <label>D) माइक्रोस्कोप</label>
+    </div>
+    <p class="answer">Ans: C) सिस्मोग्राफ</p>
+</div>
+
+<div class="question">
+    <p>100. किस गैस को जीवनदायिनी गैस कहा जाता है?</p>
+    <div class="options">
+        <label>A) नाइट्रोजन</label>
+        <label>B) ऑक्सीजन</label>
+        <label>C) कार्बन डाइऑक्साइड</label>
+        <label>D) हाइड्रोजन</label>
+    </div>
+    <p class="answer">Ans: B) ऑक्सीजन</p>
+</div><div class="question">
+    <p>101. DNA का मुख्य कार्य क्या है?</p>
+    <div class="options">
+        <label>A) ऊर्जा उत्पादन</label>
+        <label>B) अनुवांशिक सूचना का संग्रह</label>
+        <label>C) प्रोटीन पाचन</label>
+        <label>D) रक्त निर्माण</label>
+    </div>
+    <p class="answer">Ans: B) अनुवांशिक सूचना का संग्रह</p>
+</div>
+
+<div class="question">
+    <p>102. मानव शरीर में यूरिया का निर्माण कहाँ होता है?</p>
+    <div class="options">
+        <label>A) गुर्दा</label>
+        <label>B) यकृत</label>
+        <label>C) हृदय</label>
+        <label>D) अग्न्याशय</label>
+    </div>
+    <p class="answer">Ans: B) यकृत</p>
+</div>
+
+<div class="question">
+    <p>103. प्रकाश संश्लेषण की क्रिया मुख्यतः किस भाग में होती है?</p>
+    <div class="options">
+        <label>A) जड़</label>
+        <label>B) तना</label>
+        <label>C) पत्ती के क्लोरोप्लास्ट</label>
+        <label>D) फूल</label>
+    </div>
+    <p class="answer">Ans: C) पत्ती के क्लोरोप्लास्ट</p>
+</div>
+
+<div class="question">
+    <p>104. मानव रक्त का pH मान लगभग कितना होता है?</p>
+    <div class="options">
+        <label>A) 5.5</label>
+        <label>B) 6.2</label>
+        <label>C) 7.4</label>
+        <label>D) 8.5</label>
+    </div>
+    <p class="answer">Ans: C) 7.4</p>
+</div>
+
+<div class="question">
+    <p>105. सबसे अधिक विद्युत ऋणात्मक तत्व कौन सा है?</p>
+    <div class="options">
+        <label>A) ऑक्सीजन</label>
+        <label>B) क्लोरीन</label>
+        <label>C) फ्लोरीन</label>
+        <label>D) नाइट्रोजन</label>
+    </div>
+    <p class="answer">Ans: C) फ्लोरीन</p>
+</div>
+
+<div class="question">
+    <p>106. मानव शरीर में RBC का निर्माण कहाँ होता है?</p>
+    <div class="options">
+        <label>A) यकृत</label>
+        <label>B) अस्थि मज्जा</label>
+        <label>C) हृदय</label>
+        <label>D) फेफड़ा</label>
+    </div>
+    <p class="answer">Ans: B) अस्थि मज्जा</p>
+</div>
+
+<div class="question">
+    <p>107. ओम का नियम किस संबंध को दर्शाता है?</p>
+    <div class="options">
+        <label>A) बल और द्रव्यमान</label>
+        <label>B) धारा और वोल्टेज</label>
+        <label>C) ऊर्जा और शक्ति</label>
+        <label>D) दाब और आयतन</label>
+    </div>
+    <p class="answer">Ans: B) धारा और वोल्टेज</p>
+</div>
+
+<div class="question">
+    <p>108. ATP का पूरा नाम क्या है?</p>
+    <div class="options">
+        <label>A) Adenosine Triphosphate</label>
+        <label>B) Adenine Tri Protein</label>
+        <label>C) Atomic Transfer Process</label>
+        <label>D) Active Tissue Protein</label>
+    </div>
+    <p class="answer">Ans: A) Adenosine Triphosphate</p>
+</div>
+
+<div class="question">
+    <p>109. न्यूटन का प्रथम नियम किससे संबंधित है?</p>
+    <div class="options">
+        <label>A) ऊर्जा संरक्षण</label>
+        <label>B) जड़त्व</label>
+        <label>C) गुरुत्वाकर्षण</label>
+        <label>D) संवेग</label>
+    </div>
+    <p class="answer">Ans: B) जड़त्व</p>
+</div>
+
+<div class="question">
+    <p>110. कोशिका का शक्ति गृह किसे कहा जाता है?</p>
+    <div class="options">
+        <label>A) राइबोसोम</label>
+        <label>B) माइटोकॉन्ड्रिया</label>
+        <label>C) केंद्रक</label>
+        <label>D) लाइसोसोम</label>
+    </div>
+    <p class="answer">Ans: B) माइटोकॉन्ड्रिया</p>
+</div>
+
+<div class="question">
+    <p>111. ध्वनि तरंगें किस प्रकार की तरंगें होती हैं?</p>
+    <div class="options">
+        <label>A) अनुप्रस्थ</label>
+        <label>B) अनुदैर्ध्य</label>
+        <label>C) विद्युत चुंबकीय</label>
+        <label>D) स्थिर</label>
+    </div>
+    <p class="answer">Ans: B) अनुदैर्ध्य</p>
+</div>
+
+<div class="question">
+    <p>112. हरितगृह प्रभाव के लिए मुख्य गैस कौन सी है?</p>
+    <div class="options">
+        <label>A) ऑक्सीजन</label>
+        <label>B) कार्बन डाइऑक्साइड</label>
+        <label>C) नाइट्रोजन</label>
+        <label>D) हीलियम</label>
+    </div>
+    <p class="answer">Ans: B) कार्बन डाइऑक्साइड</p>
+</div>
+
+<div class="question">
+    <p>113. प्रकाश वर्ष किसकी इकाई है?</p>
+    <div class="options">
+        <label>A) समय</label>
+        <label>B) दूरी</label>
+        <label>C) प्रकाश</label>
+        <label>D) गति</label>
+    </div>
+    <p class="answer">Ans: B) दूरी</p>
+</div>
+
+<div class="question">
+    <p>114. शरीर में कैल्शियम की कमी से कौन सा रोग होता है?</p>
+    <div class="options">
+        <label>A) स्कर्वी</label>
+        <label>B) रिकेट्स</label>
+        <label>C) एनीमिया</label>
+        <label>D) बेरी-बेरी</label>
+    </div>
+    <p class="answer">Ans: B) रिकेट्स</p>
+</div>
+
+<div class="question">
+    <p>115. विद्युत शक्ति की SI इकाई क्या है?</p>
+    <div class="options">
+        <label>A) जूल</label>
+        <label>B) न्यूटन</label>
+        <label>C) वाट</label>
+        <label>D) एम्पियर</label>
+    </div>
+    <p class="answer">Ans: C) वाट</p>
+</div>
+
+<div class="question">
+    <p>116. सबसे अधिक प्रतिक्रियाशील धातु कौन सी है?</p>
+    <div class="options">
+        <label>A) सोडियम</label>
+        <label>B) पोटैशियम</label>
+        <label>C) सीज़ियम</label>
+        <label>D) कैल्शियम</label>
+    </div>
+    <p class="answer">Ans: C) सीज़ियम</p>
+</div>
+
+<div class="question">
+    <p>117. मनुष्य में गुणसूत्रों की संख्या कितनी होती है?</p>
+    <div class="options">
+        <label>A) 23</label>
+        <label>B) 46</label>
+        <label>C) 44</label>
+        <label>D) 48</label>
+    </div>
+    <p class="answer">Ans: B) 46</p>
+</div>
+
+<div class="question">
+    <p>118. लेंस की क्षमता की इकाई क्या है?</p>
+    <div class="options">
+        <label>A) जूल</label>
+        <label>B) डायोप्टर</label>
+        <label>C) न्यूटन</label>
+        <label>D) वाट</label>
+    </div>
+    <p class="answer">Ans: B) डायोप्टर</p>
+</div>
+
+<div class="question">
+    <p>119. एन्जाइम मूलतः क्या होते हैं?</p>
+    <div class="options">
+        <label>A) कार्बोहाइड्रेट</label>
+        <label>B) वसा</label>
+        <label>C) प्रोटीन</label>
+        <label>D) विटामिन</label>
+    </div>
+    <p class="answer">Ans: C) प्रोटीन</p>
+</div>
+
+<div class="question">
+    <p>120. रेडियोधर्मिता की खोज किसने की थी?</p>
+    <div class="options">
+        <label>A) मैडम क्यूरी</label>
+        <label>B) रदरफोर्ड</label>
+        <label>C) बेकरल</label>
+        <label>D) चैडविक</label>
+    </div>
+    <p class="answer">Ans: C) बेकरल</p>
+</div>
+
+<!-- Continue same format till 200 -->
+
+```
+<div class="question">
+    <p>121. मानव शरीर में पित्त रस का निर्माण कहाँ होता है?</p>
+    <div class="options">
+        <label>A) अग्न्याशय</label>
+        <label>B) यकृत</label>
+        <label>C) छोटी आंत</label>
+        <label>D) पेट</label>
+    </div>
+    <p class="answer">Ans: B) यकृत</p>
+</div>
+
+<div class="question">
+    <p>122. परमाणु के केंद्र में कौन से कण पाए जाते हैं?</p>
+    <div class="options">
+        <label>A) इलेक्ट्रॉन</label>
+        <label>B) प्रोटॉन एवं न्यूट्रॉन</label>
+        <label>C) केवल न्यूट्रॉन</label>
+        <label>D) केवल प्रोटॉन</label>
+    </div>
+    <p class="answer">Ans: B) प्रोटॉन एवं न्यूट्रॉन</p>
+</div>
+
+<div class="question">
+    <p>123. न्यूटन का तीसरा नियम किस पर आधारित है?</p>
+    <div class="options">
+        <label>A) गुरुत्वाकर्षण</label>
+        <label>B) क्रिया-प्रतिक्रिया</label>
+        <label>C) ऊर्जा संरक्षण</label>
+        <label>D) जड़त्व</label>
+    </div>
+    <p class="answer">Ans: B) क्रिया-प्रतिक्रिया</p>
+</div>
+
+<div class="question">
+    <p>124. मानव शरीर की सबसे बड़ी कोशिका कौन सी है?</p>
+    <div class="options">
+        <label>A) तंत्रिका कोशिका</label>
+        <label>B) अंडाणु</label>
+        <label>C) RBC</label>
+        <label>D) WBC</label>
+    </div>
+    <p class="answer">Ans: B) अंडाणु</p>
+</div>
+
+<div class="question">
+    <p>125. अम्ल का स्वाद कैसा होता है?</p>
+    <div class="options">
+        <label>A) मीठा</label>
+        <label>B) खट्टा</label>
+        <label>C) कड़वा</label>
+        <label>D) नमकीन</label>
+    </div>
+    <p class="answer">Ans: B) खट्टा</p>
+</div>
+
+<div class="question">
+    <p>126. विद्युत धारा उत्पन्न करने वाले यंत्र को क्या कहते हैं?</p>
+    <div class="options">
+        <label>A) मोटर</label>
+        <label>B) जनरेटर</label>
+        <label>C) ट्रांसफार्मर</label>
+        <label>D) डायनेमोमीटर</label>
+    </div>
+    <p class="answer">Ans: B) जनरेटर</p>
+</div>
+
+<div class="question">
+    <p>127. सबसे भारी गैस कौन सी है?</p>
+    <div class="options">
+        <label>A) ऑक्सीजन</label>
+        <label>B) हाइड्रोजन</label>
+        <label>C) रेडॉन</label>
+        <label>D) हीलियम</label>
+    </div>
+    <p class="answer">Ans: C) रेडॉन</p>
+</div>
+
+<div class="question">
+    <p>128. कौन सा विटामिन रक्त के थक्के जमाने में सहायक होता है?</p>
+    <div class="options">
+        <label>A) विटामिन A</label>
+        <label>B) विटामिन C</label>
+        <label>C) विटामिन D</label>
+        <label>D) विटामिन K</label>
+    </div>
+    <p class="answer">Ans: D) विटामिन K</p>
+</div>
+
+<div class="question">
+    <p>129. धातुओं में चमक का कारण क्या होता है?</p>
+    <div class="options">
+        <label>A) प्रोटॉन</label>
+        <label>B) मुक्त इलेक्ट्रॉन</label>
+        <label>C) न्यूट्रॉन</label>
+        <label>D) आयन</label>
+    </div>
+    <p class="answer">Ans: B) मुक्त इलेक्ट्रॉन</p>
+</div>
+
+<div class="question">
+    <p>130. रक्त समूह की खोज किसने की थी?</p>
+    <div class="options">
+        <label>A) लुई पाश्चर</label>
+        <label>B) रॉबर्ट हुक</label>
+        <label>C) लैंडस्टीनर</label>
+        <label>D) डार्विन</label>
+    </div>
+    <p class="answer">Ans: C) लैंडस्टीनर</p>
+</div>
+
+<div class="question">
+    <p>131. ध्वनि की तीव्रता किसमें मापी जाती है?</p>
+    <div class="options">
+        <label>A) जूल</label>
+        <label>B) डेसीबल</label>
+        <label>C) न्यूटन</label>
+        <label>D) हर्ट्ज</label>
+    </div>
+    <p class="answer">Ans: B) डेसीबल</p>
+</div>
+
+<div class="question">
+    <p>132. मनुष्य के शरीर में सबसे लंबी हड्डी कौन सी है?</p>
+    <div class="options">
+        <label>A) ह्यूमरस</label>
+        <label>B) फीमर</label>
+        <label>C) टिबिया</label>
+        <label>D) रेडियस</label>
+    </div>
+    <p class="answer">Ans: B) फीमर</p>
+</div>
+
+<div class="question">
+    <p>133. कौन सा ग्रह अपने अक्ष पर पूर्व से पश्चिम घूमता है?</p>
+    <div class="options">
+        <label>A) पृथ्वी</label>
+        <label>B) मंगल</label>
+        <label>C) शुक्र</label>
+        <label>D) बृहस्पति</label>
+    </div>
+    <p class="answer">Ans: C) शुक्र</p>
+</div>
+
+<div class="question">
+    <p>134. मानव शरीर में सबसे बड़ी धमनी कौन सी है?</p>
+    <div class="options">
+        <label>A) पल्मोनरी धमनी</label>
+        <label>B) वेना कावा</label>
+        <label>C) महाधमनी</label>
+        <label>D) कोरोनरी धमनी</label>
+    </div>
+    <p class="answer">Ans: C) महाधमनी</p>
+</div>
+
+<div class="question">
+    <p>135. कौन सा तत्व सबसे अधिक मात्रा में पृथ्वी की पपड़ी में पाया जाता है?</p>
+    <div class="options">
+        <label>A) सिलिकॉन</label>
+        <label>B) ऑक्सीजन</label>
+        <label>C) लोहा</label>
+        <label>D) एल्युमिनियम</label>
+    </div>
+    <p class="answer">Ans: B) ऑक्सीजन</p>
+</div>
+
+<div class="question">
+    <p>136. मलेरिया रोग किसके द्वारा फैलता है?</p>
+    <div class="options">
+        <label>A) घरेलू मक्खी</label>
+        <label>B) एनोफिलीज मच्छर</label>
+        <label>C) क्यूलेक्स मच्छर</label>
+        <label>D) त्से-त्से मक्खी</label>
+    </div>
+    <p class="answer">Ans: B) एनोफिलीज मच्छर</p>
+</div>
+
+<div class="question">
+    <p>137. विद्युत मोटर किस सिद्धांत पर कार्य करती है?</p>
+    <div class="options">
+        <label>A) विद्युत अपघटन</label>
+        <label>B) चुंबकीय प्रेरण</label>
+        <label>C) विद्युत चुंबकीय बल</label>
+        <label>D) प्रतिरोध</label>
+    </div>
+    <p class="answer">Ans: C) विद्युत चुंबकीय बल</p>
+</div>
+
+<div class="question">
+    <p>138. हाइड्रोक्लोरिक अम्ल का रासायनिक सूत्र क्या है?</p>
+    <div class="options">
+        <label>A) H₂SO₄</label>
+        <label>B) HNO₃</label>
+        <label>C) HCl</label>
+        <label>D) CH₃COOH</label>
+    </div>
+    <p class="answer">Ans: C) HCl</p>
+</div>
+
+<div class="question">
+    <p>139. कौन सा हार्मोन रक्त में शर्करा की मात्रा नियंत्रित करता है?</p>
+    <div class="options">
+        <label>A) थायरॉक्सिन</label>
+        <label>B) एड्रेनालिन</label>
+        <label>C) इंसुलिन</label>
+        <label>D) टेस्टोस्टेरोन</label>
+    </div>
+    <p class="answer">Ans: C) इंसुलिन</p>
+</div>
+
+<div class="question">
+    <p>140. किसी वस्तु का भार कहाँ सबसे कम होता है?</p>
+    <div class="options">
+        <label>A) पृथ्वी पर</label>
+        <label>B) चंद्रमा पर</label>
+        <label>C) बृहस्पति पर</label>
+        <label>D) सूर्य पर</label>
+    </div>
+    <p class="answer">Ans: B) चंद्रमा पर</p>
+</div>
+<div class="question">
+    <p>141. कौन सा तत्व जल में रखने पर तैरता है?</p>
+    <div class="options">
+        <label>A) सोडियम</label>
+        <label>B) लोहा</label>
+        <label>C) तांबा</label>
+        <label>D) जस्ता</label>
+    </div>
+    <p class="answer">Ans: A) सोडियम</p>
+</div>
+
+<div class="question">
+    <p>142. न्यूक्लियस की खोज किसने की थी?</p>
+    <div class="options">
+        <label>A) रदरफोर्ड</label>
+        <label>B) नील्स बोर</label>
+        <label>C) जे.जे. थॉमसन</label>
+        <label>D) चैडविक</label>
+    </div>
+    <p class="answer">Ans: A) रदरफोर्ड</p>
+</div>
+
+<div class="question">
+    <p>143. किस विटामिन में कोबाल्ट पाया जाता है?</p>
+    <div class="options">
+        <label>A) विटामिन A</label>
+        <label>B) विटामिन B₁₂</label>
+        <label>C) विटामिन C</label>
+        <label>D) विटामिन D</label>
+    </div>
+    <p class="answer">Ans: B) विटामिन B₁₂</p>
+</div>
+
+<div class="question">
+    <p>144. ध्वनि की आवृत्ति किसमें मापी जाती है?</p>
+    <div class="options">
+        <label>A) डेसीबल</label>
+        <label>B) जूल</label>
+        <label>C) हर्ट्ज</label>
+        <label>D) न्यूटन</label>
+    </div>
+    <p class="answer">Ans: C) हर्ट्ज</p>
+</div>
+
+<div class="question">
+    <p>145. क्लोरोफिल में कौन सी धातु पाई जाती है?</p>
+    <div class="options">
+        <label>A) लोहा</label>
+        <label>B) मैग्नीशियम</label>
+        <label>C) कैल्शियम</label>
+        <label>D) सोडियम</label>
+    </div>
+    <p class="answer">Ans: B) मैग्नीशियम</p>
+</div>
+
+<div class="question">
+    <p>146. सबसे अधिक अम्लीय वर्षा किस गैस के कारण होती है?</p>
+    <div class="options">
+        <label>A) ऑक्सीजन</label>
+        <label>B) नाइट्रोजन</label>
+        <label>C) सल्फर डाइऑक्साइड</label>
+        <label>D) हाइड्रोजन</label>
+    </div>
+    <p class="answer">Ans: C) सल्फर डाइऑक्साइड</p>
+</div>
+
+<div class="question">
+    <p>147. प्रकाश का अपवर्तन किस कारण होता है?</p>
+    <div class="options">
+        <label>A) दिशा परिवर्तन</label>
+        <label>B) गति परिवर्तन</label>
+        <label>C) ताप परिवर्तन</label>
+        <label>D) दाब परिवर्तन</label>
+    </div>
+    <p class="answer">Ans: B) गति परिवर्तन</p>
+</div>
+
+<div class="question">
+    <p>148. रक्त में हीमोग्लोबिन का मुख्य कार्य क्या है?</p>
+    <div class="options">
+        <label>A) भोजन पचाना</label>
+        <label>B) ऑक्सीजन का परिवहन</label>
+        <label>C) हार्मोन बनाना</label>
+        <label>D) रोग प्रतिरोध</label>
+    </div>
+    <p class="answer">Ans: B) ऑक्सीजन का परिवहन</p>
+</div>
+
+<div class="question">
+    <p>149. इलेक्ट्रॉन की खोज किसने की थी?</p>
+    <div class="options">
+        <label>A) रदरफोर्ड</label>
+        <label>B) थॉमसन</label>
+        <label>C) चैडविक</label>
+        <label>D) बोर</label>
+    </div>
+    <p class="answer">Ans: B) थॉमसन</p>
+</div>
+
+<div class="question">
+    <p>150. सबसे अधिक कठोर पदार्थ कौन सा है?</p>
+    <div class="options">
+        <label>A) ग्रेफाइट</label>
+        <label>B) हीरा</label>
+        <label>C) लोहा</label>
+        <label>D) प्लेटिनम</label>
+    </div>
+    <p class="answer">Ans: B) हीरा</p>
+</div>
+
+<div class="question">
+    <p>151. मानव शरीर में सबसे बड़ी श्वेत रक्त कोशिका कौन सी है?</p>
+    <div class="options">
+        <label>A) मोनोसाइट</label>
+        <label>B) लिम्फोसाइट</label>
+        <label>C) बेसोफिल</label>
+        <label>D) न्यूट्रोफिल</label>
+    </div>
+    <p class="answer">Ans: A) मोनोसाइट</p>
+</div>
+
+<div class="question">
+    <p>152. रमन प्रभाव की खोज किसने की थी?</p>
+    <div class="options">
+        <label>A) सी.वी. रमन</label>
+        <label>B) होमी भाभा</label>
+        <label>C) मेघनाथ साहा</label>
+        <label>D) जगदीश चंद्र बोस</label>
+    </div>
+    <p class="answer">Ans: A) सी.वी. रमन</p>
+</div>
+
+<div class="question">
+    <p>153. पौधों में वाष्पोत्सर्जन मुख्यतः किस भाग द्वारा होता है?</p>
+    <div class="options">
+        <label>A) जड़</label>
+        <label>B) रंध्र</label>
+        <label>C) तना</label>
+        <label>D) फूल</label>
+    </div>
+    <p class="answer">Ans: B) रंध्र</p>
+</div>
+
+<div class="question">
+    <p>154. परमाणु क्रमांक किसके बराबर होता है?</p>
+    <div class="options">
+        <label>A) न्यूट्रॉन</label>
+        <label>B) प्रोटॉन</label>
+        <label>C) न्यूक्लियॉन</label>
+        <label>D) द्रव्यमान संख्या</label>
+    </div>
+    <p class="answer">Ans: B) प्रोटॉन</p>
+</div>
+
+<div class="question">
+    <p>155. कौन सा रक्त समूह सार्वभौमिक दाता कहलाता है?</p>
+    <div class="options">
+        <label>A) A</label>
+        <label>B) B</label>
+        <label>C) AB</label>
+        <label>D) O</label>
+    </div>
+    <p class="answer">Ans: D) O</p>
+</div>
+
+<div class="question">
+    <p>156. प्रकाश का वेग सबसे पहले किसने ज्ञात किया था?</p>
+    <div class="options">
+        <label>A) गैलीलियो</label>
+        <label>B) रोमर</label>
+        <label>C) न्यूटन</label>
+        <label>D) आइंस्टीन</label>
+    </div>
+    <p class="answer">Ans: B) रोमर</p>
+</div>
+
+<div class="question">
+    <p>157. किस तत्व को भविष्य का ईंधन कहा जाता है?</p>
+    <div class="options">
+        <label>A) ऑक्सीजन</label>
+        <label>B) नाइट्रोजन</label>
+        <label>C) हाइड्रोजन</label>
+        <label>D) हीलियम</label>
+    </div>
+    <p class="answer">Ans: C) हाइड्रोजन</p>
+</div>
+
+<div class="question">
+    <p>158. कोशिका विभाजन की प्रक्रिया को क्या कहते हैं?</p>
+    <div class="options">
+        <label>A) प्रकाश संश्लेषण</label>
+        <label>B) माइटोसिस</label>
+        <label>C) श्वसन</label>
+        <label>D) निषेचन</label>
+    </div>
+    <p class="answer">Ans: B) माइटोसिस</p>
+</div>
+
+<div class="question">
+    <p>159. सबसे अधिक ऊर्जा किस रंग के प्रकाश में होती है?</p>
+    <div class="options">
+        <label>A) लाल</label>
+        <label>B) पीला</label>
+        <label>C) नीला</label>
+        <label>D) बैंगनी</label>
+    </div>
+    <p class="answer">Ans: D) बैंगनी</p>
+</div>
+
+<div class="question">
+    <p>160. दाब की SI इकाई क्या है?</p>
+    <div class="options">
+        <label>A) जूल</label>
+        <label>B) न्यूटन</label>
+        <label>C) पास्कल</label>
+        <label>D) वाट</label>
+    </div>
+    <p class="answer">Ans: C) पास्कल</p>
+</div>
+<div class="question">
+    <p>161. मानव शरीर में सबसे छोटी हड्डी कौन सी है?</p>
+    <div class="options">
+        <label>A) फीमर</label>
+        <label>B) स्टेप्स</label>
+        <label>C) टिबिया</label>
+        <label>D) रेडियस</label>
+    </div>
+    <p class="answer">Ans: B) स्टेप्स</p>
+</div>
+
+<div class="question">
+    <p>162. किसी तत्व के रासायनिक गुण किस पर निर्भर करते हैं?</p>
+    <div class="options">
+        <label>A) प्रोटॉन</label>
+        <label>B) न्यूट्रॉन</label>
+        <label>C) इलेक्ट्रॉन विन्यास</label>
+        <label>D) परमाणु द्रव्यमान</label>
+    </div>
+    <p class="answer">Ans: C) इलेक्ट्रॉन विन्यास</p>
+</div>
+
+<div class="question">
+    <p>163. मानव शरीर में सबसे अधिक मात्रा में कौन सा तत्व पाया जाता है?</p>
+    <div class="options">
+        <label>A) कार्बन</label>
+        <label>B) हाइड्रोजन</label>
+        <label>C) ऑक्सीजन</label>
+        <label>D) नाइट्रोजन</label>
+    </div>
+    <p class="answer">Ans: C) ऑक्सीजन</p>
+</div>
+
+<div class="question">
+    <p>164. किस गैस को ग्रीनहाउस गैस नहीं माना जाता है?</p>
+    <div class="options">
+        <label>A) कार्बन डाइऑक्साइड</label>
+        <label>B) मीथेन</label>
+        <label>C) नाइट्रोजन</label>
+        <label>D) जलवाष्प</label>
+    </div>
+    <p class="answer">Ans: C) नाइट्रोजन</p>
+</div>
+
+<div class="question">
+    <p>165. प्रकाश का परावर्तन किस नियम का पालन करता है?</p>
+    <div class="options">
+        <label>A) न्यूटन का नियम</label>
+        <label>B) स्नेल का नियम</label>
+        <label>C) परावर्तन का नियम</label>
+        <label>D) ओम का नियम</label>
+    </div>
+    <p class="answer">Ans: C) परावर्तन का नियम</p>
+</div>
+
+<div class="question">
+    <p>166. सबसे अधिक विद्युत चालकता किस धातु में होती है?</p>
+    <div class="options">
+        <label>A) तांबा</label>
+        <label>B) सोना</label>
+        <label>C) चांदी</label>
+        <label>D) एल्युमिनियम</label>
+    </div>
+    <p class="answer">Ans: C) चांदी</p>
+</div>
+
+<div class="question">
+    <p>167. पेनिसिलिन की खोज किसने की थी?</p>
+    <div class="options">
+        <label>A) फ्लेमिंग</label>
+        <label>B) पाश्चर</label>
+        <label>C) रॉबर्ट कोच</label>
+        <label>D) जेनर</label>
+    </div>
+    <p class="answer">Ans: A) फ्लेमिंग</p>
+</div>
+
+<div class="question">
+    <p>168. पृथ्वी के वायुमंडल की कौन सी परत ओजोन परत रखती है?</p>
+    <div class="options">
+        <label>A) ट्रोपोस्फीयर</label>
+        <label>B) समतापमंडल</label>
+        <label>C) आयनमंडल</label>
+        <label>D) बहिर्मंडल</label>
+    </div>
+    <p class="answer">Ans: B) समतापमंडल</p>
+</div>
+
+<div class="question">
+    <p>169. अमीबा में भोजन का पाचन कहाँ होता है?</p>
+    <div class="options">
+        <label>A) केंद्रक</label>
+        <label>B) खाद्य रिक्तिका</label>
+        <label>C) कोशिका झिल्ली</label>
+        <label>D) साइटोप्लाज्म</label>
+    </div>
+    <p class="answer">Ans: B) खाद्य रिक्तिका</p>
+</div>
+
+<div class="question">
+    <p>170. किसी वस्तु का जड़त्व किस पर निर्भर करता है?</p>
+    <div class="options">
+        <label>A) आयतन</label>
+        <label>B) वेग</label>
+        <label>C) द्रव्यमान</label>
+        <label>D) घनत्व</label>
+    </div>
+    <p class="answer">Ans: C) द्रव्यमान</p>
+</div>
+
+<div class="question">
+    <p>171. कौन सा तत्व सबसे अधिक कठोर धातु है?</p>
+    <div class="options">
+        <label>A) लोहा</label>
+        <label>B) क्रोमियम</label>
+        <label>C) प्लेटिनम</label>
+        <label>D) निकल</label>
+    </div>
+    <p class="answer">Ans: B) क्रोमियम</p>
+</div>
+
+<div class="question">
+    <p>172. रक्त में ऑक्सीजन का परिवहन कौन करता है?</p>
+    <div class="options">
+        <label>A) प्लाज्मा</label>
+        <label>B) हीमोग्लोबिन</label>
+        <label>C) प्लेटलेट्स</label>
+        <label>D) ल्यूकोसाइट्स</label>
+    </div>
+    <p class="answer">Ans: B) हीमोग्लोबिन</p>
+</div>
+
+<div class="question">
+    <p>173. ध्वनि की गति निर्वात में कितनी होती है?</p>
+    <div class="options">
+        <label>A) 343 m/s</label>
+        <label>B) 1500 m/s</label>
+        <label>C) 0 m/s</label>
+        <label>D) 300000 km/s</label>
+    </div>
+    <p class="answer">Ans: C) 0 m/s</p>
+</div>
+
+<div class="question">
+    <p>174. मानव शरीर की सबसे बड़ी ग्रंथि कौन सी है?</p>
+    <div class="options">
+        <label>A) थायरॉइड</label>
+        <label>B) अग्न्याशय</label>
+        <label>C) यकृत</label>
+        <label>D) पिट्यूटरी</label>
+    </div>
+    <p class="answer">Ans: C) यकृत</p>
+</div>
+
+<div class="question">
+    <p>175. पानी का अधिकतम घनत्व किस तापमान पर होता है?</p>
+    <div class="options">
+        <label>A) 0°C</label>
+        <label>B) 4°C</label>
+        <label>C) 25°C</label>
+        <label>D) 100°C</label>
+    </div>
+    <p class="answer">Ans: B) 4°C</p>
+</div>
+
+<div class="question">
+    <p>176. विटामिन D का प्रमुख स्रोत क्या है?</p>
+    <div class="options">
+        <label>A) दूध</label>
+        <label>B) सूर्य का प्रकाश</label>
+        <label>C) फल</label>
+        <label>D) हरी सब्जियाँ</label>
+    </div>
+    <p class="answer">Ans: B) सूर्य का प्रकाश</p>
+</div>
+
+<div class="question">
+    <p>177. सबसे अधिक क्रियाशील अधातु कौन सी है?</p>
+    <div class="options">
+        <label>A) क्लोरीन</label>
+        <label>B) फ्लोरीन</label>
+        <label>C) ऑक्सीजन</label>
+        <label>D) ब्रोमीन</label>
+    </div>
+    <p class="answer">Ans: B) फ्लोरीन</p>
+</div>
+
+<div class="question">
+    <p>178. परमाणु बम किस सिद्धांत पर आधारित है?</p>
+    <div class="options">
+        <label>A) नाभिकीय संलयन</label>
+        <label>B) नाभिकीय विखंडन</label>
+        <label>C) परावर्तन</label>
+        <label>D) अपवर्तन</label>
+    </div>
+    <p class="answer">Ans: B) नाभिकीय विखंडन</p>
+</div>
+
+<div class="question">
+    <p>179. मानव शरीर में सबसे बड़ी शिरा कौन सी है?</p>
+    <div class="options">
+        <label>A) महाशिरा</label>
+        <label>B) कोरोनरी शिरा</label>
+        <label>C) पल्मोनरी शिरा</label>
+        <label>D) जुगुलर शिरा</label>
+    </div>
+    <p class="answer">Ans: A) महाशिरा</p>
+</div>
+
+<div class="question">
+    <p>180. लेज़र किरणें किस प्रकार की होती हैं?</p>
+    <div class="options">
+        <label>A) अपसारी</label>
+        <label>B) एकवर्णी</label>
+        <label>C) अनियमित</label>
+        <label>D) ध्वनि तरंग</label>
+    </div>
+    <p class="answer">Ans: B) एकवर्णी</p>
+</div>
+<div class="question">
+    <p>181. मानव शरीर में सबसे अधिक कठोर पदार्थ कौन सा है?</p>
+    <div class="options">
+        <label>A) हड्डी</label>
+        <label>B) नाखून</label>
+        <label>C) दाँत की एनामेल</label>
+        <label>D) उपास्थि</label>
+    </div>
+    <p class="answer">Ans: C) दाँत की एनामेल</p>
+</div>
+
+<div class="question">
+    <p>182. विद्युत बल्ब का फिलामेंट सामान्यतः किस धातु का बना होता है?</p>
+    <div class="options">
+        <label>A) तांबा</label>
+        <label>B) टंगस्टन</label>
+        <label>C) एल्युमिनियम</label>
+        <label>D) निकेल</label>
+    </div>
+    <p class="answer">Ans: B) टंगस्टन</p>
+</div>
+
+<div class="question">
+    <p>183. रेडियोधर्मी तत्वों की अर्ध-आयु किसे दर्शाती है?</p>
+    <div class="options">
+        <label>A) पूर्ण विघटन का समय</label>
+        <label>B) आधे नाभिकों के विघटन का समय</label>
+        <label>C) द्रव्यमान संख्या</label>
+        <label>D) ऊर्जा उत्सर्जन</label>
+    </div>
+    <p class="answer">Ans: B) आधे नाभिकों के विघटन का समय</p>
+</div>
+
+<div class="question">
+    <p>184. पौधों में जल का अवशोषण मुख्यतः किस भाग द्वारा होता है?</p>
+    <div class="options">
+        <label>A) जड़ रोम</label>
+        <label>B) पत्ती</label>
+        <label>C) तना</label>
+        <label>D) रंध्र</label>
+    </div>
+    <p class="answer">Ans: A) जड़ रोम</p>
+</div>
+
+<div class="question">
+    <p>185. ट्रांजिस्टर का आविष्कार किसने किया था?</p>
+    <div class="options">
+        <label>A) ग्राहम बेल</label>
+        <label>B) शॉक्ले</label>
+        <label>C) एडिसन</label>
+        <label>D) न्यूटन</label>
+    </div>
+    <p class="answer">Ans: B) शॉक्ले</p>
+</div>
+
+<div class="question">
+    <p>186. रक्त में प्रतिरक्षा कार्य कौन सी कोशिकाएँ करती हैं?</p>
+    <div class="options">
+        <label>A) RBC</label>
+        <label>B) प्लेटलेट्स</label>
+        <label>C) WBC</label>
+        <label>D) हीमोग्लोबिन</label>
+    </div>
+    <p class="answer">Ans: C) WBC</p>
+</div>
+
+<div class="question">
+    <p>187. धातुओं में विद्युत धारा का प्रवाह किसके कारण होता है?</p>
+    <div class="options">
+        <label>A) प्रोटॉन</label>
+        <label>B) न्यूट्रॉन</label>
+        <label>C) मुक्त इलेक्ट्रॉन</label>
+        <label>D) आयन</label>
+    </div>
+    <p class="answer">Ans: C) मुक्त इलेक्ट्रॉन</p>
+</div>
+
+<div class="question">
+    <p>188. मानव शरीर में भोजन का अवशोषण मुख्यतः कहाँ होता है?</p>
+    <div class="options">
+        <label>A) पेट</label>
+        <label>B) छोटी आंत</label>
+        <label>C) बड़ी आंत</label>
+        <label>D) यकृत</label>
+    </div>
+    <p class="answer">Ans: B) छोटी आंत</p>
+</div>
+
+<div class="question">
+    <p>189. रासायनिक अभिक्रिया की गति बढ़ाने वाले पदार्थ को क्या कहते हैं?</p>
+    <div class="options">
+        <label>A) अवरोधक</label>
+        <label>B) उत्प्रेरक</label>
+        <label>C) ऑक्सीकारक</label>
+        <label>D) अपचायक</label>
+    </div>
+    <p class="answer">Ans: B) उत्प्रेरक</p>
+</div>
+
+<div class="question">
+    <p>190. मानव नेत्र में प्रकाश का नियंत्रण कौन करता है?</p>
+    <div class="options">
+        <label>A) कॉर्निया</label>
+        <label>B) पुतली</label>
+        <label>C) रेटिना</label>
+        <label>D) लेंस</label>
+    </div>
+    <p class="answer">Ans: B) पुतली</p>
+</div>
+
+<div class="question">
+    <p>191. किस धातु को तरल धातु कहा जाता है?</p>
+    <div class="options">
+        <label>A) सोडियम</label>
+        <label>B) पारा</label>
+        <label>C) गैलियम</label>
+        <label>D) पोटैशियम</label>
+    </div>
+    <p class="answer">Ans: B) पारा</p>
+</div>
+
+<div class="question">
+    <p>192. सबसे अधिक प्रोटीन किसमें पाया जाता है?</p>
+    <div class="options">
+        <label>A) चावल</label>
+        <label>B) दाल</label>
+        <label>C) दूध</label>
+        <label>D) आलू</label>
+    </div>
+    <p class="answer">Ans: B) दाल</p>
+</div>
+
+<div class="question">
+    <p>193. ध्वनि की तीव्रता किस पर निर्भर करती है?</p>
+    <div class="options">
+        <label>A) आयाम</label>
+        <label>B) आवृत्ति</label>
+        <label>C) तरंगदैर्ध्य</label>
+        <label>D) वेग</label>
+    </div>
+    <p class="answer">Ans: A) आयाम</p>
+</div>
+
+<div class="question">
+    <p>194. किस ग्रह का घनत्व सबसे कम है?</p>
+    <div class="options">
+        <label>A) बृहस्पति</label>
+        <label>B) मंगल</label>
+        <label>C) शनि</label>
+        <label>D) यूरेनस</label>
+    </div>
+    <p class="answer">Ans: C) शनि</p>
+</div>
+
+<div class="question">
+    <p>195. जल का रासायनिक सूत्र क्या है?</p>
+    <div class="options">
+        <label>A) CO₂</label>
+        <label>B) H₂O</label>
+        <label>C) NaCl</label>
+        <label>D) O₂</label>
+    </div>
+    <p class="answer">Ans: B) H₂O</p>
+</div>
+
+<div class="question">
+    <p>196. रक्तचाप को मापने वाला यंत्र क्या कहलाता है?</p>
+    <div class="options">
+        <label>A) थर्मामीटर</label>
+        <label>B) बैरोमीटर</label>
+        <label>C) स्फिग्मोमैनोमीटर</label>
+        <label>D) हाइड्रोमीटर</label>
+    </div>
+    <p class="answer">Ans: C) स्फिग्मोमैनोमीटर</p>
+</div>
+
+<div class="question">
+    <p>197. किस गैस के कारण अम्लीय वर्षा होती है?</p>
+    <div class="options">
+        <label>A) ऑक्सीजन</label>
+        <label>B) नाइट्रोजन</label>
+        <label>C) सल्फर डाइऑक्साइड</label>
+        <label>D) हाइड्रोजन</label>
+    </div>
+    <p class="answer">Ans: C) सल्फर डाइऑक्साइड</p>
+</div>
+
+<div class="question">
+    <p>198. हृदय की धड़कन नियंत्रित करने वाला प्राकृतिक पेसमेकर कौन सा है?</p>
+    <div class="options">
+        <label>A) AV नोड</label>
+        <label>B) SA नोड</label>
+        <label>C) वेंट्रिकल</label>
+        <label>D) एट्रियम</label>
+    </div>
+    <p class="answer">Ans: B) SA नोड</p>
+</div>
+
+<div class="question">
+    <p>199. सूर्य की ऊर्जा का स्रोत क्या है?</p>
+    <div class="options">
+        <label>A) दहन</label>
+        <label>B) नाभिकीय विखंडन</label>
+        <label>C) नाभिकीय संलयन</label>
+        <label>D) रासायनिक अभिक्रिया</label>
+    </div>
+    <p class="answer">Ans: C) नाभिकीय संलयन</p>
+</div>
+
+<div class="question">
+    <p>200. न्यूटन की गति के नियम कितने हैं?</p>
+    <div class="options">
+        <label>A) 2</label>
+        <label>B) 3</label>
+        <label>C) 4</label>
+        <label>D) 5</label>
+    </div>
+    <p class="answer">Ans: B) 3</p>
+</div>
+
+
+<!-- Continue similarly up to 200 -->
+```
+
+Note: Remaining questions from 16 to 200 should follow the exact same HTML structure shown above with science-related MCQs.
+
+
+
+
+    <div style="display: flex; justify-content: space-between;">
+
+    <!-- Show/Hide Button (Left) -->
+    <button onclick="toggleAnswers(this)">Show Answers</button>
+
+     <button onclick="prevPage()">Previous</button>
+
+    <!-- Next Button (Right) -->
+    <button onclick="goNext()">Next</button>
+
+</div>
+</div>
+</body>
+</html>

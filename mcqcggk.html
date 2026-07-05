@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+
+.quiz-container {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.question {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.answer {
+    color: green;
+    font-weight: bold;
+    display: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+let currentPage = 0;
+let perPage = 5;
+let questions;
+
+window.onload = function() {
+    questions = document.getElementsByClassName("question");
+    showPage(); // 👈 ab yahan call hoga (DOM load ke baad)
+};
+
+function showPage() {
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].style.display = "none";
+    }
+
+    let start = currentPage * perPage;
+
+    for (let i = start; i < start + perPage; i++) {
+        if (questions[i]) {
+            questions[i].style.display = "block";
+        }
+    }
+}
+
+function goNext() {
+    if ((currentPage + 1) * perPage < questions.length) {
+        currentPage++;
+        showPage();
+    }
+}
+
+function prevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        showPage();
+    }
+}
+
+function toggleAnswers(btn) {
+    let answers = document.querySelectorAll(".answer");
+
+    if (btn.innerText === "Show Answers") {
+        answers.forEach(ans => ans.style.display = "block");
+        btn.innerText = "Hide Answers";
+    } else {
+        answers.forEach(ans => ans.style.display = "none");
+        btn.innerText = "Show Answers";
+    }
+}
+</script>
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">EduSite</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Hindi</a></li>
+        <li><a href="mcqenglish.html">English</a></li>
+        <li><a href="mcqmaths.html">Maths</a></li>
+        <li><a href="mcqscience.html">Science</a></li>
+        <li><a href="mcqgk.html">general knowledge</a></li>
+        <li><a href="mcqcggk.html">Cg Gk</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+<div class="quiz-container">
+    <div class="question">
+    <p>1. छत्तीसगढ़ राज्य का गठन कब हुआ था?</p>
+    <div class="options">
+        <label>A) 1 नवंबर 2000</label>
+        <label>B) 15 अगस्त 2000</label>
+        <label>C) 26 जनवरी 2001</label>
+        <label>D) 2 अक्टूबर 2000</label>
+    </div>
+    <p class="answer">Ans: A) 1 नवंबर 2000</p>
+</div>
+
+<div class="question">
+    <p>2. छत्तीसगढ़ की राजधानी कौन-सी है?</p>
+    <div class="options">
+        <label>A) दुर्ग</label>
+        <label>B) रायपुर</label>
+        <label>C) बिलासपुर</label>
+        <label>D) जगदलपुर</label>
+    </div>
+    <p class="answer">Ans: B) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>3. छत्तीसगढ़ उच्च न्यायालय कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) अंबिकापुर</label>
+        <label>C) बिलासपुर</label>
+        <label>D) दुर्ग</label>
+    </div>
+    <p class="answer">Ans: C) बिलासपुर</p>
+</div>
+
+<div class="question">
+    <p>4. छत्तीसगढ़ का राजकीय पशु कौन-सा है?</p>
+    <div class="options">
+        <label>A) बाघ</label>
+        <label>B) जंगली भैंसा</label>
+        <label>C) हाथी</label>
+        <label>D) बारहसिंगा</label>
+    </div>
+    <p class="answer">Ans: B) जंगली भैंसा</p>
+</div>
+
+<div class="question">
+    <p>5. छत्तीसगढ़ का राजकीय पक्षी कौन-सा है?</p>
+    <div class="options">
+        <label>A) मोर</label>
+        <label>B) तोता</label>
+        <label>C) पहाड़ी मैना</label>
+        <label>D) सारस</label>
+    </div>
+    <p class="answer">Ans: C) पहाड़ी मैना</p>
+</div>
+
+<div class="question">
+    <p>6. छत्तीसगढ़ का राजकीय वृक्ष कौन-सा है?</p>
+    <div class="options">
+        <label>A) पीपल</label>
+        <label>B) साल</label>
+        <label>C) बरगद</label>
+        <label>D) नीम</label>
+    </div>
+    <p class="answer">Ans: B) साल</p>
+</div>
+
+<div class="question">
+    <p>7. छत्तीसगढ़ का राजकीय पुष्प कौन-सा है?</p>
+    <div class="options">
+        <label>A) गुलाब</label>
+        <label>B) कमल</label>
+        <label>C) गेंदा</label>
+        <label>D) सूरजमुखी</label>
+    </div>
+    <p class="answer">Ans: B) कमल</p>
+</div>
+
+<div class="question">
+    <p>8. छत्तीसगढ़ को किस नाम से जाना जाता है?</p>
+    <div class="options">
+        <label>A) धान का कटोरा</label>
+        <label>B) मसालों का राज्य</label>
+        <label>C) पर्वतों का राज्य</label>
+        <label>D) झीलों का राज्य</label>
+    </div>
+    <p class="answer">Ans: A) धान का कटोरा</p>
+</div>
+
+<div class="question">
+    <p>9. छत्तीसगढ़ का सबसे बड़ा शहर कौन-सा है?</p>
+    <div class="options">
+        <label>A) दुर्ग</label>
+        <label>B) बिलासपुर</label>
+        <label>C) रायपुर</label>
+        <label>D) कोरबा</label>
+    </div>
+    <p class="answer">Ans: C) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>10. चित्रकोट जलप्रपात किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) रायगढ़</label>
+        <label>B) बस्तर</label>
+        <label>C) दुर्ग</label>
+        <label>D) सरगुजा</label>
+    </div>
+    <p class="answer">Ans: B) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>11. तीरथगढ़ जलप्रपात किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) बस्तर</label>
+        <label>B) कोरबा</label>
+        <label>C) जांजगीर</label>
+        <label>D) बलरामपुर</label>
+    </div>
+    <p class="answer">Ans: A) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>12. छत्तीसगढ़ में इंद्रावती राष्ट्रीय उद्यान कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) बीजापुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) रायपुर</label>
+        <label>D) कबीरधाम</label>
+    </div>
+    <p class="answer">Ans: A) बीजापुर</p>
+</div>
+
+<div class="question">
+    <p>13. गुरु घासीदास राष्ट्रीय उद्यान किस क्षेत्र में स्थित है?</p>
+    <div class="options">
+        <label>A) बस्तर</label>
+        <label>B) सरगुजा</label>
+        <label>C) दुर्ग</label>
+        <label>D) रायगढ़</label>
+    </div>
+    <p class="answer">Ans: B) सरगुजा</p>
+</div>
+
+<div class="question">
+    <p>14. महानदी का उद्गम किस जिले में है?</p>
+    <div class="options">
+        <label>A) धमतरी</label>
+        <label>B) रायपुर</label>
+        <label>C) गरियाबंद</label>
+        <label>D) कोरबा</label>
+    </div>
+    <p class="answer">Ans: C) गरियाबंद</p>
+</div>
+
+<div class="question">
+    <p>15. छत्तीसगढ़ में सर्वाधिक धान उत्पादन वाला क्षेत्र कौन-सा माना जाता है?</p>
+    <div class="options">
+        <label>A) मैदानी क्षेत्र</label>
+        <label>B) बस्तर</label>
+        <label>C) सरगुजा</label>
+        <label>D) अबूझमाड़</label>
+    </div>
+    <p class="answer">Ans: A) मैदानी क्षेत्र</p>
+</div>
+
+<div class="question">
+    <p>16. भोरमदेव मंदिर किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) कबीरधाम</label>
+        <label>B) रायगढ़</label>
+        <label>C) बलौदाबाजार</label>
+        <label>D) कोरिया</label>
+    </div>
+    <p class="answer">Ans: A) कबीरधाम</p>
+</div>
+
+<div class="question">
+    <p>17. सिरपुर किस नदी के तट पर स्थित है?</p>
+    <div class="options">
+        <label>A) शिवनाथ</label>
+        <label>B) महानदी</label>
+        <label>C) हसदेव</label>
+        <label>D) इंद्रावती</label>
+    </div>
+    <p class="answer">Ans: B) महानदी</p>
+</div>
+
+<div class="question">
+    <p>18. छत्तीसगढ़ का प्रथम मुख्यमंत्री कौन था?</p>
+    <div class="options">
+        <label>A) डॉ. रमन सिंह</label>
+        <label>B) अजीत जोगी</label>
+        <label>C) भूपेश बघेल</label>
+        <label>D) मोतीलाल वोरा</label>
+    </div>
+    <p class="answer">Ans: B) अजीत जोगी</p>
+</div>
+
+<div class="question">
+    <p>19. छत्तीसगढ़ का प्रथम राज्यपाल कौन था?</p>
+    <div class="options">
+        <label>A) डी.एन. सहाय</label>
+        <label>B) ई.एस.एल. नरसिम्हन</label>
+        <label>C) शेखर दत्त</label>
+        <label>D) बलराम दास टंडन</label>
+    </div>
+    <p class="answer">Ans: A) डी.एन. सहाय</p>
+</div>
+
+<div class="question">
+    <p>20. छत्तीसगढ़ में लौह अयस्क का प्रमुख क्षेत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) बैलाडीला</label>
+        <label>B) रायपुर</label>
+        <label>C) धमतरी</label>
+        <label>D) महासमुंद</label>
+    </div>
+    <p class="answer">Ans: A) बैलाडीला</p>
+</div>
+<div class="question">
+    <p>21. छत्तीसगढ़ में कोयला उत्पादन का प्रमुख क्षेत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) दंतेवाड़ा</label>
+        <label>B) कोरबा</label>
+        <label>C) बस्तर</label>
+        <label>D) धमतरी</label>
+    </div>
+    <p class="answer">Ans: B) कोरबा</p>
+</div>
+
+<div class="question">
+    <p>22. छत्तीसगढ़ का सबसे बड़ा संभाग कौन-सा है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) बस्तर</label>
+        <label>D) बिलासपुर</label>
+    </div>
+    <p class="answer">Ans: C) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>23. छत्तीसगढ़ में 'मिनी माता' का संबंध किस क्षेत्र से है?</p>
+    <div class="options">
+        <label>A) राजनीति</label>
+        <label>B) साहित्य</label>
+        <label>C) खेल</label>
+        <label>D) संगीत</label>
+    </div>
+    <p class="answer">Ans: A) राजनीति</p>
+</div>
+
+<div class="question">
+    <p>24. छत्तीसगढ़ का सबसे ऊँचा पर्वत शिखर कौन-सा है?</p>
+    <div class="options">
+        <label>A) बैरामगढ़</label>
+        <label>B) गौरलाटा</label>
+        <label>C) मैनपाट</label>
+        <label>D) रामगढ़</label>
+    </div>
+    <p class="answer">Ans: B) गौरलाटा</p>
+</div>
+
+<div class="question">
+    <p>25. कांगेर घाटी राष्ट्रीय उद्यान किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) बस्तर</label>
+        <label>B) रायगढ़</label>
+        <label>C) कोरिया</label>
+        <label>D) बलरामपुर</label>
+    </div>
+    <p class="answer">Ans: A) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>26. छत्तीसगढ़ का प्रथम लोक सेवा आयोग अध्यक्ष कौन था?</p>
+    <div class="options">
+        <label>A) टी.पी. शर्मा</label>
+        <label>B) एस.के. मिश्रा</label>
+        <label>C) अशोक दरबारी</label>
+        <label>D) डी.एस. मिश्रा</label>
+    </div>
+    <p class="answer">Ans: D) डी.एस. मिश्रा</p>
+</div>
+
+<div class="question">
+    <p>27. 'राजिम कुंभ' का आयोजन किस नदी संगम पर होता है?</p>
+    <div class="options">
+        <label>A) महानदी, पैरी और सोंढूर</label>
+        <label>B) महानदी और शिवनाथ</label>
+        <label>C) इंद्रावती और गोदावरी</label>
+        <label>D) हसदेव और महानदी</label>
+    </div>
+    <p class="answer">Ans: A) महानदी, पैरी और सोंढूर</p>
+</div>
+
+<div class="question">
+    <p>28. छत्तीसगढ़ में सर्वाधिक वन क्षेत्र वाला जिला कौन-सा है?</p>
+    <div class="options">
+        <label>A) बीजापुर</label>
+        <label>B) रायपुर</label>
+        <label>C) दुर्ग</label>
+        <label>D) जांजगीर-चांपा</label>
+    </div>
+    <p class="answer">Ans: A) बीजापुर</p>
+</div>
+
+<div class="question">
+    <p>29. छत्तीसगढ़ में बॉक्साइट का प्रमुख क्षेत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) मैनपाट</label>
+        <label>B) धमतरी</label>
+        <label>C) बेमेतरा</label>
+        <label>D) महासमुंद</label>
+    </div>
+    <p class="answer">Ans: A) मैनपाट</p>
+</div>
+
+<div class="question">
+    <p>30. छत्तीसगढ़ का प्रसिद्ध लोकनृत्य 'सुआ नृत्य' मुख्यतः किसके द्वारा किया जाता है?</p>
+    <div class="options">
+        <label>A) पुरुष</label>
+        <label>B) महिलाएँ</label>
+        <label>C) बच्चे</label>
+        <label>D) साधु</label>
+    </div>
+    <p class="answer">Ans: B) महिलाएँ</p>
+</div>
+
+<div class="question">
+    <p>31. 'बस्तर दशहरा' लगभग कितने दिनों तक मनाया जाता है?</p>
+    <div class="options">
+        <label>A) 10 दिन</label>
+        <label>B) 25 दिन</label>
+        <label>C) 75 दिन</label>
+        <label>D) 90 दिन</label>
+    </div>
+    <p class="answer">Ans: C) 75 दिन</p>
+</div>
+
+<div class="question">
+    <p>32. छत्तीसगढ़ का पहला अखिल भारतीय आयुर्विज्ञान संस्थान (AIIMS) कहाँ स्थापित है?</p>
+    <div class="options">
+        <label>A) बिलासपुर</label>
+        <label>B) रायपुर</label>
+        <label>C) दुर्ग</label>
+        <label>D) कोरबा</label>
+    </div>
+    <p class="answer">Ans: B) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>33. छत्तीसगढ़ में 'दल्ली-राजहरा' किस खनिज के लिए प्रसिद्ध है?</p>
+    <div class="options">
+        <label>A) कोयला</label>
+        <label>B) बॉक्साइट</label>
+        <label>C) लौह अयस्क</label>
+        <label>D) तांबा</label>
+    </div>
+    <p class="answer">Ans: C) लौह अयस्क</p>
+</div>
+
+<div class="question">
+    <p>34. छत्तीसगढ़ का राज्य गीत क्या है?</p>
+    <div class="options">
+        <label>A) जय हो छत्तीसगढ़ मइया</label>
+        <label>B) अरपा पैरी के धार</label>
+        <label>C) हमर छत्तीसगढ़</label>
+        <label>D) जय जोहार</label>
+    </div>
+    <p class="answer">Ans: B) अरपा पैरी के धार</p>
+</div>
+
+<div class="question">
+    <p>35. छत्तीसगढ़ में 'मल्हार' किस कारण प्रसिद्ध है?</p>
+    <div class="options">
+        <label>A) वन्यजीव</label>
+        <label>B) जलप्रपात</label>
+        <label>C) पुरातात्विक अवशेष</label>
+        <label>D) उद्योग</label>
+    </div>
+    <p class="answer">Ans: C) पुरातात्विक अवशेष</p>
+</div>
+
+<div class="question">
+    <p>36. छत्तीसगढ़ के किस जिले को 'धान का कटोरा' क्षेत्र का केंद्र माना जाता है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) कोरिया</label>
+        <label>C) बीजापुर</label>
+        <label>D) जशपुर</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>37. छत्तीसगढ़ की सबसे लंबी नदी कौन-सी है?</p>
+    <div class="options">
+        <label>A) शिवनाथ</label>
+        <label>B) इंद्रावती</label>
+        <label>C) महानदी</label>
+        <label>D) हसदेव</label>
+    </div>
+    <p class="answer">Ans: C) महानदी</p>
+</div>
+
+<div class="question">
+    <p>38. छत्तीसगढ़ में 'देवबलौदा मंदिर' किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) बलौदाबाजार</label>
+        <label>B) कोरबा</label>
+        <label>C) जांजगीर-चांपा</label>
+        <label>D) सारंगढ़</label>
+    </div>
+    <p class="answer">Ans: C) जांजगीर-चांपा</p>
+</div>
+
+<div class="question">
+    <p>39. छत्तीसगढ़ का सबसे बड़ा बाँध कौन-सा है?</p>
+    <div class="options">
+        <label>A) गंगरेल बाँध</label>
+        <label>B) मुरूमसिल्ली बाँध</label>
+        <label>C) मिनीमाता बाँध</label>
+        <label>D) कोडार बाँध</label>
+    </div>
+    <p class="answer">Ans: A) गंगरेल बाँध</p>
+</div>
+
+<div class="question">
+    <p>40. छत्तीसगढ़ में 'गोड़' जनजाति मुख्यतः किस क्षेत्र में निवास करती है?</p>
+    <div class="options">
+        <label>A) बस्तर</label>
+        <label>B) रायपुर</label>
+        <label>C) दुर्ग</label>
+        <label>D) बेमेतरा</label>
+    </div>
+    <p class="answer">Ans: A) बस्तर</p>
+</div>
+<div class="question">
+    <p>41. छत्तीसगढ़ में स्थित प्रसिद्ध कुटुमसर गुफाएँ किस राष्ट्रीय उद्यान के भीतर हैं?</p>
+    <div class="options">
+        <label>A) इंद्रावती राष्ट्रीय उद्यान</label>
+        <label>B) कांगेर घाटी राष्ट्रीय उद्यान</label>
+        <label>C) गुरु घासीदास राष्ट्रीय उद्यान</label>
+        <label>D) अचानकमार राष्ट्रीय उद्यान</label>
+    </div>
+    <p class="answer">Ans: B) कांगेर घाटी राष्ट्रीय उद्यान</p>
+</div>
+
+<div class="question">
+    <p>42. अचानकमार टाइगर रिजर्व किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) कोरबा</label>
+        <label>B) बिलासपुर</label>
+        <label>C) धमतरी</label>
+        <label>D) बस्तर</label>
+    </div>
+    <p class="answer">Ans: B) बिलासपुर</p>
+</div>
+
+<div class="question">
+    <p>43. छत्तीसगढ़ का सबसे बड़ा ताप विद्युत उत्पादन केंद्र कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) कोरबा</label>
+        <label>D) महासमुंद</label>
+    </div>
+    <p class="answer">Ans: C) कोरबा</p>
+</div>
+
+<div class="question">
+    <p>44. छत्तीसगढ़ में 'मड़ई मेला' मुख्यतः किससे संबंधित है?</p>
+    <div class="options">
+        <label>A) जनजातीय संस्कृति</label>
+        <label>B) उद्योग</label>
+        <label>C) खेल</label>
+        <label>D) व्यापार</label>
+    </div>
+    <p class="answer">Ans: A) जनजातीय संस्कृति</p>
+</div>
+
+<div class="question">
+    <p>45. छत्तीसगढ़ का सबसे अधिक साक्षरता वाला जिला कौन-सा है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) बिलासपुर</label>
+        <label>D) धमतरी</label>
+    </div>
+    <p class="answer">Ans: B) दुर्ग</p>
+</div>
+
+<div class="question">
+    <p>46. 'नरवा, गरुवा, घुरवा, बाड़ी' योजना का उद्देश्य क्या है?</p>
+    <div class="options">
+        <label>A) औद्योगिक विकास</label>
+        <label>B) ग्रामीण अर्थव्यवस्था सुदृढ़ करना</label>
+        <label>C) पर्यटन विकास</label>
+        <label>D) सड़क निर्माण</label>
+    </div>
+    <p class="answer">Ans: B) ग्रामीण अर्थव्यवस्था सुदृढ़ करना</p>
+</div>
+
+<div class="question">
+    <p>47. छत्तीसगढ़ का सबसे बड़ा वन्यजीव अभयारण्य कौन-सा है?</p>
+    <div class="options">
+        <label>A) सीतानदी</label>
+        <label>B) उदंती</label>
+        <label>C) तमोर पिंगला</label>
+        <label>D) भैरमगढ़</label>
+    </div>
+    <p class="answer">Ans: C) तमोर पिंगला</p>
+</div>
+
+<div class="question">
+    <p>48. छत्तीसगढ़ में 'मैनपाट' किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) जशपुर</label>
+        <label>B) सरगुजा</label>
+        <label>C) कोरिया</label>
+        <label>D) बलरामपुर</label>
+    </div>
+    <p class="answer">Ans: B) सरगुजा</p>
+</div>
+
+<div class="question">
+    <p>49. छत्तीसगढ़ की पहली महिला राज्यपाल कौन थीं?</p>
+    <div class="options">
+        <label>A) अनुसुइया उइके</label>
+        <label>B) प्रतिभा पाटिल</label>
+        <label>C) आनंदीबेन पटेल</label>
+        <label>D) मृदुला सिन्हा</label>
+    </div>
+    <p class="answer">Ans: A) अनुसुइया उइके</p>
+</div>
+
+<div class="question">
+    <p>50. बिलासा देवी केवटीन हवाई अड्डा कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) अंबिकापुर</label>
+        <label>C) बिलासपुर</label>
+        <label>D) जगदलपुर</label>
+    </div>
+    <p class="answer">Ans: C) बिलासपुर</p>
+</div>
+
+<div class="question">
+    <p>51. छत्तीसगढ़ का पहला जैवमंडल आरक्षित क्षेत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) अचानकमार-अमरकंटक</label>
+        <label>B) इंद्रावती</label>
+        <label>C) कांगेर घाटी</label>
+        <label>D) उदंती</label>
+    </div>
+    <p class="answer">Ans: A) अचानकमार-अमरकंटक</p>
+</div>
+
+<div class="question">
+    <p>52. 'बस्तर दशहरा' में प्रमुख आराध्य देवी कौन हैं?</p>
+    <div class="options">
+        <label>A) दंतेश्वरी देवी</label>
+        <label>B) महामाया देवी</label>
+        <label>C) बम्लेश्वरी देवी</label>
+        <label>D) चंद्रहासिनी देवी</label>
+    </div>
+    <p class="answer">Ans: A) दंतेश्वरी देवी</p>
+</div>
+
+<div class="question">
+    <p>53. छत्तीसगढ़ का सबसे बड़ा जलप्रपात कौन-सा है?</p>
+    <div class="options">
+        <label>A) चित्रकोट</label>
+        <label>B) तीरथगढ़</label>
+        <label>C) अमृतधारा</label>
+        <label>D) रामझरना</label>
+    </div>
+    <p class="answer">Ans: A) चित्रकोट</p>
+</div>
+
+<div class="question">
+    <p>54. छत्तीसगढ़ में हीरे की संभावनाओं के लिए प्रसिद्ध क्षेत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) देवभोग</label>
+        <label>B) कोरबा</label>
+        <label>C) रायगढ़</label>
+        <label>D) जशपुर</label>
+    </div>
+    <p class="answer">Ans: A) देवभोग</p>
+</div>
+
+<div class="question">
+    <p>55. छत्तीसगढ़ का सबसे बड़ा औद्योगिक नगर कौन-सा माना जाता है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) भिलाई</label>
+        <label>C) बिलासपुर</label>
+        <label>D) कोरबा</label>
+    </div>
+    <p class="answer">Ans: B) भिलाई</p>
+</div>
+
+<div class="question">
+    <p>56. भिलाई इस्पात संयंत्र की स्थापना किस देश के सहयोग से हुई थी?</p>
+    <div class="options">
+        <label>A) अमेरिका</label>
+        <label>B) रूस (सोवियत संघ)</label>
+        <label>C) जापान</label>
+        <label>D) जर्मनी</label>
+    </div>
+    <p class="answer">Ans: B) रूस (सोवियत संघ)</p>
+</div>
+
+<div class="question">
+    <p>57. छत्तीसगढ़ का सबसे बड़ा विश्वविद्यालय कौन-सा है?</p>
+    <div class="options">
+        <label>A) पं. रविशंकर शुक्ल विश्वविद्यालय</label>
+        <label>B) गुरु घासीदास विश्वविद्यालय</label>
+        <label>C) इंदिरा कला संगीत विश्वविद्यालय</label>
+        <label>D) हिदायतुल्लाह राष्ट्रीय विधि विश्वविद्यालय</label>
+    </div>
+    <p class="answer">Ans: A) पं. रविशंकर शुक्ल विश्वविद्यालय</p>
+</div>
+
+<div class="question">
+    <p>58. 'रामगढ़' की सीता बेंगरा गुफा किस कारण प्रसिद्ध है?</p>
+    <div class="options">
+        <label>A) प्राचीन रंगमंच</label>
+        <label>B) जलप्रपात</label>
+        <label>C) खनिज</label>
+        <label>D) किला</label>
+    </div>
+    <p class="answer">Ans: A) प्राचीन रंगमंच</p>
+</div>
+
+<div class="question">
+    <p>59. छत्तीसगढ़ में सर्वाधिक जनजातीय जनसंख्या किस संभाग में पाई जाती है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) बिलासपुर</label>
+        <label>C) बस्तर</label>
+        <label>D) दुर्ग</label>
+    </div>
+    <p class="answer">Ans: C) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>60. छत्तीसगढ़ का राजकीय खेल कौन-सा है?</p>
+    <div class="options">
+        <label>A) हॉकी</label>
+        <label>B) कबड्डी</label>
+        <label>C) खो-खो</label>
+        <label>D) क्रिकेट</label>
+    </div>
+    <p class="answer">Ans: B) कबड्डी</p>
+</div>
+<div class="question">
+    <p>61. छत्तीसगढ़ में 'भोजली' पर्व मुख्य रूप से किससे संबंधित है?</p>
+    <div class="options">
+        <label>A) कृषि</label>
+        <label>B) शिकार</label>
+        <label>C) व्यापार</label>
+        <label>D) उद्योग</label>
+    </div>
+    <p class="answer">Ans: A) कृषि</p>
+</div>
+
+<div class="question">
+    <p>62. छत्तीसगढ़ के किस जिले को 'धान का कटोरा' क्षेत्र का प्रमुख केंद्र माना जाता है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) सुकमा</label>
+        <label>C) बीजापुर</label>
+        <label>D) जशपुर</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>63. छत्तीसगढ़ में चंद्रहासिनी देवी मंदिर कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) रायगढ़</label>
+        <label>B) कोरबा</label>
+        <label>C) धमतरी</label>
+        <label>D) दुर्ग</label>
+    </div>
+    <p class="answer">Ans: A) रायगढ़</p>
+</div>
+
+<div class="question">
+    <p>64. छत्तीसगढ़ में प्रसिद्ध बम्लेश्वरी देवी मंदिर किस स्थान पर स्थित है?</p>
+    <div class="options">
+        <label>A) डोंगरगढ़</label>
+        <label>B) राजिम</label>
+        <label>C) सिरपुर</label>
+        <label>D) मल्हार</label>
+    </div>
+    <p class="answer">Ans: A) डोंगरगढ़</p>
+</div>
+
+<div class="question">
+    <p>65. छत्तीसगढ़ में हसदेव नदी किस नदी की सहायक है?</p>
+    <div class="options">
+        <label>A) महानदी</label>
+        <label>B) नर्मदा</label>
+        <label>C) गोदावरी</label>
+        <label>D) सोन</label>
+    </div>
+    <p class="answer">Ans: A) महानदी</p>
+</div>
+
+<div class="question">
+    <p>66. छत्तीसगढ़ का पहला मेडिकल कॉलेज कहाँ स्थापित किया गया था?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) बिलासपुर</label>
+        <label>C) दुर्ग</label>
+        <label>D) अंबिकापुर</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>67. छत्तीसगढ़ में 'गौठान' योजना का मुख्य उद्देश्य क्या है?</p>
+    <div class="options">
+        <label>A) पशुपालन विकास</label>
+        <label>B) पर्यटन विकास</label>
+        <label>C) औद्योगिक विकास</label>
+        <label>D) सड़क निर्माण</label>
+    </div>
+    <p class="answer">Ans: A) पशुपालन विकास</p>
+</div>
+
+<div class="question">
+    <p>68. छत्तीसगढ़ की सबसे ऊँची चोटी गौरलाटा किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) बलरामपुर</label>
+        <label>B) जशपुर</label>
+        <label>C) कोरिया</label>
+        <label>D) सरगुजा</label>
+    </div>
+    <p class="answer">Ans: B) जशपुर</p>
+</div>
+
+<div class="question">
+    <p>69. छत्तीसगढ़ के किस जिले में सबसे अधिक कोयला भंडार पाया जाता है?</p>
+    <div class="options">
+        <label>A) कोरबा</label>
+        <label>B) धमतरी</label>
+        <label>C) रायपुर</label>
+        <label>D) दुर्ग</label>
+    </div>
+    <p class="answer">Ans: A) कोरबा</p>
+</div>
+
+<div class="question">
+    <p>70. छत्तीसगढ़ में प्रसिद्ध 'मदकू द्वीप' किस नदी पर स्थित है?</p>
+    <div class="options">
+        <label>A) महानदी</label>
+        <label>B) शिवनाथ</label>
+        <label>C) हसदेव</label>
+        <label>D) इंद्रावती</label>
+    </div>
+    <p class="answer">Ans: B) शिवनाथ</p>
+</div>
+
+<div class="question">
+    <p>71. छत्तीसगढ़ की पहली महिला लोकगायिका जिन्हें पद्मश्री मिला?</p>
+    <div class="options">
+        <label>A) तीजन बाई</label>
+        <label>B) ममता चंद्राकर</label>
+        <label>C) ऋतु वर्मा</label>
+        <label>D) उषा बारले</label>
+    </div>
+    <p class="answer">Ans: A) तीजन बाई</p>
+</div>
+
+<div class="question">
+    <p>72. पंडवानी लोककला का संबंध किससे है?</p>
+    <div class="options">
+        <label>A) रामायण</label>
+        <label>B) महाभारत</label>
+        <label>C) वेद</label>
+        <label>D) पुराण</label>
+    </div>
+    <p class="answer">Ans: B) महाभारत</p>
+</div>
+
+<div class="question">
+    <p>73. छत्तीसगढ़ में कुटीर उद्योगों में सबसे प्रमुख उद्योग कौन-सा है?</p>
+    <div class="options">
+        <label>A) हस्तकरघा</label>
+        <label>B) इस्पात</label>
+        <label>C) सीमेंट</label>
+        <label>D) एल्यूमिनियम</label>
+    </div>
+    <p class="answer">Ans: A) हस्तकरघा</p>
+</div>
+
+<div class="question">
+    <p>74. छत्तीसगढ़ के किस जिले में गुरु घासीदास का जन्म हुआ था?</p>
+    <div class="options">
+        <label>A) बलौदाबाजार</label>
+        <label>B) रायपुर</label>
+        <label>C) बिलासपुर</label>
+        <label>D) महासमुंद</label>
+    </div>
+    <p class="answer">Ans: A)  बलौदाबाजार</p>
+</div>
+
+<div class="question">
+    <p>75. छत्तीसगढ़ का सबसे बड़ा सीमेंट उत्पादन क्षेत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) बलौदाबाजार</label>
+        <label>B) सुकमा</label>
+        <label>C) बीजापुर</label>
+        <label>D) नारायणपुर</label>
+    </div>
+    <p class="answer">Ans: A) बलौदाबाजार</p>
+</div>
+
+<div class="question">
+    <p>76. छत्तीसगढ़ में राजिम किस कारण प्रसिद्ध है?</p>
+    <div class="options">
+        <label>A) कुंभ मेला</label>
+        <label>B) खनिज</label>
+        <label>C) उद्योग</label>
+        <label>D) जलप्रपात</label>
+    </div>
+    <p class="answer">Ans: A) कुंभ मेला</p>
+</div>
+
+<div class="question">
+    <p>77. छत्तीसगढ़ का पहला हवाई अड्डा कहाँ विकसित हुआ था?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) बिलासपुर</label>
+        <label>C) जगदलपुर</label>
+        <label>D) अंबिकापुर</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>78. छत्तीसगढ़ में किस जिले को 'धान अनुसंधान केंद्र' के लिए जाना जाता है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) जशपुर</label>
+        <label>D) कोरिया</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>79. छत्तीसगढ़ का पहला निजी विश्वविद्यालय कौन-सा है?</p>
+    <div class="options">
+        <label>A) आईटीएम विश्वविद्यालय</label>
+        <label>B) एमिटी विश्वविद्यालय</label>
+        <label>C) मात्स विश्वविद्यालय</label>
+        <label>D) केआईआईटी विश्वविद्यालय</label>
+    </div>
+    <p class="answer">Ans: C) मात्स विश्वविद्यालय</p>
+</div>
+
+<div class="question">
+    <p>80. छत्तीसगढ़ में प्रसिद्ध 'राउत नाचा' किस समुदाय का लोकनृत्य है?</p>
+    <div class="options">
+        <label>A) सतनामी</label>
+        <label>B) यादव</label>
+        <label>C) गोंड</label>
+        <label>D) हल्बा</label>
+    </div>
+    <p class="answer">Ans: B) यादव</p>
+</div>
+<div class="question">
+    <p>81. छत्तीसगढ़ में 'डोकरा कला' मुख्य रूप से किस धातु से बनाई जाती है?</p>
+    <div class="options">
+        <label>A) लोहा</label>
+        <label>B) कांसा</label>
+        <label>C) एल्यूमिनियम</label>
+        <label>D) चांदी</label>
+    </div>
+    <p class="answer">Ans: B) कांसा</p>
+</div>
+
+<div class="question">
+    <p>82. छत्तीसगढ़ का पहला राष्ट्रीय उद्यान कौन-सा है?</p>
+    <div class="options">
+        <label>A) कांगेर घाटी</label>
+        <label>B) इंद्रावती</label>
+        <label>C) अचानकमार</label>
+        <label>D) गुरु घासीदास</label>
+    </div>
+    <p class="answer">Ans: B) इंद्रावती</p>
+</div>
+
+<div class="question">
+    <p>83. छत्तीसगढ़ में 'कोसा रेशम' उत्पादन का प्रमुख केंद्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) कोरबा</label>
+        <label>B) रायपुर</label>
+        <label>C) चांपा</label>
+        <label>D) धमतरी</label>
+    </div>
+    <p class="answer">Ans: C) चांपा</p>
+</div>
+
+<div class="question">
+    <p>84. छत्तीसगढ़ के प्रथम विधानसभा अध्यक्ष कौन थे?</p>
+    <div class="options">
+        <label>A) प्रेम प्रकाश पांडेय</label>
+        <label>B) धरमलाल कौशिक</label>
+        <label>C) चरणदास महंत</label>
+        <label>D) गौरीशंकर अग्रवाल</label>
+    </div>
+    <p class="answer">Ans: A) प्रेम प्रकाश पांडेय</p>
+</div>
+
+<div class="question">
+    <p>85. छत्तीसगढ़ में 'सतनामी आंदोलन' के प्रवर्तक कौन थे?</p>
+    <div class="options">
+        <label>A) गुरु बालकदास</label>
+        <label>B) गुरु घासीदास</label>
+        <label>C) गुरु अमरदास</label>
+        <label>D) कबीरदास</label>
+    </div>
+    <p class="answer">Ans: B) गुरु घासीदास</p>
+</div>
+
+<div class="question">
+    <p>86. छत्तीसगढ़ का सबसे बड़ा रेलवे जंक्शन कौन-सा है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) बिलासपुर</label>
+        <label>D) चांपा</label>
+    </div>
+    <p class="answer">Ans: C) बिलासपुर</p>
+</div>
+
+<div class="question">
+    <p>87. छत्तीसगढ़ में 'मैनपाट' को किस नाम से जाना जाता है?</p>
+    <div class="options">
+        <label>A) छत्तीसगढ़ का कश्मीर</label>
+        <label>B) धान का कटोरा</label>
+        <label>C) इस्पात नगरी</label>
+        <label>D) खनिज नगरी</label>
+    </div>
+    <p class="answer">Ans: A) छत्तीसगढ़ का कश्मीर</p>
+</div>
+
+<div class="question">
+    <p>88. छत्तीसगढ़ की सबसे लंबी सहायक नदी कौन-सी है?</p>
+    <div class="options">
+        <label>A) हसदेव</label>
+        <label>B) शिवनाथ</label>
+        <label>C) पैरी</label>
+        <label>D) खारून</label>
+    </div>
+    <p class="answer">Ans: B) शिवनाथ</p>
+</div>
+
+<div class="question">
+    <p>89. छत्तीसगढ़ में स्थित भोरमदेव मंदिर किस शैली में निर्मित है?</p>
+    <div class="options">
+        <label>A) नागर शैली</label>
+        <label>B) द्रविड़ शैली</label>
+        <label>C) वेसर शैली</label>
+        <label>D) मुगल शैली</label>
+    </div>
+    <p class="answer">Ans: A) नागर शैली</p>
+</div>
+
+<div class="question">
+    <p>90. छत्तीसगढ़ में सर्वाधिक चूना पत्थर किस जिले में पाया जाता है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) बलौदाबाजार</label>
+        <label>C) दुर्ग</label>
+        <label>D) कोरबा</label>
+    </div>
+    <p class="answer">Ans: B) बलौदाबाजार</p>
+</div>
+
+<div class="question">
+    <p>91. छत्तीसगढ़ में प्रसिद्ध 'तीजन बाई' किस लोककला से जुड़ी हैं?</p>
+    <div class="options">
+        <label>A) पंथी</label>
+        <label>B) पंडवानी</label>
+        <label>C) करमा</label>
+        <label>D) सुआ</label>
+    </div>
+    <p class="answer">Ans: B) पंडवानी</p>
+</div>
+
+<div class="question">
+    <p>92. छत्तीसगढ़ का पहला खुला विश्वविद्यालय कौन-सा है?</p>
+    <div class="options">
+        <label>A) पं. सुंदरलाल शर्मा मुक्त विश्वविद्यालय</label>
+        <label>B) गुरु घासीदास विश्वविद्यालय</label>
+        <label>C) हिदायतुल्लाह विधि विश्वविद्यालय</label>
+        <label>D) कुशाभाऊ ठाकरे विश्वविद्यालय</label>
+    </div>
+    <p class="answer">Ans: A) पं. सुंदरलाल शर्मा मुक्त विश्वविद्यालय</p>
+</div>
+
+<div class="question">
+    <p>93. छत्तीसगढ़ में 'करमा नृत्य' मुख्य रूप से किस जनजाति द्वारा किया जाता है?</p>
+    <div class="options">
+        <label>A) गोंड</label>
+        <label>B) उरांव</label>
+        <label>C) बैगा</label>
+        <label>D) मुरिया</label>
+    </div>
+    <p class="answer">Ans: B) उरांव</p>
+</div>
+
+<div class="question">
+    <p>94. छत्तीसगढ़ का सबसे बड़ा सिंचाई परियोजना कौन-सी है?</p>
+    <div class="options">
+        <label>A) गंगरेल परियोजना</label>
+        <label>B) हसदेव-बांगो परियोजना</label>
+        <label>C) कोडार परियोजना</label>
+        <label>D) मुरूमसिल्ली परियोजना</label>
+    </div>
+    <p class="answer">Ans: A) गंगरेल परियोजना</p>
+</div>
+
+<div class="question">
+    <p>95. छत्तीसगढ़ में 'दंतेवाड़ा' का नाम किस देवी से जुड़ा है?</p>
+    <div class="options">
+        <label>A) महामाया</label>
+        <label>B) दंतेश्वरी</label>
+        <label>C) चंद्रहासिनी</label>
+        <label>D) बम्लेश्वरी</label>
+    </div>
+    <p class="answer">Ans: B) दंतेश्वरी</p>
+</div>
+
+<div class="question">
+    <p>96. छत्तीसगढ़ का पहला इंजीनियरिंग कॉलेज कहाँ स्थापित हुआ?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) बिलासपुर</label>
+        <label>C) भिलाई</label>
+        <label>D) जगदलपुर</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>97. छत्तीसगढ़ में 'रामनामी संप्रदाय' किस नाम को शरीर पर अंकित करने के लिए प्रसिद्ध है?</p>
+    <div class="options">
+        <label>A) कृष्ण</label>
+        <label>B) शिव</label>
+        <label>C) राम</label>
+        <label>D) विष्णु</label>
+    </div>
+    <p class="answer">Ans: C) राम</p>
+</div>
+
+<div class="question">
+    <p>98. छत्तीसगढ़ का सबसे बड़ा बस स्टैंड कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) बिलासपुर</label>
+        <label>D) राजनांदगांव</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>99. छत्तीसगढ़ में 'माँ दंतेश्वरी मंदिर' किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) बीजापुर</label>
+        <label>B) सुकमा</label>
+        <label>C) दंतेवाड़ा</label>
+        <label>D) नारायणपुर</label>
+    </div>
+    <p class="answer">Ans: C) दंतेवाड़ा</p>
+</div>
+
+<div class="question">
+    <p>100. छत्तीसगढ़ का राजकीय प्रतीक चिह्न किस फसल को दर्शाता है?</p>
+    <div class="options">
+        <label>A) गेहूँ</label>
+        <label>B) मक्का</label>
+        <label>C) धान</label>
+        <label>D) ज्वार</label>
+    </div>
+    <p class="answer">Ans: C) धान</p>
+</div>
+<div class="question">
+    <p>101. छत्तीसगढ़ का सबसे नया जिला कौन-सा है?</p>
+    <div class="options">
+        <label>A) मोहला-मानपुर-अंबागढ़ चौकी</label>
+        <label>B) खैरागढ़-छुईखदान-गंडई</label>
+        <label>C) सक्ती</label>
+        <label>D) सारंगढ़-बिलाईगढ़</label>
+    </div>
+    <p class="answer">Ans: A) मोहला-मानपुर-अंबागढ़ चौकी</p>
+</div>
+
+<div class="question">
+    <p>102. छत्तीसगढ़ में लौह अयस्क का सबसे बड़ा भंडार कहाँ पाया जाता है?</p>
+    <div class="options">
+        <label>A) दल्लीराजहरा</label>
+        <label>B) बैलाडीला</label>
+        <label>C) राजहरा</label>
+        <label>D) कवर्धा</label>
+    </div>
+    <p class="answer">Ans: B) बैलाडीला</p>
+</div>
+
+<div class="question">
+    <p>103. छत्तीसगढ़ के किस जिले में चित्रकोट जलप्रपात स्थित है?</p>
+    <div class="options">
+        <label>A) दंतेवाड़ा</label>
+        <label>B) बस्तर</label>
+        <label>C) बीजापुर</label>
+        <label>D) सुकमा</label>
+    </div>
+    <p class="answer">Ans: B) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>104. छत्तीसगढ़ में 'सुआ नृत्य' मुख्य रूप से किस अवसर पर किया जाता है?</p>
+    <div class="options">
+        <label>A) दीपावली</label>
+        <label>B) होली</label>
+        <label>C) फसल कटाई</label>
+        <label>D) दशहरा</label>
+    </div>
+    <p class="answer">Ans: C) फसल कटाई</p>
+</div>
+
+<div class="question">
+    <p>105. छत्तीसगढ़ का पहला अंतरराष्ट्रीय क्रिकेट स्टेडियम कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) बिलासपुर</label>
+        <label>D) भिलाई</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>106. छत्तीसगढ़ में प्रसिद्ध 'रामगढ़' गुफाएँ किस जिले में स्थित हैं?</p>
+    <div class="options">
+        <label>A) कोरिया</label>
+        <label>B) जशपुर</label>
+        <label>C) सरगुजा</label>
+        <label>D) बलरामपुर</label>
+    </div>
+    <p class="answer">Ans: C) सरगुजा</p>
+</div>
+
+<div class="question">
+    <p>107. छत्तीसगढ़ का पहला समाचार पत्र कौन-सा माना जाता है?</p>
+    <div class="options">
+        <label>A) अग्रदूत</label>
+        <label>B) छत्तीसगढ़ मित्र</label>
+        <label>C) देशबंधु</label>
+        <label>D) नवभारत</label>
+    </div>
+    <p class="answer">Ans: B) छत्तीसगढ़ मित्र</p>
+</div>
+
+<div class="question">
+    <p>108. छत्तीसगढ़ में 'भिलाई इस्पात संयंत्र' की स्थापना किस वर्ष हुई?</p>
+    <div class="options">
+        <label>A) 1955</label>
+        <label>B) 1957</label>
+        <label>C) 1959</label>
+        <label>D) 1962</label>
+    </div>
+    <p class="answer">Ans: C) 1959</p>
+</div>
+
+<div class="question">
+    <p>109. छत्तीसगढ़ का सबसे बड़ा जलाशय कौन-सा है?</p>
+    <div class="options">
+        <label>A) गंगरेल</label>
+        <label>B) हसदेव बांगो</label>
+        <label>C) मुरूमसिल्ली</label>
+        <label>D) कोडार</label>
+    </div>
+    <p class="answer">Ans: B) हसदेव बांगो</p>
+</div>
+
+<div class="question">
+    <p>110. छत्तीसगढ़ में 'पंथी नृत्य' किस समुदाय से संबंधित है?</p>
+    <div class="options">
+        <label>A) गोंड</label>
+        <label>B) सतनामी</label>
+        <label>C) उरांव</label>
+        <label>D) हल्बा</label>
+    </div>
+    <p class="answer">Ans: B) सतनामी</p>
+</div>
+
+<div class="question">
+    <p>111. छत्तीसगढ़ के प्रथम राज्य निर्वाचन आयुक्त कौन थे?</p>
+    <div class="options">
+        <label>A) एस.एल. शाक्य</label>
+        <label>B) टी.आर. सरन</label>
+        <label>C) एन.के. असवाल</label>
+        <label>D) अजय सिंह</label>
+    </div>
+    <p class="answer">Ans: C) N.K. असवाल</p>
+</div>
+
+<div class="question">
+    <p>112. छत्तीसगढ़ में प्रसिद्ध 'ककसार नृत्य' किस जनजाति का नृत्य है?</p>
+    <div class="options">
+        <label>A) बैगा</label>
+        <label>B) मुरिया</label>
+        <label>C) उरांव</label>
+        <label>D) भतरा</label>
+    </div>
+    <p class="answer">Ans: B) मुरिया</p>
+</div>
+
+<div class="question">
+    <p>113. छत्तीसगढ़ का सबसे बड़ा औद्योगिक क्षेत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) कोरबा</label>
+        <label>B) रायपुर-भिलाई-दुर्ग</label>
+        <label>C) बिलासपुर</label>
+        <label>D) रायगढ़</label>
+    </div>
+    <p class="answer">Ans: B) रायपुर-भिलाई-दुर्ग</p>
+</div>
+
+<div class="question">
+    <p>114. छत्तीसगढ़ में 'अमृतधारा जलप्रपात' किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) कोरिया</label>
+        <label>B) जशपुर</label>
+        <label>C) सरगुजा</label>
+        <label>D) बलरामपुर</label>
+    </div>
+    <p class="answer">Ans: A) कोरिया</p>
+</div>
+
+<div class="question">
+    <p>115. छत्तीसगढ़ का पहला राज्योत्सव कब मनाया गया था?</p>
+    <div class="options">
+        <label>A) 2000</label>
+        <label>B) 2001</label>
+        <label>C) 2002</label>
+        <label>D) 2003</label>
+    </div>
+    <p class="answer">Ans: B) 2001</p>
+</div>
+
+<div class="question">
+    <p>116. छत्तीसगढ़ में 'रहस' लोकनृत्य किससे संबंधित है?</p>
+    <div class="options">
+        <label>A) रामायण</label>
+        <label>B) महाभारत</label>
+        <label>C) कृष्ण लीला</label>
+        <label>D) शिव पुराण</label>
+    </div>
+    <p class="answer">Ans: C) कृष्ण लीला</p>
+</div>
+
+<div class="question">
+    <p>117. छत्तीसगढ़ में 'ताला' गाँव किस कारण प्रसिद्ध है?</p>
+    <div class="options">
+        <label>A) देवरानी-जेठानी मंदिर</label>
+        <label>B) जलप्रपात</label>
+        <label>C) खनिज</label>
+        <label>D) वन्यजीव</label>
+    </div>
+    <p class="answer">Ans: A) देवरानी-जेठानी मंदिर</p>
+</div>
+
+<div class="question">
+    <p>118. छत्तीसगढ़ के किस जिले में सबसे अधिक सीमेंट उद्योग हैं?</p>
+    <div class="options">
+        <label>A) दुर्ग</label>
+        <label>B) रायपुर</label>
+        <label>C) बलौदाबाजार</label>
+        <label>D) बिलासपुर</label>
+    </div>
+    <p class="answer">Ans: C) बलौदाबाजार</p>
+</div>
+
+<div class="question">
+    <p>119. छत्तीसगढ़ का पहला कृषि विश्वविद्यालय कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) बिलासपुर</label>
+        <label>C) दुर्ग</label>
+        <label>D) अंबिकापुर</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>120. छत्तीसगढ़ में 'गुरु घासीदास जयंती' किस तिथि को मनाई जाती है?</p>
+    <div class="options">
+        <label>A) 18 दिसंबर</label>
+        <label>B) 20 दिसंबर</label>
+        <label>C) 15 जनवरी</label>
+        <label>D) 25 दिसंबर</label>
+    </div>
+    <p class="answer">Ans: A) 18 दिसंबर</p>
+</div>
+<div class="question">
+    <p>121. छत्तीसगढ़ का पहला पूर्ण साक्षर जिला कौन-सा माना जाता है?</p>
+    <div class="options">
+        <label>A) दुर्ग</label>
+        <label>B) धमतरी</label>
+        <label>C) रायपुर</label>
+        <label>D) बिलासपुर</label>
+    </div>
+    <p class="answer">Ans: B) धमतरी</p>
+</div>
+
+<div class="question">
+    <p>122. छत्तीसगढ़ में 'सरगुजा' नाम का अर्थ किससे संबंधित माना जाता है?</p>
+    <div class="options">
+        <label>A) स्वर्ग गजा</label>
+        <label>B) हाथियों का क्षेत्र</label>
+        <label>C) पर्वतीय प्रदेश</label>
+        <label>D) वनांचल</label>
+    </div>
+    <p class="answer">Ans: A) स्वर्ग गजा</p>
+</div>
+
+<div class="question">
+    <p>123. छत्तीसगढ़ का सबसे बड़ा आदिवासी उत्सव कौन-सा है?</p>
+    <div class="options">
+        <label>A) भोजली</label>
+        <label>B) मड़ई</label>
+        <label>C) हरेली</label>
+        <label>D) छेरछेरा</label>
+    </div>
+    <p class="answer">Ans: B) मड़ई</p>
+</div>
+
+<div class="question">
+    <p>124. छत्तीसगढ़ में प्रसिद्ध 'महामाया मंदिर' कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) बिलासपुर</label>
+        <label>B) रायपुर</label>
+        <label>C) रतनपुर</label>
+        <label>D) जशपुर</label>
+    </div>
+    <p class="answer">Ans: C) रतनपुर</p>
+</div>
+
+<div class="question">
+    <p>125. छत्तीसगढ़ में सर्वाधिक वन क्षेत्र किस संभाग में पाया जाता है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) बस्तर</label>
+        <label>D) बिलासपुर</label>
+    </div>
+    <p class="answer">Ans: C) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>126. छत्तीसगढ़ के प्रथम मुख्यमंत्री अजीत जोगी किस लोकसभा क्षेत्र से सांसद रहे थे?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) महासमुंद</label>
+        <label>C) बिलासपुर</label>
+        <label>D) कोरबा</label>
+    </div>
+    <p class="answer">Ans: B) महासमुंद</p>
+</div>
+
+<div class="question">
+    <p>127. छत्तीसगढ़ में 'छेरछेरा' पर्व कब मनाया जाता है?</p>
+    <div class="options">
+        <label>A) होली के बाद</label>
+        <label>B) मकर संक्रांति के समय</label>
+        <label>C) रक्षाबंधन पर</label>
+        <label>D) दीपावली पर</label>
+    </div>
+    <p class="answer">Ans: B) मकर संक्रांति के समय</p>
+</div>
+
+<div class="question">
+    <p>128. छत्तीसगढ़ का सबसे बड़ा प्राकृतिक गुफा समूह कौन-सा है?</p>
+    <div class="options">
+        <label>A) सीता बेंगरा</label>
+        <label>B) जोगीमारा</label>
+        <label>C) कुटुमसर गुफा</label>
+        <label>D) कैलाश गुफा</label>
+    </div>
+    <p class="answer">Ans: C) कुटुमसर गुफा</p>
+</div>
+
+<div class="question">
+    <p>129. छत्तीसगढ़ में सर्वाधिक धान उत्पादन किस जिले में होता है?</p>
+    <div class="options">
+        <label>A) राजनांदगांव</label>
+        <label>B) महासमुंद</label>
+        <label>C) जांजगीर-चांपा</label>
+        <label>D) रायगढ़</label>
+    </div>
+    <p class="answer">Ans: C) जांजगीर-चांपा</p>
+</div>
+
+<div class="question">
+    <p>130. छत्तीसगढ़ का पहला महिला महाविद्यालय कहाँ स्थापित किया गया था?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) बिलासपुर</label>
+        <label>C) दुर्ग</label>
+        <label>D) राजनांदगांव</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>131. छत्तीसगढ़ का कौन-सा नगर 'इस्पात नगरी' कहलाता है?</p>
+    <div class="options">
+        <label>A) रायगढ़</label>
+        <label>B) कोरबा</label>
+        <label>C) भिलाई</label>
+        <label>D) बिलासपुर</label>
+    </div>
+    <p class="answer">Ans: C) भिलाई</p>
+</div>
+
+<div class="question">
+    <p>132. छत्तीसगढ़ में 'डंडारी नृत्य' किस जनजाति से संबंधित है?</p>
+    <div class="options">
+        <label>A) मुरिया</label>
+        <label>B) गोंड</label>
+        <label>C) हल्बा</label>
+        <label>D) उरांव</label>
+    </div>
+    <p class="answer">Ans: B) गोंड</p>
+</div>
+
+<div class="question">
+    <p>133. छत्तीसगढ़ का सबसे बड़ा थर्मल पावर स्टेशन कौन-सा है?</p>
+    <div class="options">
+        <label>A) डॉ. श्यामा प्रसाद मुखर्जी ताप विद्युत गृह</label>
+        <label>B) कोरबा सुपर थर्मल</label>
+        <label>C) सीपत ताप विद्युत परियोजना</label>
+        <label>D) हसदेव ताप विद्युत गृह</label>
+    </div>
+    <p class="answer">Ans: C) सीपत ताप विद्युत परियोजना</p>
+</div>
+
+<div class="question">
+    <p>134. छत्तीसगढ़ में 'खल्लारी माता मंदिर' किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) महासमुंद</label>
+        <label>B) रायगढ़</label>
+        <label>C) धमतरी</label>
+        <label>D) बलौदाबाजार</label>
+    </div>
+    <p class="answer">Ans: A) महासमुंद</p>
+</div>
+
+<div class="question">
+    <p>135. छत्तीसगढ़ की सबसे लंबी नदी घाटी परियोजना कौन-सी है?</p>
+    <div class="options">
+        <label>A) गंगरेल</label>
+        <label>B) महानदी परियोजना</label>
+        <label>C) हसदेव-बांगो</label>
+        <label>D) कोडार परियोजना</label>
+    </div>
+    <p class="answer">Ans: B) महानदी परियोजना</p>
+</div>
+
+<div class="question">
+    <p>136. छत्तीसगढ़ में 'देवरानी-जेठानी मंदिर' किस स्थान पर स्थित है?</p>
+    <div class="options">
+        <label>A) सिरपुर</label>
+        <label>B) ताला</label>
+        <label>C) राजिम</label>
+        <label>D) रतनपुर</label>
+    </div>
+    <p class="answer">Ans: B) ताला</p>
+</div>
+
+<div class="question">
+    <p>137. छत्तीसगढ़ में प्रसिद्ध 'अंगारमोती देवी' मंदिर कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) कोरबा</label>
+        <label>B) रायगढ़</label>
+        <label>C) जांजगीर</label>
+        <label>D) धमतरी</label>
+    </div>
+    <p class="answer">Ans: A) कोरबा</p>
+</div>
+
+<div class="question">
+    <p>138. छत्तीसगढ़ में सर्वाधिक वन उपज किससे प्राप्त होती है?</p>
+    <div class="options">
+        <label>A) साल बीज</label>
+        <label>B) तेंदूपत्ता</label>
+        <label>C) महुआ</label>
+        <label>D) लाख</label>
+    </div>
+    <p class="answer">Ans: B) तेंदूपत्ता</p>
+</div>
+
+<div class="question">
+    <p>139. छत्तीसगढ़ का पहला निजी एफएम रेडियो स्टेशन किस शहर में शुरू हुआ?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) बिलासपुर</label>
+        <label>D) कोरबा</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>140. छत्तीसगढ़ में 'हरेली' त्योहार मुख्य रूप से किस समुदाय द्वारा मनाया जाता है?</p>
+    <div class="options">
+        <label>A) व्यापारी</label>
+        <label>B) किसान</label>
+        <label>C) सैनिक</label>
+        <label>D) कारीगर</label>
+    </div>
+    <p class="answer">Ans: B) किसान</p>
+</div><div class="question">
+    <p>141. छत्तीसगढ़ में 'माँ महामाया मंदिर' किस नगर में स्थित है?</p>
+    <div class="options">
+        <label>A) राजिम</label>
+        <label>B) रतनपुर</label>
+        <label>C) सिरपुर</label>
+        <label>D) मल्हार</label>
+    </div>
+    <p class="answer">Ans: B) रतनपुर</p>
+</div>
+
+<div class="question">
+    <p>142. छत्तीसगढ़ का प्रथम हवाई अड्डा किस शहर में विकसित किया गया?</p>
+    <div class="options">
+        <label>A) बिलासपुर</label>
+        <label>B) रायपुर</label>
+        <label>C) जगदलपुर</label>
+        <label>D) अंबिकापुर</label>
+    </div>
+    <p class="answer">Ans: B) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>143. छत्तीसगढ़ में सर्वाधिक तेंदूपत्ता उत्पादन किस क्षेत्र में होता है?</p>
+    <div class="options">
+        <label>A) बस्तर</label>
+        <label>B) रायपुर</label>
+        <label>C) दुर्ग</label>
+        <label>D) जांजगीर</label>
+    </div>
+    <p class="answer">Ans: A) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>144. छत्तीसगढ़ में प्रसिद्ध 'गोंचा उत्सव' कहाँ मनाया जाता है?</p>
+    <div class="options">
+        <label>A) रायगढ़</label>
+        <label>B) राजिम</label>
+        <label>C) जगदलपुर</label>
+        <label>D) कोरबा</label>
+    </div>
+    <p class="answer">Ans: C) जगदलपुर</p>
+</div>
+
+<div class="question">
+    <p>145. छत्तीसगढ़ के किस जिले में कांगेर घाटी राष्ट्रीय उद्यान स्थित है?</p>
+    <div class="options">
+        <label>A) दंतेवाड़ा</label>
+        <label>B) बस्तर</label>
+        <label>C) बीजापुर</label>
+        <label>D) नारायणपुर</label>
+    </div>
+    <p class="answer">Ans: B) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>146. छत्तीसगढ़ का पहला सूचना प्रौद्योगिकी पार्क कहाँ स्थापित किया गया?</p>
+    <div class="options">
+        <label>A) दुर्ग</label>
+        <label>B) रायपुर</label>
+        <label>C) बिलासपुर</label>
+        <label>D) भिलाई</label>
+    </div>
+    <p class="answer">Ans: B) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>147. छत्तीसगढ़ में 'सिरपुर' किस धर्म के प्राचीन अवशेषों के लिए प्रसिद्ध है?</p>
+    <div class="options">
+        <label>A) जैन</label>
+        <label>B) बौद्ध</label>
+        <label>C) सिख</label>
+        <label>D) पारसी</label>
+    </div>
+    <p class="answer">Ans: B) बौद्ध</p>
+</div>
+
+<div class="question">
+    <p>148. छत्तीसगढ़ का सबसे बड़ा प्राकृतिक जलप्रपात कौन-सा है?</p>
+    <div class="options">
+        <label>A) तीरथगढ़</label>
+        <label>B) चित्रकोट</label>
+        <label>C) अमृतधारा</label>
+        <label>D) रामझरना</label>
+    </div>
+    <p class="answer">Ans: B) चित्रकोट</p>
+</div>
+
+<div class="question">
+    <p>149. छत्तीसगढ़ में 'बस्तर दशहरा' का मुख्य केंद्र कौन-सा नगर है?</p>
+    <div class="options">
+        <label>A) दंतेवाड़ा</label>
+        <label>B) कोंडागांव</label>
+        <label>C) जगदलपुर</label>
+        <label>D) सुकमा</label>
+    </div>
+    <p class="answer">Ans: C) जगदलपुर</p>
+</div>
+
+<div class="question">
+    <p>150. छत्तीसगढ़ के किस जिले में हीरे के भंडार पाए जाने की संभावना है?</p>
+    <div class="options">
+        <label>A) देवभोग</label>
+        <label>B) धमतरी</label>
+        <label>C) कोरिया</label>
+        <label>D) जशपुर</label>
+    </div>
+    <p class="answer">Ans: A) देवभोग</p>
+</div>
+
+<div class="question">
+    <p>151. छत्तीसगढ़ में 'राउत नाचा' किस पर्व के बाद किया जाता है?</p>
+    <div class="options">
+        <label>A) होली</label>
+        <label>B) दशहरा</label>
+        <label>C) दीपावली</label>
+        <label>D) मकर संक्रांति</label>
+    </div>
+    <p class="answer">Ans: C) दीपावली</p>
+</div>
+
+<div class="question">
+    <p>152. छत्तीसगढ़ का सबसे बड़ा विश्वविद्यालय कौन-सा है?</p>
+    <div class="options">
+        <label>A) गुरु घासीदास विश्वविद्यालय</label>
+        <label>B) पं. रविशंकर शुक्ल विश्वविद्यालय</label>
+        <label>C) हिदायतुल्लाह राष्ट्रीय विधि विश्वविद्यालय</label>
+        <label>D) इंदिरा कला संगीत विश्वविद्यालय</label>
+    </div>
+    <p class="answer">Ans: B) पं. रविशंकर शुक्ल विश्वविद्यालय</p>
+</div>
+
+<div class="question">
+    <p>153. छत्तीसगढ़ में 'तीरथगढ़ जलप्रपात' किस नदी पर स्थित है?</p>
+    <div class="options">
+        <label>A) कांगेर नदी</label>
+        <label>B) इंद्रावती नदी</label>
+        <label>C) महानदी</label>
+        <label>D) शिवनाथ नदी</label>
+    </div>
+    <p class="answer">Ans: A) कांगेर नदी</p>
+</div>
+
+<div class="question">
+    <p>154. छत्तीसगढ़ के प्रथम राज्यपाल कौन थे?</p>
+    <div class="options">
+        <label>A) डी.एन. सहाय</label>
+        <label>B) शेखर दत्त</label>
+        <label>C) ई.एस.एल. नरसिम्हन</label>
+        <label>D) बलराम दास टंडन</label>
+    </div>
+    <p class="answer">Ans: A) डी.एन. सहाय</p>
+</div>
+
+<div class="question">
+    <p>155. छत्तीसगढ़ में 'मुरिया' जनजाति मुख्यतः किस क्षेत्र में निवास करती है?</p>
+    <div class="options">
+        <label>A) सरगुजा</label>
+        <label>B) बस्तर</label>
+        <label>C) रायपुर</label>
+        <label>D) बिलासपुर</label>
+    </div>
+    <p class="answer">Ans: B) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>156. छत्तीसगढ़ का सबसे बड़ा बाँध कौन-सा है?</p>
+    <div class="options">
+        <label>A) गंगरेल बाँध</label>
+        <label>B) मुरूमसिल्ली बाँध</label>
+        <label>C) हसदेव-बांगो बाँध</label>
+        <label>D) कोडार बाँध</label>
+    </div>
+    <p class="answer">Ans: C) हसदेव-बांगो बाँध</p>
+</div>
+
+<div class="question">
+    <p>157. छत्तीसगढ़ में 'डोकरा कला' के लिए प्रसिद्ध क्षेत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) बस्तर</label>
+        <label>B) रायपुर</label>
+        <label>C) धमतरी</label>
+        <label>D) कोरिया</label>
+    </div>
+    <p class="answer">Ans: A) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>158. छत्तीसगढ़ में 'भिलाई इस्पात संयंत्र' किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) राजनांदगांव</label>
+        <label>D) बिलासपुर</label>
+    </div>
+    <p class="answer">Ans: B) दुर्ग</p>
+</div>
+
+<div class="question">
+    <p>159. छत्तीसगढ़ का राज्य गीत 'अरपा पैरी के धार' किसने लिखा है?</p>
+    <div class="options">
+        <label>A) मुकुटधर पांडेय</label>
+        <label>B) डॉ. नरेंद्र देव वर्मा</label>
+        <label>C) हरि ठाकुर</label>
+        <label>D) विनोद कुमार शुक्ल</label>
+    </div>
+    <p class="answer">Ans: B) डॉ. नरेंद्र देव वर्मा</p>
+</div>
+
+<div class="question">
+    <p>160. छत्तीसगढ़ में प्रसिद्ध 'राजिम कुंभ' किस नदी के तट पर आयोजित होता है?</p>
+    <div class="options">
+        <label>A) शिवनाथ</label>
+        <label>B) इंद्रावती</label>
+        <label>C) महानदी</label>
+        <label>D) हसदेव</label>
+    </div>
+    <p class="answer">Ans: C) महानदी</p>
+</div><div class="question">
+    <p>161. छत्तीसगढ़ में प्रसिद्ध 'लक्ष्मण मंदिर' कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) रतनपुर</label>
+        <label>B) सिरपुर</label>
+        <label>C) राजिम</label>
+        <label>D) मल्हार</label>
+    </div>
+    <p class="answer">Ans: B) सिरपुर</p>
+</div>
+
+<div class="question">
+    <p>162. छत्तीसगढ़ का पहला नगर निगम कौन-सा है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) भिलाई</label>
+        <label>C) बिलासपुर</label>
+        <label>D) दुर्ग</label>
+    </div>
+    <p class="answer">Ans: A) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>163. छत्तीसगढ़ में सर्वाधिक वनाच्छादित जिला कौन-सा है?</p>
+    <div class="options">
+        <label>A) बस्तर</label>
+        <label>B) कांकेर</label>
+        <label>C) गरियाबंद</label>
+        <label>D) नारायणपुर</label>
+    </div>
+    <p class="answer">Ans: D) नारायणपुर</p>
+</div>
+
+<div class="question">
+    <p>164. छत्तीसगढ़ में 'भोरमदेव मंदिर' किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) कवर्धा (कबीरधाम)</label>
+        <label>B) रायपुर</label>
+        <label>C) कोरबा</label>
+        <label>D) धमतरी</label>
+    </div>
+    <p class="answer">Ans: A) कवर्धा (कबीरधाम)</p>
+</div>
+
+<div class="question">
+    <p>165. छत्तीसगढ़ का राजकीय वृक्ष कौन-सा है?</p>
+    <div class="options">
+        <label>A) नीम</label>
+        <label>B) बरगद</label>
+        <label>C) साल</label>
+        <label>D) पीपल</label>
+    </div>
+    <p class="answer">Ans: C) साल</p>
+</div>
+
+<div class="question">
+    <p>166. छत्तीसगढ़ में 'सिरपुर महोत्सव' किस जिले में आयोजित होता है?</p>
+    <div class="options">
+        <label>A) रायगढ़</label>
+        <label>B) महासमुंद</label>
+        <label>C) धमतरी</label>
+        <label>D) बलौदाबाजार</label>
+    </div>
+    <p class="answer">Ans: B) महासमुंद</p>
+</div>
+
+<div class="question">
+    <p>167. छत्तीसगढ़ का राजकीय पुष्प कौन-सा है?</p>
+    <div class="options">
+        <label>A) कमल</label>
+        <label>B) गुलाब</label>
+        <label>C) गेंदा</label>
+        <label>D) चमेली</label>
+    </div>
+    <p class="answer">Ans: A) कमल</p>
+</div>
+
+<div class="question">
+    <p>168. छत्तीसगढ़ में 'मल्हार' किस ऐतिहासिक काल के अवशेषों के लिए प्रसिद्ध है?</p>
+    <div class="options">
+        <label>A) मौर्य काल</label>
+        <label>B) गुप्त काल</label>
+        <label>C) कलचुरी काल</label>
+        <label>D) मुगल काल</label>
+    </div>
+    <p class="answer">Ans: C) कलचुरी काल</p>
+</div>
+
+<div class="question">
+    <p>169. छत्तीसगढ़ का राजकीय पशु कौन-सा है?</p>
+    <div class="options">
+        <label>A) बाघ</label>
+        <label>B) जंगली भैंसा</label>
+        <label>C) बारहसिंगा</label>
+        <label>D) हाथी</label>
+    </div>
+    <p class="answer">Ans: B) जंगली भैंसा</p>
+</div>
+
+<div class="question">
+    <p>170. छत्तीसगढ़ में 'इंद्रावती राष्ट्रीय उद्यान' किस जिले में स्थित है?</p>
+    <div class="options">
+        <label>A) बीजापुर</label>
+        <label>B) कांकेर</label>
+        <label>C) कोंडागांव</label>
+        <label>D) नारायणपुर</label>
+    </div>
+    <p class="answer">Ans: A) बीजापुर</p>
+</div>
+
+<div class="question">
+    <p>171. छत्तीसगढ़ का राजकीय पक्षी कौन-सा है?</p>
+    <div class="options">
+        <label>A) मोर</label>
+        <label>B) तोता</label>
+        <label>C) पहाड़ी मैना</label>
+        <label>D) सारस</label>
+    </div>
+    <p class="answer">Ans: C) पहाड़ी मैना</p>
+</div>
+
+<div class="question">
+    <p>172. छत्तीसगढ़ में 'उदंती-सीतानदी टाइगर रिजर्व' किन जिलों में फैला हुआ है?</p>
+    <div class="options">
+        <label>A) गरियाबंद एवं धमतरी</label>
+        <label>B) रायपुर एवं दुर्ग</label>
+        <label>C) बस्तर एवं कांकेर</label>
+        <label>D) बिलासपुर एवं कोरबा</label>
+    </div>
+    <p class="answer">Ans: A) गरियाबंद एवं धमतरी</p>
+</div>
+
+<div class="question">
+    <p>173. छत्तीसगढ़ की राजकीय मछली कौन-सी है?</p>
+    <div class="options">
+        <label>A) रोहू</label>
+        <label>B) कतला</label>
+        <label>C) महाशीर</label>
+        <label>D) मंगुर</label>
+    </div>
+    <p class="answer">Ans: C) महाशीर</p>
+</div>
+
+<div class="question">
+    <p>174. छत्तीसगढ़ में 'चंपारण' किस कारण प्रसिद्ध है?</p>
+    <div class="options">
+        <label>A) गुरु घासीदास जन्मस्थली</label>
+        <label>B) वल्लभाचार्य जन्मस्थली</label>
+        <label>C) कबीर जन्मस्थली</label>
+        <label>D) तीजन बाई जन्मस्थली</label>
+    </div>
+    <p class="answer">Ans: B) वल्लभाचार्य जन्मस्थली</p>
+</div>
+
+<div class="question">
+    <p>175. छत्तीसगढ़ का राजकीय खेल कौन-सा है?</p>
+    <div class="options">
+        <label>A) हॉकी</label>
+        <label>B) क्रिकेट</label>
+        <label>C) कबड्डी</label>
+        <label>D) खो-खो</label>
+    </div>
+    <p class="answer">Ans: C) कबड्डी</p>
+</div>
+
+<div class="question">
+    <p>176. छत्तीसगढ़ में 'गुरु घासीदास राष्ट्रीय उद्यान' किस क्षेत्र में स्थित है?</p>
+    <div class="options">
+        <label>A) बस्तर</label>
+        <label>B) सरगुजा</label>
+        <label>C) कोरिया</label>
+        <label>D) गरियाबंद</label>
+    </div>
+    <p class="answer">Ans: C) कोरिया</p>
+</div>
+
+<div class="question">
+    <p>177. छत्तीसगढ़ का गठन किस राज्य से अलग होकर हुआ?</p>
+    <div class="options">
+        <label>A) उत्तर प्रदेश</label>
+        <label>B) बिहार</label>
+        <label>C) मध्य प्रदेश</label>
+        <label>D) महाराष्ट्र</label>
+    </div>
+    <p class="answer">Ans: C) मध्य प्रदेश</p>
+</div>
+
+<div class="question">
+    <p>178. छत्तीसगढ़ राज्य का स्थापना दिवस कब मनाया जाता है?</p>
+    <div class="options">
+        <label>A) 15 अगस्त</label>
+        <label>B) 26 जनवरी</label>
+        <label>C) 1 नवंबर</label>
+        <label>D) 2 अक्टूबर</label>
+    </div>
+    <p class="answer">Ans: C) 1 नवंबर</p>
+</div>
+
+<div class="question">
+    <p>179. छत्तीसगढ़ की राजधानी कौन-सी है?</p>
+    <div class="options">
+        <label>A) बिलासपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) रायपुर</label>
+        <label>D) जगदलपुर</label>
+    </div>
+    <p class="answer">Ans: C) रायपुर</p>
+</div>
+
+<div class="question">
+    <p>180. छत्तीसगढ़ उच्च न्यायालय कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) बिलासपुर</label>
+        <label>D) राजनांदगांव</label>
+    </div>
+    <p class="answer">Ans: C) बिलासपुर</p>
+</div><div class="question">
+    <p>181. छत्तीसगढ़ का सबसे बड़ा संभाग कौन-सा है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) बिलासपुर</label>
+        <label>C) बस्तर</label>
+        <label>D) सरगुजा</label>
+    </div>
+    <p class="answer">Ans: C) बस्तर</p>
+</div>
+
+<div class="question">
+    <p>182. छत्तीसगढ़ में 'तीजन बाई' को किस कला के लिए जाना जाता है?</p>
+    <div class="options">
+        <label>A) करमा नृत्य</label>
+        <label>B) पंथी नृत्य</label>
+        <label>C) पंडवानी गायन</label>
+        <label>D) सुआ नृत्य</label>
+    </div>
+    <p class="answer">Ans: C) पंडवानी गायन</p>
+</div>
+
+<div class="question">
+    <p>183. छत्तीसगढ़ का सबसे बड़ा कोयला क्षेत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) रायगढ़</label>
+        <label>B) कोरबा</label>
+        <label>C) सरगुजा</label>
+        <label>D) जशपुर</label>
+    </div>
+    <p class="answer">Ans: B) कोरबा</p>
+</div>
+
+<div class="question">
+    <p>184. छत्तीसगढ़ में प्रसिद्ध 'राजिम' किस नदियों के संगम पर स्थित है?</p>
+    <div class="options">
+        <label>A) महानदी, पैरी और सोंढूर</label>
+        <label>B) महानदी, शिवनाथ और हसदेव</label>
+        <label>C) इंद्रावती, गोदावरी और शबरी</label>
+        <label>D) महानदी, खारून और पैरी</label>
+    </div>
+    <p class="answer">Ans: A) महानदी, पैरी और सोंढूर</p>
+</div>
+
+<div class="question">
+    <p>185. छत्तीसगढ़ का राज्य पशु कौन-सा है?</p>
+    <div class="options">
+        <label>A) बाघ</label>
+        <label>B) हाथी</label>
+        <label>C) जंगली भैंसा</label>
+        <label>D) बारहसिंगा</label>
+    </div>
+    <p class="answer">Ans: C) जंगली भैंसा</p>
+</div>
+
+<div class="question">
+    <p>186. छत्तीसगढ़ में सर्वाधिक बॉक्साइट किस जिले में पाया जाता है?</p>
+    <div class="options">
+        <label>A) कोरबा</label>
+        <label>B) सरगुजा</label>
+        <label>C) कांकेर</label>
+        <label>D) महासमुंद</label>
+    </div>
+    <p class="answer">Ans: B) सरगुजा</p>
+</div>
+
+<div class="question">
+    <p>187. छत्तीसगढ़ में 'भिलाई इस्पात संयंत्र' का निर्माण किस देश के सहयोग से हुआ?</p>
+    <div class="options">
+        <label>A) अमेरिका</label>
+        <label>B) जापान</label>
+        <label>C) रूस (सोवियत संघ)</label>
+        <label>D) जर्मनी</label>
+    </div>
+    <p class="answer">Ans: C) रूस (सोवियत संघ)</p>
+</div>
+
+<div class="question">
+    <p>188. छत्तीसगढ़ का राज्य पक्षी कौन-सा है?</p>
+    <div class="options">
+        <label>A) मोर</label>
+        <label>B) तोता</label>
+        <label>C) पहाड़ी मैना</label>
+        <label>D) सारस</label>
+    </div>
+    <p class="answer">Ans: C) पहाड़ी मैना</p>
+</div>
+
+<div class="question">
+    <p>189. छत्तीसगढ़ में 'चित्रकोट जलप्रपात' किस नदी पर स्थित है?</p>
+    <div class="options">
+        <label>A) महानदी</label>
+        <label>B) इंद्रावती</label>
+        <label>C) शिवनाथ</label>
+        <label>D) हसदेव</label>
+    </div>
+    <p class="answer">Ans: B) इंद्रावती</p>
+</div>
+
+<div class="question">
+    <p>190. छत्तीसगढ़ में 'कुटुमसर गुफा' किस राष्ट्रीय उद्यान में स्थित है?</p>
+    <div class="options">
+        <label>A) इंद्रावती राष्ट्रीय उद्यान</label>
+        <label>B) कांगेर घाटी राष्ट्रीय उद्यान</label>
+        <label>C) गुरु घासीदास राष्ट्रीय उद्यान</label>
+        <label>D) अचानकमार राष्ट्रीय उद्यान</label>
+    </div>
+    <p class="answer">Ans: B) कांगेर घाटी राष्ट्रीय उद्यान</p>
+</div>
+
+<div class="question">
+    <p>191. छत्तीसगढ़ का राज्य वृक्ष कौन-सा है?</p>
+    <div class="options">
+        <label>A) पीपल</label>
+        <label>B) नीम</label>
+        <label>C) साल</label>
+        <label>D) बरगद</label>
+    </div>
+    <p class="answer">Ans: C) साल</p>
+</div>
+
+<div class="question">
+    <p>192. छत्तीसगढ़ का राज्य पुष्प कौन-सा है?</p>
+    <div class="options">
+        <label>A) गुलाब</label>
+        <label>B) कमल</label>
+        <label>C) चमेली</label>
+        <label>D) गेंदा</label>
+    </div>
+    <p class="answer">Ans: B) कमल</p>
+</div>
+
+<div class="question">
+    <p>193. छत्तीसगढ़ में 'मड़ई मेला' मुख्य रूप से किस संस्कृति से जुड़ा है?</p>
+    <div class="options">
+        <label>A) शहरी संस्कृति</label>
+        <label>B) औद्योगिक संस्कृति</label>
+        <label>C) जनजातीय संस्कृति</label>
+        <label>D) आधुनिक संस्कृति</label>
+    </div>
+    <p class="answer">Ans: C) जनजातीय संस्कृति</p>
+</div>
+
+<div class="question">
+    <p>194. छत्तीसगढ़ का राज्य गीत कौन-सा है?</p>
+    <div class="options">
+        <label>A) वंदे मातरम्</label>
+        <label>B) जन गण मन</label>
+        <label>C) अरपा पैरी के धार</label>
+        <label>D) जय जोहार छत्तीसगढ़</label>
+    </div>
+    <p class="answer">Ans: C) अरपा पैरी के धार</p>
+</div>
+
+<div class="question">
+    <p>195. छत्तीसगढ़ में सर्वाधिक लौह अयस्क किस क्षेत्र में पाया जाता है?</p>
+    <div class="options">
+        <label>A) बैलाडीला</label>
+        <label>B) कोरबा</label>
+        <label>C) रायगढ़</label>
+        <label>D) सरगुजा</label>
+    </div>
+    <p class="answer">Ans: A) बैलाडीला</p>
+</div>
+
+<div class="question">
+    <p>196. छत्तीसगढ़ का उच्च न्यायालय किस शहर में स्थित है?</p>
+    <div class="options">
+        <label>A) रायपुर</label>
+        <label>B) दुर्ग</label>
+        <label>C) बिलासपुर</label>
+        <label>D) भिलाई</label>
+    </div>
+    <p class="answer">Ans: C) बिलासपुर</p>
+</div>
+
+<div class="question">
+    <p>197. छत्तीसगढ़ की सबसे लंबी नदी कौन-सी है?</p>
+    <div class="options">
+        <label>A) शिवनाथ</label>
+        <label>B) इंद्रावती</label>
+        <label>C) महानदी</label>
+        <label>D) हसदेव</label>
+    </div>
+    <p class="answer">Ans: C) महानदी</p>
+</div>
+
+<div class="question">
+    <p>198. छत्तीसगढ़ का गठन किस वर्ष हुआ था?</p>
+    <div class="options">
+        <label>A) 1998</label>
+        <label>B) 1999</label>
+        <label>C) 2000</label>
+        <label>D) 2001</label>
+    </div>
+    <p class="answer">Ans: C) 2000</p>
+</div>
+
+<div class="question">
+    <p>199. छत्तीसगढ़ के प्रथम मुख्यमंत्री कौन थे?</p>
+    <div class="options">
+        <label>A) भूपेश बघेल</label>
+        <label>B) डॉ. रमन सिंह</label>
+        <label>C) अजीत जोगी</label>
+        <label>D) विष्णुदेव साय</label>
+    </div>
+    <p class="answer">Ans: C) अजीत जोगी</p>
+</div>
+
+<div class="question">
+    <p>200. छत्तीसगढ़ की राजधानी रायपुर किस नदी के किनारे स्थित है?</p>
+    <div class="options">
+        <label>A) पैरी</label>
+        <label>B) महानदी</label>
+        <label>C) शिवनाथ</label>
+        <label>D) खारून</label>
+    </div>
+    <p class="answer">Ans: D) खारून</p>
+</div>
+
+
+
+    <div style="display: flex; justify-content: space-between;">
+
+    <!-- Show/Hide Button (Left) -->
+    <button onclick="toggleAnswers(this)">Show Answers</button>
+
+     <button onclick="prevPage()">Previous</button>
+
+    <!-- Next Button (Right) -->
+    <button onclick="goNext()">Next</button>
+
+</div>
+</div>
+</body>
+</html>

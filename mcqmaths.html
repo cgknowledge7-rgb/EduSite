@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+
+.quiz-container {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    
+}
+
+.question {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.answer {
+    color: green;
+    font-weight: bold;
+    display: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#allSolutions {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    bottom: 0;   /* 👈 ये add करो */
+    width: 300px;
+    max-height: 100vh;
+    overflow-y: auto;
+    background: #f9f9f9;
+    padding: 15px;
+    border-right: 2px solid #ccc;
+}
+#allSolutions p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    #allSolutions {
+        width: 100%;
+        position: static;
+        height: auto;
+        display: block;
+    }
+
+    .quiz-container {
+        margin-left: 0;
+    }
+}
+</style>
+
+<script>
+let currentPage = 0;
+let perPage = 5;
+let questions;
+
+window.onload = function() {
+    questions = document.getElementsByClassName("question");
+    showPage(); // 👈 ab yahan call hoga (DOM load ke baad)
+};
+
+function showPage() {
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].style.display = "none";
+    }
+
+    let start = currentPage * perPage;
+
+    for (let i = start; i < start + perPage; i++) {
+        if (questions[i]) {
+            questions[i].style.display = "block";
+        }
+    }
+}
+
+function goNext() {
+    if ((currentPage + 1) * perPage < questions.length) {
+        currentPage++;
+        showPage();
+    }
+}
+
+function prevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        showPage();
+    }
+}
+
+function toggleAnswers(btn) {
+    let answers = document.querySelectorAll(".answer");
+
+    if (btn.innerText === "Show Answers") {
+        answers.forEach(ans => ans.style.display = "block");
+        btn.innerText = "Hide Answers";
+    } else {
+        answers.forEach(ans => ans.style.display = "none");
+        btn.innerText = "Show Answers";
+    }
+}
+
+function toggleAllSolutions(btn) {
+    let box = document.getElementById("allSolutions");
+
+    if (box.style.display === "block") {
+        box.style.display = "none";
+        btn.innerText = "Show Solutions";
+    } else {
+        box.style.display = "block";
+        btn.innerText = "Hide Solutions";
+    }
+}
+</script>
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">EduSite</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Hindi</a></li>
+        <li><a href="mcqenglish.html">English</a></li>
+        <li><a href="mcqmaths.html">Maths</a></li>
+        <li><a href="mcqscience.html">Science</a></li>
+        <li><a href="mcqgk.html">general knowledge</a></li>
+        <li><a href="mcqcggk.html">Cg Gk</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+<div class="quiz-container">
+
+    <div class="question">
+    <p>1. यदि x + 1/x = 3, तो x² + 1/x² का मान क्या है?</p>
+    <div class="options">
+        <label>A) 5</label>
+        <label>B) 7</label>
+        <label>C) 9</label>
+        <label>D) 11</label>
+    </div>
+    <p class="answer">Ans: B) 7</p>
+</div>
+
+<div class="question">
+    <p>2. यदि 2x - 5 = 9, तो x का मान क्या है?</p>
+    <div class="options">
+        <label>A) 6</label>
+        <label>B) 7</label>
+        <label>C) 8</label>
+        <label>D) 9</label>
+    </div>
+    <p class="answer">Ans: B) 7</p>
+</div>
+
+<div class="question">
+    <p>3. √(256) का मान क्या है?</p>
+    <div class="options">
+        <label>A) 14</label>
+        <label>B) 15</label>
+        <label>C) 16</label>
+        <label>D) 18</label>
+    </div>
+    <p class="answer">Ans: C) 16</p>
+</div>
+
+<div class="question">
+    <p>4. यदि किसी संख्या का 25% = 50 है, तो संख्या क्या है?</p>
+    <div class="options">
+        <label>A) 150</label>
+        <label>B) 200</label>
+        <label>C) 250</label>
+        <label>D) 300</label>
+    </div>
+    <p class="answer">Ans: B) 200</p>
+</div>
+
+<div class="question">
+    <p>5. यदि a = 3, b = 4, तो a² + b² = ?</p>
+    <div class="options">
+        <label>A) 25</label>
+        <label>B) 24</label>
+        <label>C) 23</label>
+        <label>D) 20</label>
+    </div>
+    <p class="answer">Ans: A) 25</p>
+</div>
+
+<div class="question">
+    <p>6. 15² का मान क्या है?</p>
+    <div class="options">
+        <label>A) 215</label>
+        <label>B) 225</label>
+        <label>C) 235</label>
+        <label>D) 245</label>
+    </div>
+    <p class="answer">Ans: B) 225</p>
+</div>
+
+<div class="question">
+    <p>7. यदि 3x = 27, तो x = ?</p>
+    <div class="options">
+        <label>A) 6</label>
+        <label>B) 7</label>
+        <label>C) 8</label>
+        <label>D) 9</label>
+    </div>
+    <p class="answer">Ans: D) 9</p>
+</div>
+
+<div class="question">
+    <p>8. √(81 × 49) = ?</p>
+    <div class="options">
+        <label>A) 63</label>
+        <label>B) 72</label>
+        <label>C) 81</label>
+        <label>D) 49</label>
+    </div>
+    <p class="answer">Ans: A) 63</p>
+</div>
+
+<div class="question">
+    <p>9. यदि किसी त्रिभुज के कोण 3x, 4x और 5x हैं, तो x का मान क्या है?</p>
+    <div class="options">
+        <label>A) 10</label>
+        <label>B) 12</label>
+        <label>C) 15</label>
+        <label>D) 18</label>
+    </div>
+    <p class="answer">Ans: B) 15</p>
+</div>
+
+<div class="question">
+    <p>10. यदि 7² + 24² = ?</p>
+    <div class="options">
+        <label>A) 625</label>
+        <label>B) 575</label>
+        <label>C) 600</label>
+        <label>D) 650</label>
+    </div>
+    <p class="answer">Ans: A) 625</p>
+</div>
+
+<div class="question">
+    <p>11. यदि x² - 9 = 0, तो x का मान क्या होगा?</p>
+    <div class="options">
+        <label>A) ±3</label>
+        <label>B) 3</label>
+        <label>C) -3</label>
+        <label>D) 9</label>
+    </div>
+    <p class="answer">Ans: A) ±3</p>
+</div>
+
+<div class="question">
+    <p>12. 20% of 250 = ?</p>
+    <div class="options">
+        <label>A) 40</label>
+        <label>B) 45</label>
+        <label>C) 50</label>
+        <label>D) 60</label>
+    </div>
+    <p class="answer">Ans: C) 50</p>
+</div>
+
+<div class="question">
+    <p>13. यदि 2³ × 3² = ?</p>
+    <div class="options">
+        <label>A) 36</label>
+        <label>B) 48</label>
+        <label>C) 72</label>
+        <label>D) 64</label>
+    </div>
+    <p class="answer">Ans: C) 72</p>
+</div>
+
+<div class="question">
+    <p>14. √196 = ?</p>
+    <div class="options">
+        <label>A) 12</label>
+        <label>B) 13</label>
+        <label>C) 14</label>
+        <label>D) 15</label>
+    </div>
+    <p class="answer">Ans: C) 14</p>
+</div>
+
+<div class="question">
+    <p>15. यदि किसी वर्ग का क्षेत्रफल 121 है, तो उसकी भुजा क्या है?</p>
+    <div class="options">
+        <label>A) 10</label>
+        <label>B) 11</label>
+        <label>C) 12</label>
+        <label>D) 13</label>
+    </div>
+    <p class="answer">Ans: B) 11</p>
+</div>
+
+<div class="question">
+    <p>16. यदि x + 2 = 10, तो x = ?</p>
+    <div class="options">
+        <label>A) 6</label>
+        <label>B) 7</label>
+        <label>C) 8</label>
+        <label>D) 9</label>
+    </div>
+    <p class="answer">Ans: C) 8</p>
+</div>
+
+<div class="question">
+    <p>17. 9³ = ?</p>
+    <div class="options">
+        <label>A) 729</label>
+        <label>B) 512</label>
+        <label>C) 343</label>
+        <label>D) 625</label>
+    </div>
+    <p class="answer">Ans: A) 729</p>
+</div>
+
+<div class="question">
+    <p>18. यदि 4x = 20, तो x = ?</p>
+    <div class="options">
+        <label>A) 4</label>
+        <label>B) 5</label>
+        <label>C) 6</label>
+        <label>D) 7</label>
+    </div>
+    <p class="answer">Ans: B) 5</p>
+</div>
+
+<div class="question">
+    <p>19. √(225) = ?</p>
+    <div class="options">
+        <label>A) 12</label>
+        <label>B) 13</label>
+        <label>C) 14</label>
+        <label>D) 15</label>
+    </div>
+    <p class="answer">Ans: D) 15</p>
+</div>
+
+<div class="question">
+    <p>20. यदि किसी आयत की लंबाई 12 और चौड़ाई 8 है, तो क्षेत्रफल क्या है?</p>
+    <div class="options">
+        <label>A) 84</label>
+        <label>B) 96</label>
+        <label>C) 100</label>
+        <label>D) 108</label>
+    </div>
+    <p class="answer">Ans: B) 96</p>
+</div>
+
+<div class="question">
+    <p>21. 1 से 10 तक सभी संख्याओं का योग क्या है?</p>
+    <div class="options">
+        <label>A) 45</label>
+        <label>B) 50</label>
+        <label>C) 55</label>
+        <label>D) 60</label>
+    </div>
+    <p class="answer">Ans: C) 55</p>
+</div>
+
+<div class="question">
+    <p>22. यदि x² = 81, तो x = ?</p>
+    <div class="options">
+        <label>A) ±9</label>
+        <label>B) 9</label>
+        <label>C) -9</label>
+        <label>D) 18</label>
+    </div>
+    <p class="answer">Ans: A) ±9</p>
+</div>
+
+<div class="question">
+    <p>23. 30% of 400 = ?</p>
+    <div class="options">
+        <label>A) 100</label>
+        <label>B) 110</label>
+        <label>C) 120</label>
+        <label>D) 130</label>
+    </div>
+    <p class="answer">Ans: C) 120</p>
+</div>
+
+<div class="question">
+    <p>24. यदि 5² + 12² = ?</p>
+    <div class="options">
+        <label>A) 169</label>
+        <label>B) 144</label>
+        <label>C) 150</label>
+        <label>D) 160</label>
+    </div>
+    <p class="answer">Ans: A) 169</p>
+</div>
+
+<div class="question">
+    <p>25. √(100) = ?</p>
+    <div class="options">
+        <label>A) 8</label>
+        <label>B) 9</label>
+        <label>C) 10</label>
+        <label>D) 11</label>
+    </div>
+    <p class="answer">Ans: C) 10</p>
+</div>
+
+<div class="question">
+    <p>26. यदि किसी त्रिभुज का क्षेत्रफल = 1/2 × आधार × ऊँचाई है, आधार = 12, ऊँचाई = 10, तो क्षेत्रफल?</p>
+    <div class="options">
+        <label>A) 50</label>
+        <label>B) 60</label>
+        <label>C) 70</label>
+        <label>D) 80</label>
+    </div>
+    <p class="answer">Ans: B) 60</p>
+</div>
+
+<div class="question">
+    <p>27. यदि 6x = 42, तो x = ?</p>
+    <div class="options">
+        <label>A) 6</label>
+        <label>B) 7</label>
+        <label>C) 8</label>
+        <label>D) 9</label>
+    </div>
+    <p class="answer">Ans: B) 7</p>
+</div>
+
+<div class="question">
+    <p>28. 8² = ?</p>
+    <div class="options">
+        <label>A) 60</label>
+        <label>B) 62</label>
+        <label>C) 64</label>
+        <label>D) 66</label>
+    </div>
+    <p class="answer">Ans: C) 64</p>
+</div>
+
+<div class="question">
+    <p>29. √(121) = ?</p>
+    <div class="options">
+        <label>A) 10</label>
+        <label>B) 11</label>
+        <label>C) 12</label>
+        <label>D) 13</label>
+    </div>
+    <p class="answer">Ans: B) 11</p>
+</div>
+
+<div class="question">
+    <p>30. यदि 9x = 81, तो x = ?</p>
+    <div class="options">
+        <label>A) 7</label>
+        <label>B) 8</label>
+        <label>C) 9</label>
+        <label>D) 10</label>
+    </div>
+    <p class="answer">Ans: C) 9</p>
+</div>
+<div class="question">
+    <p>31. यदि x + 1/x = 5, तो x² + 1/x² = ?</p>
+    <div class="options">
+        <label>A) 21</label>
+        <label>B) 23</label>
+        <label>C) 25</label>
+        <label>D) 27</label>
+    </div>
+    <p class="answer">Ans: B) 23</p>
+</div>
+
+<div class="question">
+    <p>32. यदि 3x + 2 = 20, तो x = ?</p>
+    <div class="options">
+        <label>A) 5</label>
+        <label>B) 6</label>
+        <label>C) 7</label>
+        <label>D) 8</label>
+    </div>
+    <p class="answer">Ans: B) 6</p>
+</div>
+
+<div class="question">
+    <p>33. √(400) = ?</p>
+    <div class="options">
+        <label>A) 18</label>
+        <label>B) 19</label>
+        <label>C) 20</label>
+        <label>D) 21</label>
+    </div>
+    <p class="answer">Ans: C) 20</p>
+</div>
+
+<div class="question">
+    <p>34. यदि किसी संख्या का 40% = 80 है, तो संख्या क्या है?</p>
+    <div class="options">
+        <label>A) 150</label>
+        <label>B) 180</label>
+        <label>C) 200</label>
+        <label>D) 220</label>
+    </div>
+    <p class="answer">Ans: C) 200</p>
+</div>
+
+<div class="question">
+    <p>35. यदि a = 4, b = 5, तो a² + b² = ?</p>
+    <div class="options">
+        <label>A) 41</label>
+        <label>B) 45</label>
+        <label>C) 50</label>
+        <label>D) 55</label>
+    </div>
+    <p class="answer">Ans: A) 41</p>
+</div>
+
+<div class="question">
+    <p>36. 18² = ?</p>
+    <div class="options">
+        <label>A) 324</label>
+        <label>B) 344</label>
+        <label>C) 364</label>
+        <label>D) 384</label>
+    </div>
+    <p class="answer">Ans: A) 324</p>
+</div>
+
+<div class="question">
+    <p>37. यदि 5x = 60, तो x = ?</p>
+    <div class="options">
+        <label>A) 10</label>
+        <label>B) 11</label>
+        <label>C) 12</label>
+        <label>D) 13</label>
+    </div>
+    <p class="answer">Ans: C) 12</p>
+</div>
+
+<div class="question">
+    <p>38. √(144 × 100) = ?</p>
+    <div class="options">
+        <label>A) 100</label>
+        <label>B) 110</label>
+        <label>C) 120</label>
+        <label>D) 130</label>
+    </div>
+    <p class="answer">Ans: C) 120</p>
+</div>
+
+<div class="question">
+    <p>39. यदि किसी त्रिभुज के कोण 2x, 4x और 6x हैं, तो x = ?</p>
+    <div class="options">
+        <label>A) 10</label>
+        <label>B) 12</label>
+        <label>C) 15</label>
+        <label>D) 18</label>
+    </div>
+    <p class="answer">Ans: A) 10</p>
+</div>
+
+<div class="question">
+    <p>40. यदि 8² + 15² = ?</p>
+    <div class="options">
+        <label>A) 289</label>
+        <label>B) 300</label>
+        <label>C) 310</label>
+        <label>D) 320</label>
+    </div>
+    <p class="answer">Ans: A) 289</p>
+</div>
+
+<div class="question">
+    <p>41. यदि x² - 16 = 0, तो x = ?</p>
+    <div class="options">
+        <label>A) ±4</label>
+        <label>B) 4</label>
+        <label>C) -4</label>
+        <label>D) 8</label>
+    </div>
+    <p class="answer">Ans: A) ±4</p>
+</div>
+
+<div class="question">
+    <p>42. 25% of 320 = ?</p>
+    <div class="options">
+        <label>A) 60</label>
+        <label>B) 70</label>
+        <label>C) 80</label>
+        <label>D) 90</label>
+    </div>
+    <p class="answer">Ans: C) 80</p>
+</div>
+
+<div class="question">
+    <p>43. यदि 4³ × 2² = ?</p>
+    <div class="options">
+        <label>A) 64</label>
+        <label>B) 128</label>
+        <label>C) 256</label>
+        <label>D) 512</label>
+    </div>
+    <p class="answer">Ans: C) 256</p>
+</div>
+
+<div class="question">
+    <p>44. √225 = ?</p>
+    <div class="options">
+        <label>A) 12</label>
+        <label>B) 13</label>
+        <label>C) 14</label>
+        <label>D) 15</label>
+    </div>
+    <p class="answer">Ans: D) 15</p>
+</div>
+
+<div class="question">
+    <p>45. यदि किसी वर्ग का क्षेत्रफल 169 है, तो उसकी भुजा क्या है?</p>
+    <div class="options">
+        <label>A) 11</label>
+        <label>B) 12</label>
+        <label>C) 13</label>
+        <label>D) 14</label>
+    </div>
+    <p class="answer">Ans: C) 13</p>
+</div>
+
+<div class="question">
+    <p>46. यदि x + 3 = 15, तो x = ?</p>
+    <div class="options">
+        <label>A) 10</label>
+        <label>B) 11</label>
+        <label>C) 12</label>
+        <label>D) 13</label>
+    </div>
+    <p class="answer">Ans: C) 12</p>
+</div>
+
+<div class="question">
+    <p>47. 12³ = ?</p>
+    <div class="options">
+        <label>A) 1728</label>
+        <label>B) 1440</label>
+        <label>C) 1600</label>
+        <label>D) 1800</label>
+    </div>
+    <p class="answer">Ans: A) 1728</p>
+</div>
+
+<div class="question">
+    <p>48. यदि 7x = 56, तो x = ?</p>
+    <div class="options">
+        <label>A) 6</label>
+        <label>B) 7</label>
+        <label>C) 8</label>
+        <label>D) 9</label>
+    </div>
+    <p class="answer">Ans: C) 8</p>
+</div>
+
+<div class="question">
+    <p>49. √361 = ?</p>
+    <div class="options">
+        <label>A) 17</label>
+        <label>B) 18</label>
+        <label>C) 19</label>
+        <label>D) 20</label>
+    </div>
+    <p class="answer">Ans: C) 19</p>
+</div>
+
+<div class="question">
+    <p>50. यदि आयत की लंबाई 15 और चौड़ाई 10 है, तो क्षेत्रफल क्या है?</p>
+    <div class="options">
+        <label>A) 120</label>
+        <label>B) 130</label>
+        <label>C) 140</label>
+        <label>D) 150</label>
+    </div>
+    <p class="answer">Ans: D) 150</p>
+</div>
+
+<div class="question">
+    <p>51. 1 से 15 तक संख्याओं का योग क्या है?</p>
+    <div class="options">
+        <label>A) 110</label>
+        <label>B) 120</label>
+        <label>C) 130</label>
+        <label>D) 140</label>
+    </div>
+    <p class="answer">Ans: B) 120</p>
+</div>
+
+<div class="question">
+    <p>52. यदि x² = 100, तो x = ?</p>
+    <div class="options">
+        <label>A) ±10</label>
+        <label>B) 10</label>
+        <label>C) -10</label>
+        <label>D) 20</label>
+    </div>
+    <p class="answer">Ans: A) ±10</p>
+</div>
+
+<div class="question">
+    <p>53. 35% of 200 = ?</p>
+    <div class="options">
+        <label>A) 60</label>
+        <label>B) 65</label>
+        <label>C) 70</label>
+        <label>D) 75</label>
+    </div>
+    <p class="answer">Ans: C) 70</p>
+</div>
+
+<div class="question">
+    <p>54. यदि 9² + 12² = ?</p>
+    <div class="options">
+        <label>A) 225</label>
+        <label>B) 240</label>
+        <label>C) 250</label>
+        <label>D) 260</label>
+    </div>
+    <p class="answer">Ans: A) 225</p>
+</div>
+
+<div class="question">
+    <p>55. √144 = ?</p>
+    <div class="options">
+        <label>A) 10</label>
+        <label>B) 11</label>
+        <label>C) 12</label>
+        <label>D) 13</label>
+    </div>
+    <p class="answer">Ans: C) 12</p>
+</div>
+
+<div class="question">
+    <p>56. यदि त्रिभुज का क्षेत्रफल = 1/2 × आधार × ऊँचाई, आधार = 20, ऊँचाई = 5, तो क्षेत्रफल?</p>
+    <div class="options">
+        <label>A) 40</label>
+        <label>B) 45</label>
+        <label>C) 50</label>
+        <label>D) 55</label>
+    </div>
+    <p class="answer">Ans: C) 50</p>
+</div>
+
+<div class="question">
+    <p>57. यदि 8x = 64, तो x = ?</p>
+    <div class="options">
+        <label>A) 6</label>
+        <label>B) 7</label>
+        <label>C) 8</label>
+        <label>D) 9</label>
+    </div>
+    <p class="answer">Ans: C) 8</p>
+</div>
+
+<div class="question">
+    <p>58. 11² = ?</p>
+    <div class="options">
+        <label>A) 111</label>
+        <label>B) 121</label>
+        <label>C) 131</label>
+        <label>D) 141</label>
+    </div>
+    <p class="answer">Ans: B) 121</p>
+</div>
+
+<div class="question">
+    <p>59. √169 = ?</p>
+    <div class="options">
+        <label>A) 11</label>
+        <label>B) 12</label>
+        <label>C) 13</label>
+        <label>D) 14</label>
+    </div>
+    <p class="answer">Ans: C) 13</p>
+</div>
+
+<div class="question">
+    <p>60. यदि 10x = 100, तो x = ?</p>
+    <div class="options">
+        <label>A) 8</label>
+        <label>B) 9</label>
+        <label>C) 10</label>
+        <label>D) 11</label>
+    </div>
+    <p class="answer">Ans: C) 10</p>
+</div>
+<div class="question">
+    <p>61. यदि x + 1/x = 6, तो x² + 1/x² = ?</p>
+    <div class="options">
+        <label>A) 34</label>
+        <label>B) 36</label>
+        <label>C) 38</label>
+        <label>D) 40</label>
+    </div>
+    <p class="answer">Ans: A) 34</p>
+</div>
+
+<div class="question">
+    <p>62. यदि 4x - 3 = 13, तो x = ?</p>
+    <div class="options">
+        <label>A) 3</label>
+        <label>B) 4</label>
+        <label>C) 5</label>
+        <label>D) 6</label>
+    </div>
+    <p class="answer">Ans: B) 4</p>
+</div>
+
+<div class="question">
+    <p>63. √(625) = ?</p>
+    <div class="options">
+        <label>A) 20</label>
+        <label>B) 25</label>
+        <label>C) 30</label>
+        <label>D) 35</label>
+    </div>
+    <p class="answer">Ans: B) 25</p>
+</div>
+
+<div class="question">
+    <p>64. यदि किसी संख्या का 50% = 75, तो संख्या क्या है?</p>
+    <div class="options">
+        <label>A) 100</label>
+        <label>B) 125</label>
+        <label>C) 150</label>
+        <label>D) 175</label>
+    </div>
+    <p class="answer">Ans: C) 150</p>
+</div>
+
+<div class="question">
+    <p>65. यदि a = 5, b = 12, तो √(a² + b²) = ?</p>
+    <div class="options">
+        <label>A) 12</label>
+        <label>B) 13</label>
+        <label>C) 14</label>
+        <label>D) 15</label>
+    </div>
+    <p class="answer">Ans: B) 13</p>
+</div>
+
+<div class="question">
+    <p>66. 21² = ?</p>
+    <div class="options">
+        <label>A) 421</label>
+        <label>B) 441</label>
+        <label>C) 451</label>
+        <label>D) 461</label>
+    </div>
+    <p class="answer">Ans: B) 441</p>
+</div>
+
+<div class="question">
+    <p>67. यदि 6x = 90, तो x = ?</p>
+    <div class="options">
+        <label>A) 12</label>
+        <label>B) 13</label>
+        <label>C) 14</label>
+        <label>D) 15</label>
+    </div>
+    <p class="answer">Ans: D) 15</p>
+</div>
+
+<div class="question">
+    <p>68. √(256 × 121) = ?</p>
+    <div class="options">
+        <label>A) 176</label>
+        <label>B) 186</label>
+        <label>C) 196</label>
+        <label>D) 206</label>
+    </div>
+    <p class="answer">Ans: A) 176</p>
+</div>
+
+<div class="question">
+    <p>69. यदि किसी त्रिभुज के कोण x, 2x, 3x हैं, तो x = ?</p>
+    <div class="options">
+        <label>A) 20</label>
+        <label>B) 25</label>
+        <label>C) 30</label>
+        <label>D) 35</label>
+    </div>
+    <p class="answer">Ans: C) 30</p>
+</div>
+
+<div class="question">
+    <p>70. यदि 9² + 40² = ?</p>
+    <div class="options">
+        <label>A) 1681</label>
+        <label>B) 1700</label>
+        <label>C) 1721</label>
+        <label>D) 1800</label>
+    </div>
+    <p class="answer">Ans: A) 1681</p>
+</div>
+
+<div class="question">
+    <p>71. यदि x² - 25 = 0, तो x = ?</p>
+    <div class="options">
+        <label>A) ±5</label>
+        <label>B) 5</label>
+        <label>C) -5</label>
+        <label>D) 10</label>
+    </div>
+    <p class="answer">Ans: A) ±5</p>
+</div>
+
+<div class="question">
+    <p>72. 15% of 400 = ?</p>
+    <div class="options">
+        <label>A) 50</label>
+        <label>B) 55</label>
+        <label>C) 60</label>
+        <label>D) 65</label>
+    </div>
+    <p class="answer">Ans: C) 60</p>
+</div>
+
+<div class="question">
+    <p>73. यदि 5³ × 2² = ?</p>
+    <div class="options">
+        <label>A) 200</label>
+        <label>B) 300</label>
+        <label>C) 400</label>
+        <label>D) 500</label>
+    </div>
+    <p class="answer">Ans: D) 500</p>
+</div>
+
+<div class="question">
+    <p>74. √289 = ?</p>
+    <div class="options">
+        <label>A) 15</label>
+        <label>B) 16</label>
+        <label>C) 17</label>
+        <label>D) 18</label>
+    </div>
+    <p class="answer">Ans: C) 17</p>
+</div>
+
+<div class="question">
+    <p>75. यदि किसी वर्ग का क्षेत्रफल 196 है, तो भुजा = ?</p>
+    <div class="options">
+        <label>A) 12</label>
+        <label>B) 13</label>
+        <label>C) 14</label>
+        <label>D) 15</label>
+    </div>
+    <p class="answer">Ans: C) 14</p>
+</div>
+
+<div class="question">
+    <p>76. यदि x + 4 = 18, तो x = ?</p>
+    <div class="options">
+        <label>A) 12</label>
+        <label>B) 13</label>
+        <label>C) 14</label>
+        <label>D) 15</label>
+    </div>
+    <p class="answer">Ans: C) 14</p>
+</div>
+
+<div class="question">
+    <p>77. 13³ = ?</p>
+    <div class="options">
+        <label>A) 2197</label>
+        <label>B) 2100</label>
+        <label>C) 2000</label>
+        <label>D) 2300</label>
+    </div>
+    <p class="answer">Ans: A) 2197</p>
+</div>
+
+<div class="question">
+    <p>78. यदि 9x = 72, तो x = ?</p>
+    <div class="options">
+        <label>A) 6</label>
+        <label>B) 7</label>
+        <label>C) 8</label>
+        <label>D) 9</label>
+    </div>
+    <p class="answer">Ans: C) 8</p>
+</div>
+
+<div class="question">
+    <p>79. √441 = ?</p>
+    <div class="options">
+        <label>A) 19</label>
+        <label>B) 20</label>
+        <label>C) 21</label>
+        <label>D) 22</label>
+    </div>
+    <p class="answer">Ans: C) 21</p>
+</div>
+
+<div class="question">
+    <p>80. यदि आयत की लंबाई 20 और चौड़ाई 12 है, तो क्षेत्रफल = ?</p>
+    <div class="options">
+        <label>A) 200</label>
+        <label>B) 220</label>
+        <label>C) 240</label>
+        <label>D) 260</label>
+    </div>
+    <p class="answer">Ans: C) 240</p>
+</div>
+
+<div class="question">
+    <p>81. 1 से 25 तक संख्याओं का योग = ?</p>
+    <div class="options">
+        <label>A) 300</label>
+        <label>B) 310</label>
+        <label>C) 325</label>
+        <label>D) 350</label>
+    </div>
+    <p class="answer">Ans: C) 325</p>
+</div>
+
+<div class="question">
+    <p>82. यदि x² = 121, तो x = ?</p>
+    <div class="options">
+        <label>A) ±11</label>
+        <label>B) 11</label>
+        <label>C) -11</label>
+        <label>D) 22</label>
+    </div>
+    <p class="answer">Ans: A) ±11</p>
+</div>
+
+<div class="question">
+    <p>83. 40% of 250 = ?</p>
+    <div class="options">
+        <label>A) 80</label>
+        <label>B) 90</label>
+        <label>C) 100</label>
+        <label>D) 110</label>
+    </div>
+    <p class="answer">Ans: C) 100</p>
+</div>
+
+<div class="question">
+    <p>84. यदि 16² + 12² = ?</p>
+    <div class="options">
+        <label>A) 400</label>
+        <label>B) 500</label>
+        <label>C) 600</label>
+        <label>D) 700</label>
+    </div>
+    <p class="answer">Ans: A) 400</p>
+</div>
+
+<div class="question">
+    <p>85. √324 = ?</p>
+    <div class="options">
+        <label>A) 16</label>
+        <label>B) 17</label>
+        <label>C) 18</label>
+        <label>D) 19</label>
+    </div>
+    <p class="answer">Ans: C) 18</p>
+</div>
+
+<div class="question">
+    <p>86. यदि त्रिभुज का क्षेत्रफल = 1/2 × आधार × ऊँचाई, आधार = 30, ऊँचाई = 6, तो क्षेत्रफल?</p>
+    <div class="options">
+        <label>A) 80</label>
+        <label>B) 85</label>
+        <label>C) 90</label>
+        <label>D) 95</label>
+    </div>
+    <p class="answer">Ans: C) 90</p>
+</div>
+
+<div class="question">
+    <p>87. यदि 12x = 144, तो x = ?</p>
+    <div class="options">
+        <label>A) 10</label>
+        <label>B) 11</label>
+        <label>C) 12</label>
+        <label>D) 13</label>
+    </div>
+    <p class="answer">Ans: C) 12</p>
+</div>
+
+<div class="question">
+    <p>88. 14² = ?</p>
+    <div class="options">
+        <label>A) 186</label>
+        <label>B) 196</label>
+        <label>C) 206</label>
+        <label>D) 216</label>
+    </div>
+    <p class="answer">Ans: B) 196</p>
+</div>
+
+<div class="question">
+    <p>89. √529 = ?</p>
+    <div class="options">
+        <label>A) 21</label>
+        <label>B) 22</label>
+        <label>C) 23</label>
+        <label>D) 24</label>
+    </div>
+    <p class="answer">Ans: C) 23</p>
+</div>
+
+<div class="question">
+    <p>90. यदि आयत की लंबाई 25 और चौड़ाई 4 है, तो क्षेत्रफल?</p>
+    <div class="options">
+        <label>A) 90</label>
+        <label>B) 95</label>
+        <label>C) 100</label>
+        <label>D) 110</label>
+    </div>
+    <p class="answer">Ans: C) 100</p>
+</div>
+
+<div class="question">
+    <p>91. 1 से 30 तक संख्याओं का योग = ?</p>
+    <div class="options">
+        <label>A) 435</label>
+        <label>B) 450</label>
+        <label>C) 465</label>
+        <label>D) 480</label>
+    </div>
+    <p class="answer">Ans: C) 465</p>
+</div>
+
+<div class="question">
+    <p>92. यदि x² = 144, तो x = ?</p>
+    <div class="options">
+        <label>A) ±12</label>
+        <label>B) 12</label>
+        <label>C) -12</label>
+        <label>D) 24</label>
+    </div>
+    <p class="answer">Ans: A) ±12</p>
+</div>
+
+<div class="question">
+    <p>93. 60% of 150 = ?</p>
+    <div class="options">
+        <label>A) 80</label>
+        <label>B) 85</label>
+        <label>C) 90</label>
+        <label>D) 95</label>
+    </div>
+    <p class="answer">Ans: C) 90</p>
+</div>
+
+<div class="question">
+    <p>94. यदि 20² + 21² = ?</p>
+    <div class="options">
+        <label>A) 800</label>
+        <label>B) 841</label>
+        <label>C) 900</label>
+        <label>D) 950</label>
+    </div>
+    <p class="answer">Ans: B) 841</p>
+</div>
+
+<div class="question">
+    <p>95. √400 = ?</p>
+    <div class="options">
+        <label>A) 18</label>
+        <label>B) 19</label>
+        <label>C) 20</label>
+        <label>D) 21</label>
+    </div>
+    <p class="answer">Ans: C) 20</p>
+</div>
+
+<div class="question">
+    <p>96. यदि त्रिभुज का क्षेत्रफल = 1/2 × आधार × ऊँचाई, आधार = 40, ऊँचाई = 5, तो क्षेत्रफल?</p>
+    <div class="options">
+        <label>A) 90</label>
+        <label>B) 95</label>
+        <label>C) 100</label>
+        <label>D) 105</label>
+    </div>
+    <p class="answer">Ans: C) 100</p>
+</div>
+
+<div class="question">
+    <p>97. यदि 15x = 150, तो x = ?</p>
+    <div class="options">
+        <label>A) 8</label>
+        <label>B) 9</label>
+        <label>C) 10</label>
+        <label>D) 11</label>
+    </div>
+    <p class="answer">Ans: C) 10</p>
+</div>
+
+<div class="question">
+    <p>98. 16² = ?</p>
+    <div class="options">
+        <label>A) 246</label>
+        <label>B) 256</label>
+        <label>C) 266</label>
+        <label>D) 276</label>
+    </div>
+    <p class="answer">Ans: B) 256</p>
+</div>
+
+<div class="question">
+    <p>99. √576 = ?</p>
+    <div class="options">
+        <label>A) 22</label>
+        <label>B) 23</label>
+        <label>C) 24</label>
+        <label>D) 25</label>
+    </div>
+    <p class="answer">Ans: C) 24</p>
+</div>
+
+<div class="question">
+    <p>100. यदि आयत की लंबाई 50 और चौड़ाई 2 है, तो क्षेत्रफल?</p>
+    <div class="options">
+        <label>A) 80</label>
+        <label>B) 90</label>
+        <label>C) 100</label>
+        <label>D) 120</label>
+    </div>
+    <p class="answer">Ans: C) 100</p>
+</div>
+
+
+
+    <div style="display: flex; justify-content: space-between;">
+
+    <!-- Show/Hide Button (Left) -->
+    <button onclick="toggleAnswers(this)">Show Answers</button>
+    <button onclick="toggleAllSolutions(this)">Show Solutions</button>
+
+     <button onclick="prevPage()">Previous</button>
+
+    <!-- Next Button (Right) -->
+    <button onclick="goNext()">Next</button>
+
+</div>
+</div>
+<div id="allSolutions">
+
+<p><b>Q1.</b><br>
+दिया है: x + 1/x = 3 <br>
+दोनों तरफ square करें: <br>
+(x + 1/x)² = x² + 1/x² + 2 <br>
+⇒ 3² = x² + 1/x² + 2 <br>
+⇒ 9 = x² + 1/x² + 2 <br>
+⇒ x² + 1/x² = 9 - 2 = 7
+</p>
+
+<p><b>Q2.</b><br>
+2x - 5 = 9 <br>
+⇒ 2x = 9 + 5 <br>
+⇒ 2x = 14 <br>
+⇒ x = 14/2 = 7
+</p>
+
+<p><b>Q3.</b><br>
+√256 <br>
+⇒ 16 × 16 = 256 <br>
+⇒ √256 = 16
+</p>
+
+<p><b>Q4.</b><br>
+25% = 50 <br>
+⇒ 25/100 × Number = 50 <br>
+⇒ Number = (50 × 100) / 25 <br>
+⇒ Number = 200
+</p>
+
+<p><b>Q5.</b><br>
+a = 3, b = 4 <br>
+⇒ a² + b² = 3² + 4² <br>
+⇒ 9 + 16 = 25
+</p>
+
+<p><b>Q6.</b><br>
+15² = 15 × 15 = 225
+</p>
+
+<p><b>Q7.</b><br>
+3x = 27 <br>
+⇒ x = 27/3 = 9
+</p>
+
+<p><b>Q8.</b><br>
+√(81 × 49) <br>
+⇒ √81 × √49 <br>
+⇒ 9 × 7 = 63
+</p>
+
+<p><b>Q9.</b><br>
+3x + 4x + 5x = 180° <br>
+⇒ 12x = 180 <br>
+⇒ x = 180/12 = 15
+</p>
+
+<p><b>Q10.</b><br>
+7² + 24² <br>
+⇒ 49 + 576 <br>
+⇒ 625
+</p>
+
+<p><b>Q11.</b><br>
+x² - 9 = 0 <br>
+⇒ x² = 9 <br>
+⇒ x = ±3
+</p>
+
+<p><b>Q12.</b><br>
+20% of 250 <br>
+⇒ 20/100 × 250 <br>
+⇒ 50
+</p>
+
+<p><b>Q13.</b><br>
+2³ × 3² <br>
+⇒ 8 × 9 <br>
+⇒ 72
+</p>
+
+<p><b>Q14.</b><br>
+√196 <br>
+⇒ 14 × 14 = 196 <br>
+⇒ √196 = 14
+</p>
+
+<p><b>Q15.</b><br>
+Area = 121 <br>
+⇒ Side = √121 = 11
+</p>
+
+<p><b>Q16.</b><br>
+x + 2 = 10 <br>
+⇒ x = 10 - 2 = 8
+</p>
+
+<p><b>Q17.</b><br>
+9³ = 9 × 9 × 9 = 729
+</p>
+
+<p><b>Q18.</b><br>
+4x = 20 <br>
+⇒ x = 20/4 = 5
+</p>
+
+<p><b>Q19.</b><br>
+√225 <br>
+⇒ 15 × 15 = 225 <br>
+⇒ √225 = 15
+</p>
+
+<p><b>Q20.</b><br>
+Area of rectangle = length × breadth <br>
+⇒ 12 × 8 = 96
+</p>
+<p><b>Q21.</b><br>
+1 से 10 तक का योग <br>
+⇒ n(n+1)/2 = 10×11/2 <br>
+⇒ 55
+</p>
+
+<p><b>Q22.</b><br>
+x² = 81 <br>
+⇒ x = ±√81 <br>
+⇒ x = ±9
+</p>
+
+<p><b>Q23.</b><br>
+30% of 400 <br>
+⇒ 30/100 × 400 <br>
+⇒ 120
+</p>
+
+<p><b>Q24.</b><br>
+5² + 12² <br>
+⇒ 25 + 144 <br>
+⇒ 169
+</p>
+
+<p><b>Q25.</b><br>
+√100 <br>
+⇒ 10 × 10 = 100 <br>
+⇒ √100 = 10
+</p>
+
+<p><b>Q26.</b><br>
+Area of triangle = 1/2 × base × height <br>
+⇒ 1/2 × 12 × 10 <br>
+⇒ 60
+</p>
+
+<p><b>Q27.</b><br>
+6x = 42 <br>
+⇒ x = 42/6 <br>
+⇒ 7
+</p>
+
+<p><b>Q28.</b><br>
+8² = 8 × 8 <br>
+⇒ 64
+</p>
+
+<p><b>Q29.</b><br>
+√121 <br>
+⇒ 11 × 11 = 121 <br>
+⇒ √121 = 11
+</p>
+
+<p><b>Q30.</b><br>
+9x = 81 <br>
+⇒ x = 81/9 <br>
+⇒ 9
+</p>
+
+<p><b>Q31.</b><br>
+x + 1/x = 5 <br>
+⇒ (x + 1/x)² = x² + 1/x² + 2 <br>
+⇒ 25 = x² + 1/x² + 2 <br>
+⇒ x² + 1/x² = 23
+</p>
+
+<p><b>Q32.</b><br>
+3x + 2 = 20 <br>
+⇒ 3x = 18 <br>
+⇒ x = 6
+</p>
+
+<p><b>Q33.</b><br>
+√400 <br>
+⇒ 20 × 20 = 400 <br>
+⇒ √400 = 20
+</p>
+
+<p><b>Q34.</b><br>
+40% = 80 <br>
+⇒ 40/100 × Number = 80 <br>
+⇒ Number = (80 × 100)/40 <br>
+⇒ 200
+</p>
+
+<p><b>Q35.</b><br>
+a = 4, b = 5 <br>
+⇒ a² + b² = 16 + 25 <br>
+⇒ 41
+</p>
+
+<p><b>Q36.</b><br>
+18² = 18 × 18 <br>
+⇒ 324
+</p>
+
+<p><b>Q37.</b><br>
+5x = 60 <br>
+⇒ x = 60/5 <br>
+⇒ 12
+</p>
+
+<p><b>Q38.</b><br>
+√(144 × 100) <br>
+⇒ √144 × √100 <br>
+⇒ 12 × 10 <br>
+⇒ 120
+</p>
+
+<p><b>Q39.</b><br>
+2x + 4x + 6x = 180° <br>
+⇒ 12x = 180 <br>
+⇒ x = 15
+</p>
+
+<p><b>Q40.</b><br>
+8² + 15² <br>
+⇒ 64 + 225 <br>
+⇒ 289
+</p>
+
+<p><b>Q41.</b><br>
+x² - 16 = 0 <br>
+⇒ x² = 16 <br>
+⇒ x = ±4
+</p>
+
+<p><b>Q42.</b><br>
+25% of 320 <br>
+⇒ 25/100 × 320 <br>
+⇒ 80
+</p>
+
+<p><b>Q43.</b><br>
+4³ × 2² <br>
+⇒ 64 × 4 <br>
+⇒ 256
+</p>
+
+<p><b>Q44.</b><br>
+√225 <br>
+⇒ 15 × 15 = 225 <br>
+⇒ √225 = 15
+</p>
+
+<p><b>Q45.</b><br>
+Area = 169 <br>
+⇒ Side = √169 <br>
+⇒ 13
+</p>
+
+<p><b>Q46.</b><br>
+x + 3 = 15 <br>
+⇒ x = 15 - 3 <br>
+⇒ 12
+</p>
+
+<p><b>Q47.</b><br>
+12³ <br>
+⇒ 12 × 12 × 12 <br>
+⇒ 1728
+</p>
+
+<p><b>Q48.</b><br>
+7x = 56 <br>
+⇒ x = 56/7 <br>
+⇒ 8
+</p>
+
+<p><b>Q49.</b><br>
+√361 <br>
+⇒ 19 × 19 = 361 <br>
+⇒ √361 = 19
+</p>
+
+<p><b>Q50.</b><br>
+Area = length × breadth <br>
+⇒ 15 × 10 <br>
+⇒ 150
+</p>
+
+<p><b>Q51.</b><br>
+1 से 15 तक का योग <br>
+⇒ n(n+1)/2 = 15×16/2 <br>
+⇒ 120
+</p>
+
+<p><b>Q52.</b><br>
+x² = 100 <br>
+⇒ x = ±√100 <br>
+⇒ ±10
+</p>
+
+<p><b>Q53.</b><br>
+35% of 200 <br>
+⇒ 35/100 × 200 <br>
+⇒ 70
+</p>
+
+<p><b>Q54.</b><br>
+9² + 12² <br>
+⇒ 81 + 144 <br>
+⇒ 225
+</p>
+
+<p><b>Q55.</b><br>
+√144 <br>
+⇒ 12 × 12 = 144 <br>
+⇒ √144 = 12
+</p>
+
+<p><b>Q56.</b><br>
+Area = 1/2 × base × height <br>
+⇒ 1/2 × 20 × 5 <br>
+⇒ 50
+</p>
+
+<p><b>Q57.</b><br>
+8x = 64 <br>
+⇒ x = 64/8 <br>
+⇒ 8
+</p>
+
+<p><b>Q58.</b><br>
+11² <br>
+⇒ 11 × 11 <br>
+⇒ 121
+</p>
+
+<p><b>Q59.</b><br>
+√169 <br>
+⇒ 13 × 13 = 169 <br>
+⇒ √169 = 13
+</p>
+
+<p><b>Q60.</b><br>
+10x = 100 <br>
+⇒ x = 100/10 <br>
+⇒ 10
+</p>
+
+<p><b>Q61.</b><br>
+x + 1/x = 6 <br>
+⇒ (x + 1/x)² = x² + 1/x² + 2 <br>
+⇒ 36 = x² + 1/x² + 2 <br>
+⇒ x² + 1/x² = 34
+</p>
+
+<p><b>Q62.</b><br>
+4x - 3 = 13 <br>
+⇒ 4x = 16 <br>
+⇒ x = 4
+</p>
+
+<p><b>Q63.</b><br>
+√625 <br>
+⇒ 25 × 25 = 625 <br>
+⇒ √625 = 25
+</p>
+
+<p><b>Q64.</b><br>
+50% = 75 <br>
+⇒ 50/100 × Number = 75 <br>
+⇒ Number = 150
+</p>
+
+<p><b>Q65.</b><br>
+a = 5, b = 12 <br>
+⇒ √(a² + b²) = √(25 + 144) <br>
+⇒ √169 = 13
+</p>
+
+<p><b>Q66.</b><br>
+21² <br>
+⇒ 21 × 21 <br>
+⇒ 441
+</p>
+
+<p><b>Q67.</b><br>
+6x = 90 <br>
+⇒ x = 90/6 <br>
+⇒ 15
+</p>
+
+<p><b>Q68.</b><br>
+√(256 × 121) <br>
+⇒ 16 × 11 <br>
+⇒ 176
+</p>
+
+<p><b>Q69.</b><br>
+x + 2x + 3x = 180° <br>
+⇒ 6x = 180 <br>
+⇒ x = 30
+</p>
+
+<p><b>Q70.</b><br>
+9² + 40² <br>
+⇒ 81 + 1600 <br>
+⇒ 1681
+</p>
+
+<p><b>Q71.</b><br>
+x² - 25 = 0 <br>
+⇒ x = ±5
+</p>
+
+<p><b>Q72.</b><br>
+15% of 400 <br>
+⇒ 15/100 × 400 <br>
+⇒ 60
+</p>
+
+<p><b>Q73.</b><br>
+5³ × 2² <br>
+⇒ 125 × 4 <br>
+⇒ 500
+</p>
+
+<p><b>Q74.</b><br>
+√289 <br>
+⇒ 17 × 17 = 289 <br>
+⇒ √289 = 17
+</p>
+
+<p><b>Q75.</b><br>
+Area = 196 <br>
+⇒ Side = √196 <br>
+⇒ 14
+</p>
+
+<p><b>Q76.</b><br>
+x + 4 = 18 <br>
+⇒ x = 14
+</p>
+
+<p><b>Q77.</b><br>
+13³ <br>
+⇒ 2197
+</p>
+
+<p><b>Q78.</b><br>
+9x = 72 <br>
+⇒ x = 8
+</p>
+
+<p><b>Q79.</b><br>
+√441 <br>
+⇒ 21 × 21 = 441 <br>
+⇒ 21
+</p>
+
+<p><b>Q80.</b><br>
+20 × 12 = 240
+</p>
+
+<p><b>Q81.</b><br>
+1 से 25 का योग <br>
+⇒ 25×26/2 = 325
+</p>
+
+<p><b>Q82.</b><br>
+x² = 121 <br>
+⇒ x = ±11
+</p>
+
+<p><b>Q83.</b><br>
+40% of 250 <br>
+⇒ 100
+</p>
+
+<p><b>Q84.</b><br>
+16² + 12² <br>
+⇒ 256 + 144 <br>
+⇒ 400
+</p>
+
+<p><b>Q85.</b><br>
+√324 <br>
+⇒ 18
+</p>
+
+<p><b>Q86.</b><br>
+1/2 × 30 × 6 <br>
+⇒ 90
+</p>
+
+<p><b>Q87.</b><br>
+12x = 144 <br>
+⇒ x = 12
+</p>
+
+<p><b>Q88.</b><br>
+14² = 196
+</p>
+
+<p><b>Q89.</b><br>
+√529 = 23
+</p>
+
+<p><b>Q90.</b><br>
+25 × 4 = 100
+</p>
+
+<p><b>Q91.</b><br>
+1 से 30 = 30×31/2 = 465
+</p>
+
+<p><b>Q92.</b><br>
+x² = 144 <br>
+⇒ x = ±12
+</p>
+
+<p><b>Q93.</b><br>
+60% of 150 <br>
+⇒ 90
+</p>
+
+<p><b>Q94.</b><br>
+20² + 21² <br>
+⇒ 400 + 441 <br>
+⇒ 841
+</p>
+
+<p><b>Q95.</b><br>
+√400 = 20
+</p>
+
+<p><b>Q96.</b><br>
+1/2 × 40 × 5 <br>
+⇒ 100
+</p>
+
+<p><b>Q97.</b><br>
+15x = 150 <br>
+⇒ x = 10
+</p>
+
+<p><b>Q98.</b><br>
+16² = 256
+</p>
+
+<p><b>Q99.</b><br>
+√576 = 24
+</p>
+
+<p><b>Q100.</b><br>
+50 × 2 = 100
+</p>
+
+
+</div>
+</body>
+</html>

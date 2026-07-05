@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    .quiz-container {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.question {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.answer {
+    color: green;
+    font-weight: bold;
+    display: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+let currentPage = 0;
+let perPage = 5;
+let questions;
+
+window.onload = function() {
+    questions = document.getElementsByClassName("question");
+    showPage(); // 👈 ab yahan call hoga (DOM load ke baad)
+};
+
+function showPage() {
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].style.display = "none";
+    }
+
+    let start = currentPage * perPage;
+
+    for (let i = start; i < start + perPage; i++) {
+        if (questions[i]) {
+            questions[i].style.display = "block";
+        }
+    }
+}
+
+function goNext() {
+    if ((currentPage + 1) * perPage < questions.length) {
+        currentPage++;
+        showPage();
+    }
+}
+
+function prevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        showPage();
+    }
+}
+
+function toggleAnswers(btn) {
+    let answers = document.querySelectorAll(".answer");
+
+    if (btn.innerText === "Show Answers") {
+        answers.forEach(ans => ans.style.display = "block");
+        btn.innerText = "Hide Answers";
+    } else {
+        answers.forEach(ans => ans.style.display = "none");
+        btn.innerText = "Show Answers";
+    }
+}
+</script>
+</head>
+<body>
+       <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">EduSite</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Hindi</a></li>
+        <li><a href="mcqenglish.html">English</a></li>
+        <li><a href="mcqmaths.html">Maths</a></li>
+        <li><a href="mcqscience.html">Science</a></li>
+        <li><a href="mcqgk.html">general knowledge</a></li>
+        <li><a href="mcqcggk.html">Cg Gk</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+<div class="quiz-container">
+
+    <div class="question">
+    <p>1. Identify the noun in the sentence: “Ram is playing.”</p>
+    <div class="options">
+        <label>A) playing</label>
+        <label>B) is</label>
+        <label>C) Ram</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: C) Ram</p>
+</div>
+
+<div class="question">
+    <p>2. Choose the correct article: ___ apple</p>
+    <div class="options">
+        <label>A) a</label>
+        <label>B) an</label>
+        <label>C) the</label>
+        <label>D) no article</label>
+    </div>
+    <p class="answer">Ans: B) an</p>
+</div>
+
+<div class="question">
+    <p>3. Identify the verb: “She runs fast.”</p>
+    <div class="options">
+        <label>A) She</label>
+        <label>B) runs</label>
+        <label>C) fast</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: B) runs</p>
+</div>
+
+<div class="question">
+    <p>4. Choose the synonym of “Happy”</p>
+    <div class="options">
+        <label>A) Sad</label>
+        <label>B) Angry</label>
+        <label>C) Joyful</label>
+        <label>D) Tired</label>
+    </div>
+    <p class="answer">Ans: C) Joyful</p>
+</div>
+
+<div class="question">
+    <p>5. Choose the antonym of “Hot”</p>
+    <div class="options">
+        <label>A) Warm</label>
+        <label>B) Cold</label>
+        <label>C) Heat</label>
+        <label>D) Boil</label>
+    </div>
+    <p class="answer">Ans: B) Cold</p>
+</div>
+
+<div class="question">
+    <p>6. “He ___ to school every day.”</p>
+    <div class="options">
+        <label>A) go</label>
+        <label>B) goes</label>
+        <label>C) going</label>
+        <label>D) gone</label>
+    </div>
+    <p class="answer">Ans: B) goes</p>
+</div>
+
+<div class="question">
+    <p>7. Identify the adjective: “She is a beautiful girl.”</p>
+    <div class="options">
+        <label>A) She</label>
+        <label>B) girl</label>
+        <label>C) beautiful</label>
+        <label>D) is</label>
+    </div>
+    <p class="answer">Ans: C) beautiful</p>
+</div>
+
+<div class="question">
+    <p>8. Choose the correct plural of “Child”</p>
+    <div class="options">
+        <label>A) Childs</label>
+        <label>B) Children</label>
+        <label>C) Childes</label>
+        <label>D) Childrens</label>
+    </div>
+    <p class="answer">Ans: B) Children</p>
+</div>
+
+<div class="question">
+    <p>9. Identify the pronoun: “They are coming.”</p>
+    <div class="options">
+        <label>A) They</label>
+        <label>B) are</label>
+        <label>C) coming</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) They</p>
+</div>
+
+<div class="question">
+    <p>10. Choose correct tense: “I ___ my homework.”</p>
+    <div class="options">
+        <label>A) did</label>
+        <label>B) do</label>
+        <label>C) done</label>
+        <label>D) doing</label>
+    </div>
+    <p class="answer">Ans: A) did</p>
+</div>
+
+<div class="question">
+    <p>11. Synonym of “Big”</p>
+    <div class="options">
+        <label>A) Small</label>
+        <label>B) Large</label>
+        <label>C) Tiny</label>
+        <label>D) Short</label>
+    </div>
+    <p class="answer">Ans: B) Large</p>
+</div>
+
+<div class="question">
+    <p>12. Antonym of “Easy”</p>
+    <div class="options">
+        <label>A) Simple</label>
+        <label>B) Hard</label>
+        <label>C) Clear</label>
+        <label>D) Fast</label>
+    </div>
+    <p class="answer">Ans: B) Hard</p>
+</div>
+
+<div class="question">
+    <p>13. “She ___ singing.”</p>
+    <div class="options">
+        <label>A) is</label>
+        <label>B) are</label>
+        <label>C) am</label>
+        <label>D) be</label>
+    </div>
+    <p class="answer">Ans: A) is</p>
+</div>
+
+<div class="question">
+    <p>14. Identify adverb: “He runs quickly.”</p>
+    <div class="options">
+        <label>A) He</label>
+        <label>B) runs</label>
+        <label>C) quickly</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: C) quickly</p>
+</div>
+
+<div class="question">
+    <p>15. Correct spelling?</p>
+    <div class="options">
+        <label>A) Beautifull</label>
+        <label>B) Beautiful</label>
+        <label>C) Beautifull</label>
+        <label>D) Beautifull</label>
+    </div>
+    <p class="answer">Ans: B) Beautiful</p>
+</div>
+
+<!-- continue same pattern -->
+
+<div class="question">
+    <p>16. “We ___ playing.”</p>
+    <div class="options">
+        <label>A) is</label>
+        <label>B) are</label>
+        <label>C) am</label>
+        <label>D) be</label>
+    </div>
+    <p class="answer">Ans: B) are</p>
+</div>
+
+<div class="question">
+    <p>17. Identify noun: “The dog barks.”</p>
+    <div class="options">
+        <label>A) dog</label>
+        <label>B) barks</label>
+        <label>C) the</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) dog</p>
+</div>
+
+<div class="question">
+    <p>18. Opposite of “Good”</p>
+    <div class="options">
+        <label>A) Nice</label>
+        <label>B) Bad</label>
+        <label>C) Better</label>
+        <label>D) Best</label>
+    </div>
+    <p class="answer">Ans: B) Bad</p>
+</div>
+
+<div class="question">
+    <p>19. “He ___ a car.”</p>
+    <div class="options">
+        <label>A) have</label>
+        <label>B) has</label>
+        <label>C) having</label>
+        <label>D) had</label>
+    </div>
+    <p class="answer">Ans: B) has</p>
+</div>
+
+<div class="question">
+    <p>20. Choose correct preposition: “He is ___ the room.”</p>
+    <div class="options">
+        <label>A) in</label>
+        <label>B) on</label>
+        <label>C) at</label>
+        <label>D) under</label>
+    </div>
+    <p class="answer">Ans: A) in</p>
+</div>
+<div class="question">
+    <p>21. Identify the adjective: “He is a tall boy.”</p>
+    <div class="options">
+        <label>A) He</label>
+        <label>B) tall</label>
+        <label>C) boy</label>
+        <label>D) is</label>
+    </div>
+    <p class="answer">Ans: B) tall</p>
+</div>
+
+<div class="question">
+    <p>22. Choose the correct tense: “She ___ her work.”</p>
+    <div class="options">
+        <label>A) finish</label>
+        <label>B) finishes</label>
+        <label>C) finishing</label>
+        <label>D) finisheds</label>
+    </div>
+    <p class="answer">Ans: B) finishes</p>
+</div>
+
+<div class="question">
+    <p>23. Synonym of “Quick”</p>
+    <div class="options">
+        <label>A) Slow</label>
+        <label>B) Fast</label>
+        <label>C) Lazy</label>
+        <label>D) Weak</label>
+    </div>
+    <p class="answer">Ans: B) Fast</p>
+</div>
+
+<div class="question">
+    <p>24. Antonym of “Strong”</p>
+    <div class="options">
+        <label>A) Powerful</label>
+        <label>B) Weak</label>
+        <label>C) Hard</label>
+        <label>D) Tough</label>
+    </div>
+    <p class="answer">Ans: B) Weak</p>
+</div>
+
+<div class="question">
+    <p>25. Identify the verb: “They play football.”</p>
+    <div class="options">
+        <label>A) They</label>
+        <label>B) play</label>
+        <label>C) football</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: B) play</p>
+</div>
+
+<div class="question">
+    <p>26. Choose correct plural of “Mouse”</p>
+    <div class="options">
+        <label>A) Mouses</label>
+        <label>B) Mice</label>
+        <label>C) Mousees</label>
+        <label>D) Mous</label>
+    </div>
+    <p class="answer">Ans: B) Mice</p>
+</div>
+
+<div class="question">
+    <p>27. Identify pronoun: “She is happy.”</p>
+    <div class="options">
+        <label>A) She</label>
+        <label>B) is</label>
+        <label>C) happy</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) She</p>
+</div>
+
+<div class="question">
+    <p>28. “We ___ going to school.”</p>
+    <div class="options">
+        <label>A) is</label>
+        <label>B) are</label>
+        <label>C) am</label>
+        <label>D) be</label>
+    </div>
+    <p class="answer">Ans: B) are</p>
+</div>
+
+<div class="question">
+    <p>29. Identify adverb: “He speaks softly.”</p>
+    <div class="options">
+        <label>A) He</label>
+        <label>B) speaks</label>
+        <label>C) softly</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: C) softly</p>
+</div>
+
+<div class="question">
+    <p>30. Correct spelling?</p>
+    <div class="options">
+        <label>A) Enviroment</label>
+        <label>B) Environment</label>
+        <label>C) Environmant</label>
+        <label>D) Envirnment</label>
+    </div>
+    <p class="answer">Ans: B) Environment</p>
+</div>
+
+<div class="question">
+    <p>31. Opposite of “Early”</p>
+    <div class="options">
+        <label>A) Late</label>
+        <label>B) Fast</label>
+        <label>C) Soon</label>
+        <label>D) Before</label>
+    </div>
+    <p class="answer">Ans: A) Late</p>
+</div>
+
+<div class="question">
+    <p>32. “He ___ eating food.”</p>
+    <div class="options">
+        <label>A) is</label>
+        <label>B) are</label>
+        <label>C) am</label>
+        <label>D) be</label>
+    </div>
+    <p class="answer">Ans: A) is</p>
+</div>
+
+<div class="question">
+    <p>33. Identify noun: “The sun shines.”</p>
+    <div class="options">
+        <label>A) sun</label>
+        <label>B) shines</label>
+        <label>C) the</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) sun</p>
+</div>
+
+<div class="question">
+    <p>34. Synonym of “Small”</p>
+    <div class="options">
+        <label>A) Big</label>
+        <label>B) Tiny</label>
+        <label>C) Large</label>
+        <label>D) Huge</label>
+    </div>
+    <p class="answer">Ans: B) Tiny</p>
+</div>
+
+<div class="question">
+    <p>35. Antonym of “Rich”</p>
+    <div class="options">
+        <label>A) Wealthy</label>
+        <label>B) Poor</label>
+        <label>C) Strong</label>
+        <label>D) Happy</label>
+    </div>
+    <p class="answer">Ans: B) Poor</p>
+</div>
+
+<div class="question">
+    <p>36. Identify adjective: “It is a red ball.”</p>
+    <div class="options">
+        <label>A) red</label>
+        <label>B) ball</label>
+        <label>C) is</label>
+        <label>D) it</label>
+    </div>
+    <p class="answer">Ans: A) red</p>
+</div>
+
+<div class="question">
+    <p>37. “They ___ finished their work.”</p>
+    <div class="options">
+        <label>A) has</label>
+        <label>B) have</label>
+        <label>C) hads</label>
+        <label>D) having</label>
+    </div>
+    <p class="answer">Ans: B) have</p>
+</div>
+
+<div class="question">
+    <p>38. Identify verb: “Birds fly.”</p>
+    <div class="options">
+        <label>A) Birds</label>
+        <label>B) fly</label>
+        <label>C) none</label>
+        <label>D) both</label>
+    </div>
+    <p class="answer">Ans: B) fly</p>
+</div>
+
+<div class="question">
+    <p>39. Opposite of “Dark”</p>
+    <div class="options">
+        <label>A) Black</label>
+        <label>B) Light</label>
+        <label>C) Night</label>
+        <label>D) Shadow</label>
+    </div>
+    <p class="answer">Ans: B) Light</p>
+</div>
+
+<div class="question">
+    <p>40. “She ___ a song.”</p>
+    <div class="options">
+        <label>A) sing</label>
+        <label>B) sings</label>
+        <label>C) singing</label>
+        <label>D) sung</label>
+    </div>
+    <p class="answer">Ans: B) sings</p>
+</div>
+
+<div class="question">
+    <p>41. Identify pronoun: “We are ready.”</p>
+    <div class="options">
+        <label>A) We</label>
+        <label>B) are</label>
+        <label>C) ready</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) We</p>
+</div>
+
+<div class="question">
+    <p>42. Synonym of “Smart”</p>
+    <div class="options">
+        <label>A) Clever</label>
+        <label>B) Slow</label>
+        <label>C) Weak</label>
+        <label>D) Lazy</label>
+    </div>
+    <p class="answer">Ans: A) Clever</p>
+</div>
+
+<div class="question">
+    <p>43. Antonym of “Clean”</p>
+    <div class="options">
+        <label>A) Dirty</label>
+        <label>B) Pure</label>
+        <label>C) Fresh</label>
+        <label>D) Clear</label>
+    </div>
+    <p class="answer">Ans: A) Dirty</p>
+</div>
+
+<div class="question">
+    <p>44. Identify adverb: “She speaks loudly.”</p>
+    <div class="options">
+        <label>A) She</label>
+        <label>B) speaks</label>
+        <label>C) loudly</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: C) loudly</p>
+</div>
+
+<div class="question">
+    <p>45. Correct spelling?</p>
+    <div class="options">
+        <label>A) Recieve</label>
+        <label>B) Receive</label>
+        <label>C) Receve</label>
+        <label>D) Receeve</label>
+    </div>
+    <p class="answer">Ans: B) Receive</p>
+</div>
+
+<div class="question">
+    <p>46. “He ___ to market.”</p>
+    <div class="options">
+        <label>A) go</label>
+        <label>B) goes</label>
+        <label>C) going</label>
+        <label>D) gone</label>
+    </div>
+    <p class="answer">Ans: B) goes</p>
+</div>
+
+<div class="question">
+    <p>47. Identify noun: “The boy runs.”</p>
+    <div class="options">
+        <label>A) boy</label>
+        <label>B) runs</label>
+        <label>C) the</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) boy</p>
+</div>
+
+<div class="question">
+    <p>48. Opposite of “High”</p>
+    <div class="options">
+        <label>A) Tall</label>
+        <label>B) Low</label>
+        <label>C) Big</label>
+        <label>D) Long</label>
+    </div>
+    <p class="answer">Ans: B) Low</p>
+</div>
+
+<div class="question">
+    <p>49. “I ___ my work.”</p>
+    <div class="options">
+        <label>A) do</label>
+        <label>B) does</label>
+        <label>C) doing</label>
+        <label>D) done</label>
+    </div>
+    <p class="answer">Ans: A) do</p>
+</div>
+
+<div class="question">
+    <p>50. Identify adjective: “It is a big house.”</p>
+    <div class="options">
+        <label>A) house</label>
+        <label>B) big</label>
+        <label>C) is</label>
+        <label>D) it</label>
+    </div>
+    <p class="answer">Ans: B) big</p>
+</div>
+<div class="question">
+    <p>51. Identify the noun: “The cat sleeps.”</p>
+    <div class="options">
+        <label>A) cat</label>
+        <label>B) sleeps</label>
+        <label>C) the</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) cat</p>
+</div>
+
+<div class="question">
+    <p>52. Synonym of “Angry”</p>
+    <div class="options">
+        <label>A) Happy</label>
+        <label>B) Furious</label>
+        <label>C) Calm</label>
+        <label>D) Soft</label>
+    </div>
+    <p class="answer">Ans: B) Furious</p>
+</div>
+
+<div class="question">
+    <p>53. Antonym of “Open”</p>
+    <div class="options">
+        <label>A) Close</label>
+        <label>B) Shut</label>
+        <label>C) Closed</label>
+        <label>D) All</label>
+    </div>
+    <p class="answer">Ans: D) All</p>
+</div>
+
+<div class="question">
+    <p>54. Identify the verb: “He writes a letter.”</p>
+    <div class="options">
+        <label>A) He</label>
+        <label>B) writes</label>
+        <label>C) letter</label>
+        <label>D) a</label>
+    </div>
+    <p class="answer">Ans: B) writes</p>
+</div>
+
+<div class="question">
+    <p>55. “They ___ playing cricket.”</p>
+    <div class="options">
+        <label>A) is</label>
+        <label>B) are</label>
+        <label>C) am</label>
+        <label>D) be</label>
+    </div>
+    <p class="answer">Ans: B) are</p>
+</div>
+
+<div class="question">
+    <p>56. Identify adjective: “She has a blue dress.”</p>
+    <div class="options">
+        <label>A) she</label>
+        <label>B) blue</label>
+        <label>C) dress</label>
+        <label>D) has</label>
+    </div>
+    <p class="answer">Ans: B) blue</p>
+</div>
+
+<div class="question">
+    <p>57. Opposite of “Soft”</p>
+    <div class="options">
+        <label>A) Smooth</label>
+        <label>B) Hard</label>
+        <label>C) Light</label>
+        <label>D) Weak</label>
+    </div>
+    <p class="answer">Ans: B) Hard</p>
+</div>
+
+<div class="question">
+    <p>58. Correct plural of “Foot”</p>
+    <div class="options">
+        <label>A) Foots</label>
+        <label>B) Feets</label>
+        <label>C) Feet</label>
+        <label>D) Footes</label>
+    </div>
+    <p class="answer">Ans: C) Feet</p>
+</div>
+
+<div class="question">
+    <p>59. Identify pronoun: “It is raining.”</p>
+    <div class="options">
+        <label>A) It</label>
+        <label>B) is</label>
+        <label>C) raining</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) It</p>
+</div>
+
+<div class="question">
+    <p>60. “She ___ her homework.”</p>
+    <div class="options">
+        <label>A) do</label>
+        <label>B) does</label>
+        <label>C) doing</label>
+        <label>D) done</label>
+    </div>
+    <p class="answer">Ans: B) does</p>
+</div>
+
+<div class="question">
+    <p>61. Synonym of “Brave”</p>
+    <div class="options">
+        <label>A) Coward</label>
+        <label>B) Bold</label>
+        <label>C) Weak</label>
+        <label>D) Fear</label>
+    </div>
+    <p class="answer">Ans: B) Bold</p>
+</div>
+
+<div class="question">
+    <p>62. Antonym of “Fast”</p>
+    <div class="options">
+        <label>A) Quick</label>
+        <label>B) Slow</label>
+        <label>C) Rapid</label>
+        <label>D) Speed</label>
+    </div>
+    <p class="answer">Ans: B) Slow</p>
+</div>
+
+<div class="question">
+    <p>63. Identify adverb: “He runs fast.”</p>
+    <div class="options">
+        <label>A) He</label>
+        <label>B) runs</label>
+        <label>C) fast</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: C) fast</p>
+</div>
+
+<div class="question">
+    <p>64. Correct spelling?</p>
+    <div class="options">
+        <label>A) Definately</label>
+        <label>B) Definitely</label>
+        <label>C) Definatly</label>
+        <label>D) Definetly</label>
+    </div>
+    <p class="answer">Ans: B) Definitely</p>
+</div>
+
+<div class="question">
+    <p>65. Identify noun: “The teacher teaches.”</p>
+    <div class="options">
+        <label>A) teacher</label>
+        <label>B) teaches</label>
+        <label>C) the</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) teacher</p>
+</div>
+
+<div class="question">
+    <p>66. “He ___ going to school.”</p>
+    <div class="options">
+        <label>A) is</label>
+        <label>B) are</label>
+        <label>C) am</label>
+        <label>D) be</label>
+    </div>
+    <p class="answer">Ans: A) is</p>
+</div>
+
+<div class="question">
+    <p>67. Opposite of “Young”</p>
+    <div class="options">
+        <label>A) Old</label>
+        <label>B) New</label>
+        <label>C) Fresh</label>
+        <label>D) Small</label>
+    </div>
+    <p class="answer">Ans: A) Old</p>
+</div>
+
+<div class="question">
+    <p>68. Identify adjective: “It is a small house.”</p>
+    <div class="options">
+        <label>A) small</label>
+        <label>B) house</label>
+        <label>C) is</label>
+        <label>D) it</label>
+    </div>
+    <p class="answer">Ans: A) small</p>
+</div>
+
+<div class="question">
+    <p>69. Synonym of “Begin”</p>
+    <div class="options">
+        <label>A) End</label>
+        <label>B) Start</label>
+        <label>C) Stop</label>
+        <label>D) Finish</label>
+    </div>
+    <p class="answer">Ans: B) Start</p>
+</div>
+
+<div class="question">
+    <p>70. Antonym of “Up”</p>
+    <div class="options">
+        <label>A) Above</label>
+        <label>B) Down</label>
+        <label>C) High</label>
+        <label>D) Top</label>
+    </div>
+    <p class="answer">Ans: B) Down</p>
+</div>
+
+<div class="question">
+    <p>71. Identify pronoun: “They are here.”</p>
+    <div class="options">
+        <label>A) They</label>
+        <label>B) are</label>
+        <label>C) here</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) They</p>
+</div>
+
+<div class="question">
+    <p>72. “I ___ a book.”</p>
+    <div class="options">
+        <label>A) read</label>
+        <label>B) reads</label>
+        <label>C) reading</label>
+        <label>D) readed</label>
+    </div>
+    <p class="answer">Ans: A) read</p>
+</div>
+
+<div class="question">
+    <p>73. Identify noun: “The sun rises.”</p>
+    <div class="options">
+        <label>A) sun</label>
+        <label>B) rises</label>
+        <label>C) the</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) sun</p>
+</div>
+
+<div class="question">
+    <p>74. Opposite of “Happy”</p>
+    <div class="options">
+        <label>A) Joyful</label>
+        <label>B) Sad</label>
+        <label>C) Glad</label>
+        <label>D) Smile</label>
+    </div>
+    <p class="answer">Ans: B) Sad</p>
+</div>
+
+<div class="question">
+    <p>75. Identify verb: “Birds sing.”</p>
+    <div class="options">
+        <label>A) Birds</label>
+        <label>B) sing</label>
+        <label>C) none</label>
+        <label>D) both</label>
+    </div>
+    <p class="answer">Ans: B) sing</p>
+</div>
+
+<div class="question">
+    <p>76. Correct plural of “Man”</p>
+    <div class="options">
+        <label>A) Mans</label>
+        <label>B) Men</label>
+        <label>C) Manes</label>
+        <label>D) Mens</label>
+    </div>
+    <p class="answer">Ans: B) Men</p>
+</div>
+
+<div class="question">
+    <p>77. Identify adverb: “She sings well.”</p>
+    <div class="options">
+        <label>A) She</label>
+        <label>B) sings</label>
+        <label>C) well</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: C) well</p>
+</div>
+
+<div class="question">
+    <p>78. Synonym of “Strong”</p>
+    <div class="options">
+        <label>A) Weak</label>
+        <label>B) Powerful</label>
+        <label>C) Small</label>
+        <label>D) Thin</label>
+    </div>
+    <p class="answer">Ans: B) Powerful</p>
+</div>
+
+<div class="question">
+    <p>79. Antonym of “Before”</p>
+    <div class="options">
+        <label>A) After</label>
+        <label>B) Early</label>
+        <label>C) Soon</label>
+        <label>D) Past</label>
+    </div>
+    <p class="answer">Ans: A) After</p>
+</div>
+
+<div class="question">
+    <p>80. Identify adjective: “He is a clever boy.”</p>
+    <div class="options">
+        <label>A) clever</label>
+        <label>B) boy</label>
+        <label>C) is</label>
+        <label>D) he</label>
+    </div>
+    <p class="answer">Ans: A) clever</p>
+</div>
+
+<div class="question">
+    <p>81. “She ___ tea.”</p>
+    <div class="options">
+        <label>A) drink</label>
+        <label>B) drinks</label>
+        <label>C) drinking</label>
+        <label>D) dranked</label>
+    </div>
+    <p class="answer">Ans: B) drinks</p>
+</div>
+
+<div class="question">
+    <p>82. Identify noun: “The child cries.”</p>
+    <div class="options">
+        <label>A) child</label>
+        <label>B) cries</label>
+        <label>C) the</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) child</p>
+</div>
+
+<div class="question">
+    <p>83. Opposite of “Full”</p>
+    <div class="options">
+        <label>A) Empty</label>
+        <label>B) Heavy</label>
+        <label>C) Large</label>
+        <label>D) Big</label>
+    </div>
+    <p class="answer">Ans: A) Empty</p>
+</div>
+
+<div class="question">
+    <p>84. Identify verb: “He drives a car.”</p>
+    <div class="options">
+        <label>A) He</label>
+        <label>B) drives</label>
+        <label>C) car</label>
+        <label>D) a</label>
+    </div>
+    <p class="answer">Ans: B) drives</p>
+</div>
+
+<div class="question">
+    <p>85. Synonym of “Cold”</p>
+    <div class="options">
+        <label>A) Cool</label>
+        <label>B) Hot</label>
+        <label>C) Warm</label>
+        <label>D) Heat</label>
+    </div>
+    <p class="answer">Ans: A) Cool</p>
+</div>
+
+<div class="question">
+    <p>86. Antonym of “Inside”</p>
+    <div class="options">
+        <label>A) Inner</label>
+        <label>B) Outside</label>
+        <label>C) In</label>
+        <label>D) Within</label>
+    </div>
+    <p class="answer">Ans: B) Outside</p>
+</div>
+
+<div class="question">
+    <p>87. Identify pronoun: “He is my friend.”</p>
+    <div class="options">
+        <label>A) He</label>
+        <label>B) is</label>
+        <label>C) friend</label>
+        <label>D) my</label>
+    </div>
+    <p class="answer">Ans: A) He</p>
+</div>
+
+<div class="question">
+    <p>88. “We ___ happy.”</p>
+    <div class="options">
+        <label>A) is</label>
+        <label>B) are</label>
+        <label>C) am</label>
+        <label>D) be</label>
+    </div>
+    <p class="answer">Ans: B) are</p>
+</div>
+
+<div class="question">
+    <p>89. Identify adjective: “It is a green tree.”</p>
+    <div class="options">
+        <label>A) green</label>
+        <label>B) tree</label>
+        <label>C) is</label>
+        <label>D) it</label>
+    </div>
+    <p class="answer">Ans: A) green</p>
+</div>
+
+<div class="question">
+    <p>90. Opposite of “Hot”</p>
+    <div class="options">
+        <label>A) Warm</label>
+        <label>B) Cold</label>
+        <label>C) Heat</label>
+        <label>D) Fire</label>
+    </div>
+    <p class="answer">Ans: B) Cold</p>
+</div>
+
+<div class="question">
+    <p>91. Identify noun: “The car moves fast.”</p>
+    <div class="options">
+        <label>A) car</label>
+        <label>B) moves</label>
+        <label>C) fast</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: A) car</p>
+</div>
+
+<div class="question">
+    <p>92. Synonym of “Happy”</p>
+    <div class="options">
+        <label>A) Sad</label>
+        <label>B) Joyful</label>
+        <label>C) Angry</label>
+        <label>D) Weak</label>
+    </div>
+    <p class="answer">Ans: B) Joyful</p>
+</div>
+
+<div class="question">
+    <p>93. Antonym of “Big”</p>
+    <div class="options">
+        <label>A) Large</label>
+        <label>B) Huge</label>
+        <label>C) Small</label>
+        <label>D) Giant</label>
+    </div>
+    <p class="answer">Ans: C) Small</p>
+</div>
+
+<div class="question">
+    <p>94. Identify verb: “She dances well.”</p>
+    <div class="options">
+        <label>A) She</label>
+        <label>B) dances</label>
+        <label>C) well</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: B) dances</p>
+</div>
+
+<div class="question">
+    <p>95. “He ___ a letter.”</p>
+    <div class="options">
+        <label>A) write</label>
+        <label>B) writes</label>
+        <label>C) writing</label>
+        <label>D) writed</label>
+    </div>
+    <p class="answer">Ans: B) writes</p>
+</div>
+
+<div class="question">
+    <p>96. Identify adjective: “It is a big tree.”</p>
+    <div class="options">
+        <label>A) big</label>
+        <label>B) tree</label>
+        <label>C) is</label>
+        <label>D) it</label>
+    </div>
+    <p class="answer">Ans: A) big</p>
+</div>
+
+<div class="question">
+    <p>97. Opposite of “Old”</p>
+    <div class="options">
+        <label>A) Young</label>
+        <label>B) New</label>
+        <label>C) Fresh</label>
+        <label>D) Small</label>
+    </div>
+    <p class="answer">Ans: A) Young</p>
+</div>
+
+<div class="question">
+    <p>98. Identify adverb: “He speaks loudly.”</p>
+    <div class="options">
+        <label>A) He</label>
+        <label>B) speaks</label>
+        <label>C) loudly</label>
+        <label>D) none</label>
+    </div>
+    <p class="answer">Ans: C) loudly</p>
+</div>
+
+<div class="question">
+    <p>99. Synonym of “Start”</p>
+    <div class="options">
+        <label>A) End</label>
+        <label>B) Begin</label>
+        <label>C) Stop</label>
+        <label>D) Close</label>
+    </div>
+    <p class="answer">Ans: B) Begin</p>
+</div>
+
+<div class="question">
+    <p>100. Antonym of “Light”</p>
+    <div class="options">
+        <label>A) Bright</label>
+        <label>B) Dark</label>
+        <label>C) Shine</label>
+        <label>D) Glow</label>
+    </div>
+    <p class="answer">Ans: B) Dark</p>
+</div>
+
+ <div style="display: flex; justify-content: space-between;">
+
+    <!-- Show/Hide Button (Left) -->
+    <button onclick="toggleAnswers(this)">Show Answers</button>
+
+     <button onclick="prevPage()">Previous</button>
+
+    <!-- Next Button (Right) -->
+    <button onclick="goNext()">Next</button>
+
+</div>
+</div>
+</body>
+</html>

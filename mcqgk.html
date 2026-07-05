@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+
+
+
+.quiz-container {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.question {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.answer {
+    color: green;
+    font-weight: bold;
+    display: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+let currentPage = 0;
+let perPage = 5;
+let questions;
+
+window.onload = function() {
+    questions = document.getElementsByClassName("question");
+    showPage(); // 👈 ab yahan call hoga (DOM load ke baad)
+};
+
+function showPage() {
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].style.display = "none";
+    }
+
+    let start = currentPage * perPage;
+
+    for (let i = start; i < start + perPage; i++) {
+        if (questions[i]) {
+            questions[i].style.display = "block";
+        }
+    }
+}
+
+function goNext() {
+    if ((currentPage + 1) * perPage < questions.length) {
+        currentPage++;
+        showPage();
+    }
+}
+
+function prevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        showPage();
+    }
+}
+
+function toggleAnswers(btn) {
+    let answers = document.querySelectorAll(".answer");
+
+    if (btn.innerText === "Show Answers") {
+        answers.forEach(ans => ans.style.display = "block");
+        btn.innerText = "Hide Answers";
+    } else {
+        answers.forEach(ans => ans.style.display = "none");
+        btn.innerText = "Show Answers";
+    }
+}
+</script>
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">EduSite</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Hindi</a></li>
+        <li><a href="mcqenglish.html">English</a></li>
+        <li><a href="mcqmaths.html">Maths</a></li>
+        <li><a href="mcqscience.html">Science</a></li>
+        <li><a href="mcqgk.html">general knowledge</a></li>
+        <li><a href="mcqcggk.html">Cg Gk</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+<div class="quiz-container">
+    # 200 General Knowledge Questions (HTML Format)
+
+```html
+<div class="question">
+    <p>1. भारत की राजधानी कौन-सी है?</p>
+    <div class="options">
+        <label>A) मुंबई</label>
+        <label>B) चेन्नई</label>
+        <label>C) नई दिल्ली</label>
+        <label>D) कोलकाता</label>
+    </div>
+    <p class="answer">Ans: C) नई दिल्ली</p>
+</div>
+
+<div class="question">
+    <p>2. भारत का राष्ट्रीय पशु कौन है?</p>
+    <div class="options">
+        <label>A) शेर</label>
+        <label>B) बाघ</label>
+        <label>C) हाथी</label>
+        <label>D) मोर</label>
+    </div>
+    <p class="answer">Ans: B) बाघ</p>
+</div>
+
+<div class="question">
+    <p>3. पृथ्वी का सबसे बड़ा महासागर कौन-सा है?</p>
+    <div class="options">
+        <label>A) अटलांटिक महासागर</label>
+        <label>B) हिंद महासागर</label>
+        <label>C) प्रशांत महासागर</label>
+        <label>D) आर्कटिक महासागर</label>
+    </div>
+    <p class="answer">Ans: C) प्रशांत महासागर</p>
+</div>
+
+<div class="question">
+    <p>4. भारत का राष्ट्रीय पक्षी कौन है?</p>
+    <div class="options">
+        <label>A) कबूतर</label>
+        <label>B) तोता</label>
+        <label>C) मोर</label>
+        <label>D) हंस</label>
+    </div>
+    <p class="answer">Ans: C) मोर</p>
+</div>
+
+<div class="question">
+    <p>5. सूर्य किस दिशा में उगता है?</p>
+    <div class="options">
+        <label>A) उत्तर</label>
+        <label>B) दक्षिण</label>
+        <label>C) पूर्व</label>
+        <label>D) पश्चिम</label>
+    </div>
+    <p class="answer">Ans: C) पूर्व</p>
+</div>
+
+<div class="question">
+    <p>6. भारत का राष्ट्रीय फूल कौन-सा है?</p>
+    <div class="options">
+        <label>A) गुलाब</label>
+        <label>B) कमल</label>
+        <label>C) चमेली</label>
+        <label>D) गेंदा</label>
+    </div>
+    <p class="answer">Ans: B) कमल</p>
+</div>
+
+<div class="question">
+    <p>7. पानी का रासायनिक सूत्र क्या है?</p>
+    <div class="options">
+        <label>A) CO2</label>
+        <label>B) H2O</label>
+        <label>C) O2</label>
+        <label>D) NaCl</label>
+    </div>
+    <p class="answer">Ans: B) H2O</p>
+</div>
+
+<div class="question">
+    <p>8. भारत के प्रथम प्रधानमंत्री कौन थे?</p>
+    <div class="options">
+        <label>A) महात्मा गांधी</label>
+        <label>B) सरदार पटेल</label>
+        <label>C) जवाहरलाल नेहरू</label>
+        <label>D) राजेंद्र प्रसाद</label>
+    </div>
+    <p class="answer">Ans: C) जवाहरलाल नेहरू</p>
+</div>
+
+<div class="question">
+    <p>9. विश्व का सबसे ऊँचा पर्वत कौन-सा है?</p>
+    <div class="options">
+        <label>A) कंचनजंगा</label>
+        <label>B) एवरेस्ट</label>
+        <label>C) नंगा पर्वत</label>
+        <label>D) अरावली</label>
+    </div>
+    <p class="answer">Ans: B) एवरेस्ट</p>
+</div>
+
+<div class="question">
+    <p>10. भारत का राष्ट्रीय खेल कौन-सा माना जाता है?</p>
+    <div class="options">
+        <label>A) क्रिकेट</label>
+        <label>B) फुटबॉल</label>
+        <label>C) हॉकी</label>
+        <label>D) कबड्डी</label>
+    </div>
+    <p class="answer">Ans: C) हॉकी</p>
+</div>
+
+<!-- Questions 11 to 200 continue in same format -->
+
+<div class="question">
+    <p>11. चंद्रमा पर कदम रखने वाला पहला व्यक्ति कौन था?</p>
+    <div class="options">
+        <label>A) यूरी गागरिन</label>
+        <label>B) नील आर्मस्ट्रांग</label>
+        <label>C) राकेश शर्मा</label>
+        <label>D) कल्पना चावला</label>
+    </div>
+    <p class="answer">Ans: B) नील आर्मस्ट्रांग</p>
+</div>
+
+<div class="question">
+    <p>12. भारत का संविधान कब लागू हुआ?</p>
+    <div class="options">
+        <label>A) 15 अगस्त 1947</label>
+        <label>B) 26 जनवरी 1950</label>
+        <label>C) 2 अक्टूबर 1948</label>
+        <label>D) 26 नवंबर 1949</label>
+    </div>
+    <p class="answer">Ans: B) 26 जनवरी 1950</p>
+</div>
+
+<div class="question">
+    <p>13. ताजमहल कहाँ स्थित है?</p>
+    <div class="options">
+        <label>A) दिल्ली</label>
+        <label>B) जयपुर</label>
+        <label>C) आगरा</label>
+        <label>D) लखनऊ</label>
+    </div>
+    <p class="answer">Ans: C) आगरा</p>
+</div>
+
+<div class="question">
+    <p>14. भारत का राष्ट्रीय गान किसने लिखा?</p>
+    <div class="options">
+        <label>A) बंकिमचंद्र चट्टोपाध्याय</label>
+        <label>B) प्रेमचंद</label>
+        <label>C) रवींद्रनाथ टैगोर</label>
+        <label>D) महादेवी वर्मा</label>
+    </div>
+    <p class="answer">Ans: C) रवींद्रनाथ टैगोर</p>
+</div>
+
+<div class="question">
+    <p>15. कंप्यूटर का जनक किसे कहा जाता है?</p>
+    <div class="options">
+        <label>A) आइजैक न्यूटन</label>
+        <label>B) चार्ल्स बैबेज</label>
+        <label>C) अल्बर्ट आइंस्टीन</label>
+        <label>D) थॉमस एडिसन</label>
+    </div>
+    <p class="answer">Ans: B) चार्ल्स बैबेज</p>
+</div>
+
+<!-- Continue similarly up to 200 -->
+```
+<div class="question">
+    <p>16. भारत का राष्ट्रीय वृक्ष कौन-सा है?</p>
+    <div class="options">
+        <label>A) नीम</label>
+        <label>B) बरगद</label>
+        <label>C) पीपल</label>
+        <label>D) आम</label>
+    </div>
+    <p class="answer">Ans: B) बरगद</p>
+</div>
+
+<div class="question">
+    <p>17. विश्व का सबसे बड़ा देश कौन-सा है?</p>
+    <div class="options">
+        <label>A) चीन</label>
+        <label>B) अमेरिका</label>
+        <label>C) रूस</label>
+        <label>D) भारत</label>
+    </div>
+    <p class="answer">Ans: C) रूस</p>
+</div>
+
+<div class="question">
+    <p>18. भारतीय रिजर्व बैंक की स्थापना कब हुई?</p>
+    <div class="options">
+        <label>A) 1935</label>
+        <label>B) 1947</label>
+        <label>C) 1950</label>
+        <label>D) 1921</label>
+    </div>
+    <p class="answer">Ans: A) 1935</p>
+</div>
+
+<div class="question">
+    <p>19. ग्रीनलैंड किस महासागर में स्थित है?</p>
+    <div class="options">
+        <label>A) हिंद महासागर</label>
+        <label>B) आर्कटिक महासागर</label>
+        <label>C) प्रशांत महासागर</label>
+        <label>D) अटलांटिक महासागर</label>
+    </div>
+    <p class="answer">Ans: B) आर्कटिक महासागर</p>
+</div>
+
+<div class="question">
+    <p>20. मानव शरीर में रक्त को शुद्ध कौन करता है?</p>
+    <div class="options">
+        <label>A) हृदय</label>
+        <label>B) फेफड़े</label>
+        <label>C) गुर्दे</label>
+        <label>D) यकृत</label>
+    </div>
+    <p class="answer">Ans: C) गुर्दे</p>
+</div>
+<div class="question">
+    <p>21. भारत का सबसे बड़ा राज्य क्षेत्रफल की दृष्टि से कौन-सा है?</p>
+    <div class="options">
+        <label>A) मध्य प्रदेश</label>
+        <label>B) महाराष्ट्र</label>
+        <label>C) राजस्थान</label>
+        <label>D) उत्तर प्रदेश</label>
+    </div>
+    <p class="answer">Ans: C) राजस्थान</p>
+</div>
+
+<div class="question">
+    <p>22. ‘वंदे मातरम्’ किसने लिखा?</p>
+    <div class="options">
+        <label>A) रवींद्रनाथ टैगोर</label>
+        <label>B) प्रेमचंद</label>
+        <label>C) बंकिमचंद्र चट्टोपाध्याय</label>
+        <label>D) मैथिलीशरण गुप्त</label>
+    </div>
+    <p class="answer">Ans: C) बंकिमचंद्र चट्टोपाध्याय</p>
+</div>
+
+<div class="question">
+    <p>23. सूर्य ग्रहण कब होता है?</p>
+    <div class="options">
+        <label>A) जब पृथ्वी सूर्य और चंद्रमा के बीच आती है</label>
+        <label>B) जब चंद्रमा सूर्य और पृथ्वी के बीच आता है</label>
+        <label>C) जब सूर्य पृथ्वी के पीछे होता है</label>
+        <label>D) इनमें से कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: B) जब चंद्रमा सूर्य और पृथ्वी के बीच आता है</p>
+</div>
+
+<div class="question">
+    <p>24. विश्व पर्यावरण दिवस कब मनाया जाता है?</p>
+    <div class="options">
+        <label>A) 5 जून</label>
+        <label>B) 10 जून</label>
+        <label>C) 15 अगस्त</label>
+        <label>D) 21 मार्च</label>
+    </div>
+    <p class="answer">Ans: A) 5 जून</p>
+</div>
+
+<div class="question">
+    <p>25. भारत में सबसे लंबी नदी कौन-सी है?</p>
+    <div class="options">
+        <label>A) यमुना</label>
+        <label>B) ब्रह्मपुत्र</label>
+        <label>C) गंगा</label>
+        <label>D) गोदावरी</label>
+    </div>
+    <p class="answer">Ans: C) गंगा</p>
+</div>
+<div class="question">
+    <p>26. भारत का राष्ट्रीय फल कौन-सा है?</p>
+    <div class="options">
+        <label>A) केला</label>
+        <label>B) आम</label>
+        <label>C) सेब</label>
+        <label>D) अंगूर</label>
+    </div>
+    <p class="answer">Ans: B) आम</p>
+</div>
+
+<div class="question">
+    <p>27. पृथ्वी का उपग्रह कौन है?</p>
+    <div class="options">
+        <label>A) मंगल</label>
+        <label>B) शुक्र</label>
+        <label>C) चंद्रमा</label>
+        <label>D) सूर्य</label>
+    </div>
+    <p class="answer">Ans: C) चंद्रमा</p>
+</div>
+
+<div class="question">
+    <p>28. भारत की सबसे लंबी नदी कौन-सी है?</p>
+    <div class="options">
+        <label>A) गंगा</label>
+        <label>B) गोदावरी</label>
+        <label>C) नर्मदा</label>
+        <label>D) कृष्णा</label>
+    </div>
+    <p class="answer">Ans: A) गंगा</p>
+</div>
+
+<div class="question">
+    <p>29. विश्व का सबसे बड़ा महाद्वीप कौन-सा है?</p>
+    <div class="options">
+        <label>A) अफ्रीका</label>
+        <label>B) यूरोप</label>
+        <label>C) एशिया</label>
+        <label>D) ऑस्ट्रेलिया</label>
+    </div>
+    <p class="answer">Ans: C) एशिया</p>
+</div>
+
+<div class="question">
+    <p>30. भारत का राष्ट्रीय गीत कौन-सा है?</p>
+    <div class="options">
+        <label>A) जन गण मन</label>
+        <label>B) सारे जहाँ से अच्छा</label>
+        <label>C) वंदे मातरम्</label>
+        <label>D) ऐ मेरे वतन के लोगो</label>
+    </div>
+    <p class="answer">Ans: C) वंदे मातरम्</p>
+</div>
+
+<div class="question">
+    <p>31. लाल ग्रह किसे कहा जाता है?</p>
+    <div class="options">
+        <label>A) बुध</label>
+        <label>B) मंगल</label>
+        <label>C) शनि</label>
+        <label>D) बृहस्पति</label>
+    </div>
+    <p class="answer">Ans: B) मंगल</p>
+</div>
+
+<div class="question">
+    <p>32. भारतीय संविधान के निर्माता कौन माने जाते हैं?</p>
+    <div class="options">
+        <label>A) महात्मा गांधी</label>
+        <label>B) जवाहरलाल नेहरू</label>
+        <label>C) डॉ. भीमराव अंबेडकर</label>
+        <label>D) सरदार पटेल</label>
+    </div>
+    <p class="answer">Ans: C) डॉ. भीमराव अंबेडकर</p>
+</div>
+
+<div class="question">
+    <p>33. भारत का राष्ट्रीय जलीय जीव कौन है?</p>
+    <div class="options">
+        <label>A) व्हेल</label>
+        <label>B) डॉल्फिन</label>
+        <label>C) मगरमच्छ</label>
+        <label>D) शार्क</label>
+    </div>
+    <p class="answer">Ans: B) डॉल्फिन</p>
+</div>
+
+<div class="question">
+    <p>34. ‘जय जवान जय किसान’ का नारा किसने दिया?</p>
+    <div class="options">
+        <label>A) महात्मा गांधी</label>
+        <label>B) लाल बहादुर शास्त्री</label>
+        <label>C) इंदिरा गांधी</label>
+        <label>D) सुभाष चंद्र बोस</label>
+    </div>
+    <p class="answer">Ans: B) लाल बहादुर शास्त्री</p>
+</div>
+
+<div class="question">
+    <p>35. विश्व का सबसे छोटा महाद्वीप कौन-सा है?</p>
+    <div class="options">
+        <label>A) यूरोप</label>
+        <label>B) ऑस्ट्रेलिया</label>
+        <label>C) अंटार्कटिका</label>
+        <label>D) अफ्रीका</label>
+    </div>
+    <p class="answer">Ans: B) ऑस्ट्रेलिया</p>
+</div>
+
+<div class="question">
+    <p>36. भारत में कितने राज्य हैं?</p>
+    <div class="options">
+        <label>A) 28</label>
+        <label>B) 29</label>
+        <label>C) 30</label>
+        <label>D) 27</label>
+    </div>
+    <p class="answer">Ans: A) 28</p>
+</div>
+
+<div class="question">
+    <p>37. विश्व का सबसे लंबा जानवर कौन-सा है?</p>
+    <div class="options">
+        <label>A) हाथी</label>
+        <label>B) जिराफ</label>
+        <label>C) ऊँट</label>
+        <label>D) घोड़ा</label>
+    </div>
+    <p class="answer">Ans: B) जिराफ</p>
+</div>
+
+<div class="question">
+    <p>38. भारत का राष्ट्रीय कैलेंडर कौन-सा है?</p>
+    <div class="options">
+        <label>A) विक्रम संवत</label>
+        <label>B) शक संवत</label>
+        <label>C) हिजरी संवत</label>
+        <label>D) ग्रेगोरियन कैलेंडर</label>
+    </div>
+    <p class="answer">Ans: B) शक संवत</p>
+</div>
+
+<div class="question">
+    <p>39. ताजमहल का निर्माण किसने कराया?</p>
+    <div class="options">
+        <label>A) अकबर</label>
+        <label>B) बाबर</label>
+        <label>C) शाहजहाँ</label>
+        <label>D) औरंगज़ेब</label>
+    </div>
+    <p class="answer">Ans: C) शाहजहाँ</p>
+</div>
+
+<div class="question">
+    <p>40. कंप्यूटर की स्थायी स्मृति क्या कहलाती है?</p>
+    <div class="options">
+        <label>A) RAM</label>
+        <label>B) ROM</label>
+        <label>C) CPU</label>
+        <label>D) USB</label>
+    </div>
+    <p class="answer">Ans: B) ROM</p>
+</div>
+
+<div class="question">
+    <p>41. भारत का राष्ट्रीय ध्वज किसने डिजाइन किया?</p>
+    <div class="options">
+        <label>A) पिंगली वेंकैया</label>
+        <label>B) महात्मा गांधी</label>
+        <label>C) जवाहरलाल नेहरू</label>
+        <label>D) सुभाष चंद्र बोस</label>
+    </div>
+    <p class="answer">Ans: A) पिंगली वेंकैया</p>
+</div>
+
+<div class="question">
+    <p>42. विश्व स्वास्थ्य संगठन (WHO) का मुख्यालय कहाँ है?</p>
+    <div class="options">
+        <label>A) पेरिस</label>
+        <label>B) न्यूयॉर्क</label>
+        <label>C) जिनेवा</label>
+        <label>D) लंदन</label>
+    </div>
+    <p class="answer">Ans: C) जिनेवा</p>
+</div>
+
+<div class="question">
+    <p>43. भारत का सबसे बड़ा बांध कौन-सा है?</p>
+    <div class="options">
+        <label>A) भाखड़ा नांगल</label>
+        <label>B) हीराकुंड</label>
+        <label>C) टिहरी</label>
+        <label>D) सरदार सरोवर</label>
+    </div>
+    <p class="answer">Ans: A) भाखड़ा नांगल</p>
+</div>
+
+<div class="question">
+    <p>44. ‘रामचरितमानस’ के रचयिता कौन हैं?</p>
+    <div class="options">
+        <label>A) सूरदास</label>
+        <label>B) तुलसीदास</label>
+        <label>C) कबीरदास</label>
+        <label>D) रहीम</label>
+    </div>
+    <p class="answer">Ans: B) तुलसीदास</p>
+</div>
+
+<div class="question">
+    <p>45. भारत का राष्ट्रीय मुद्रा चिन्ह क्या है?</p>
+    <div class="options">
+        <label>A) $</label>
+        <label>B) €</label>
+        <label>C) ₹</label>
+        <label>D) ¥</label>
+    </div>
+    <p class="answer">Ans: C) ₹</p>
+</div><div class="question">
+    <p>46. पृथ्वी सूर्य का चक्कर कितने दिनों में लगाती है?</p>
+    <div class="options">
+        <label>A) 365 दिन</label>
+        <label>B) 300 दिन</label>
+        <label>C) 200 दिन</label>
+        <label>D) 400 दिन</label>
+    </div>
+    <p class="answer">Ans: A) 365 दिन</p>
+</div>
+
+<div class="question">
+    <p>47. भारत की पहली महिला प्रधानमंत्री कौन थीं?</p>
+    <div class="options">
+        <label>A) प्रतिभा पाटिल</label>
+        <label>B) इंदिरा गांधी</label>
+        <label>C) सरोजिनी नायडू</label>
+        <label>D) सोनिया गांधी</label>
+    </div>
+    <p class="answer">Ans: B) इंदिरा गांधी</p>
+</div>
+
+<div class="question">
+    <p>48. सबसे कठोर पदार्थ कौन-सा है?</p>
+    <div class="options">
+        <label>A) सोना</label>
+        <label>B) लोहा</label>
+        <label>C) हीरा</label>
+        <label>D) चाँदी</label>
+    </div>
+    <p class="answer">Ans: C) हीरा</p>
+</div>
+
+<div class="question">
+    <p>49. ‘डिस्कवरी ऑफ इंडिया’ पुस्तक किसने लिखी?</p>
+    <div class="options">
+        <label>A) महात्मा गांधी</label>
+        <label>B) जवाहरलाल नेहरू</label>
+        <label>C) डॉ. राजेंद्र प्रसाद</label>
+        <label>D) सुभाष चंद्र बोस</label>
+    </div>
+    <p class="answer">Ans: B) जवाहरलाल नेहरू</p>
+</div>
+
+<div class="question">
+    <p>50. भारत का राष्ट्रीय पेड़ कौन-सा है?</p>
+    <div class="options">
+        <label>A) बरगद</label>
+        <label>B) नीम</label>
+        <label>C) आम</label>
+        <label>D) पीपल</label>
+    </div>
+    <p class="answer">Ans: A) बरगद</p>
+</div>
+
+<div class="question">
+    <p>51. विश्व का सबसे बड़ा रेगिस्तान कौन-सा है?</p>
+    <div class="options">
+        <label>A) थार</label>
+        <label>B) गोबी</label>
+        <label>C) सहारा</label>
+        <label>D) कालाहारी</label>
+    </div>
+    <p class="answer">Ans: C) सहारा</p>
+</div>
+
+<div class="question">
+    <p>52. भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO) की स्थापना कब हुई?</p>
+    <div class="options">
+        <label>A) 1969</label>
+        <label>B) 1950</label>
+        <label>C) 1975</label>
+        <label>D) 1980</label>
+    </div>
+    <p class="answer">Ans: A) 1969</p>
+</div>
+
+<div class="question">
+    <p>53. भारत का राष्ट्रीय जलचर कौन है?</p>
+    <div class="options">
+        <label>A) मगरमच्छ</label>
+        <label>B) डॉल्फिन</label>
+        <label>C) शार्क</label>
+        <label>D) कछुआ</label>
+    </div>
+    <p class="answer">Ans: B) डॉल्फिन</p>
+</div>
+
+<div class="question">
+    <p>54. ‘जन गण मन’ पहली बार कब गाया गया?</p>
+    <div class="options">
+        <label>A) 1911</label>
+        <label>B) 1947</label>
+        <label>C) 1950</label>
+        <label>D) 1920</label>
+    </div>
+    <p class="answer">Ans: A) 1911</p>
+</div>
+
+<div class="question">
+    <p>55. विश्व का सबसे ऊँचा जलप्रपात कौन-सा है?</p>
+    <div class="options">
+        <label>A) नियाग्रा</label>
+        <label>B) विक्टोरिया</label>
+        <label>C) एंजेल फॉल्स</label>
+        <label>D) जोग फॉल्स</label>
+    </div>
+    <p class="answer">Ans: C) एंजेल फॉल्स</p>
+</div>
+
+<div class="question">
+    <p>56. भारत की पहली महिला राष्ट्रपति कौन थीं?</p>
+    <div class="options">
+        <label>A) इंदिरा गांधी</label>
+        <label>B) प्रतिभा पाटिल</label>
+        <label>C) सरोजिनी नायडू</label>
+        <label>D) द्रौपदी मुर्मू</label>
+    </div>
+    <p class="answer">Ans: B) प्रतिभा पाटिल</p>
+</div>
+
+<div class="question">
+    <p>57. विश्व का सबसे बड़ा द्वीप कौन-सा है?</p>
+    <div class="options">
+        <label>A) ग्रीनलैंड</label>
+        <label>B) श्रीलंका</label>
+        <label>C) मेडागास्कर</label>
+        <label>D) जापान</label>
+    </div>
+    <p class="answer">Ans: A) ग्रीनलैंड</p>
+</div>
+
+<div class="question">
+    <p>58. भारत में सबसे अधिक बोली जाने वाली भाषा कौन-सी है?</p>
+    <div class="options">
+        <label>A) अंग्रेजी</label>
+        <label>B) हिंदी</label>
+        <label>C) तमिल</label>
+        <label>D) बंगाली</label>
+    </div>
+    <p class="answer">Ans: B) हिंदी</p>
+</div>
+
+<div class="question">
+    <p>59. ‘गीता’ किस महाकाव्य का भाग है?</p>
+    <div class="options">
+        <label>A) रामायण</label>
+        <label>B) महाभारत</label>
+        <label>C) वेद</label>
+        <label>D) उपनिषद</label>
+    </div>
+    <p class="answer">Ans: B) महाभारत</p>
+</div>
+
+<div class="question">
+    <p>60. विश्व का सबसे बड़ा पक्षी कौन-सा है?</p>
+    <div class="options">
+        <label>A) मोर</label>
+        <label>B) शुतुरमुर्ग</label>
+        <label>C) बाज</label>
+        <label>D) हंस</label>
+    </div>
+    <p class="answer">Ans: B) शुतुरमुर्ग</p>
+</div>
+
+<div class="question">
+    <p>61. भारत का राष्ट्रीय पशु कौन है?</p>
+    <div class="options">
+        <label>A) शेर</label>
+        <label>B) बाघ</label>
+        <label>C) हाथी</label>
+        <label>D) घोड़ा</label>
+    </div>
+    <p class="answer">Ans: B) बाघ</p>
+</div>
+
+<div class="question">
+    <p>62. संविधान दिवस कब मनाया जाता है?</p>
+    <div class="options">
+        <label>A) 26 जनवरी</label>
+        <label>B) 15 अगस्त</label>
+        <label>C) 26 नवंबर</label>
+        <label>D) 2 अक्टूबर</label>
+    </div>
+    <p class="answer">Ans: C) 26 नवंबर</p>
+</div>
+
+<div class="question">
+    <p>63. भारत का सबसे ऊँचा पर्वत शिखर कौन-सा है?</p>
+    <div class="options">
+        <label>A) कंचनजंगा</label>
+        <label>B) एवरेस्ट</label>
+        <label>C) नंदा देवी</label>
+        <label>D) धौलागिरी</label>
+    </div>
+    <p class="answer">Ans: A) कंचनजंगा</p>
+</div>
+
+<div class="question">
+    <p>64. ‘सत्यमेव जयते’ कहाँ से लिया गया है?</p>
+    <div class="options">
+        <label>A) रामायण</label>
+        <label>B) महाभारत</label>
+        <label>C) मुण्डक उपनिषद</label>
+        <label>D) गीता</label>
+    </div>
+    <p class="answer">Ans: C) मुण्डक उपनिषद</p>
+</div>
+
+<div class="question">
+    <p>65. विश्व का सबसे तेज़ दौड़ने वाला जानवर कौन-सा है?</p>
+    <div class="options">
+        <label>A) शेर</label>
+        <label>B) चीता</label>
+        <label>C) घोड़ा</label>
+        <label>D) हिरण</label>
+    </div>
+    <p class="answer">Ans: B) चीता</p>
+</div><div class="question">
+    <p>66. भारत का राष्ट्रीय पक्षी कौन-सा है?</p>
+    <div class="options">
+        <label>A) कबूतर</label>
+        <label>B) हंस</label>
+        <label>C) मोर</label>
+        <label>D) तोता</label>
+    </div>
+    <p class="answer">Ans: C) मोर</p>
+</div>
+
+<div class="question">
+    <p>67. विश्व का सबसे बड़ा महासागर कौन-सा है?</p>
+    <div class="options">
+        <label>A) अटलांटिक महासागर</label>
+        <label>B) हिंद महासागर</label>
+        <label>C) आर्कटिक महासागर</label>
+        <label>D) प्रशांत महासागर</label>
+    </div>
+    <p class="answer">Ans: D) प्रशांत महासागर</p>
+</div>
+
+<div class="question">
+    <p>68. भारत के वर्तमान संविधान में कितनी अनुसूचियाँ हैं?</p>
+    <div class="options">
+        <label>A) 10</label>
+        <label>B) 12</label>
+        <label>C) 14</label>
+        <label>D) 8</label>
+    </div>
+    <p class="answer">Ans: B) 12</p>
+</div>
+
+<div class="question">
+    <p>69. ‘भारत छोड़ो आंदोलन’ कब शुरू हुआ?</p>
+    <div class="options">
+        <label>A) 1940</label>
+        <label>B) 1942</label>
+        <label>C) 1935</label>
+        <label>D) 1947</label>
+    </div>
+    <p class="answer">Ans: B) 1942</p>
+</div>
+
+<div class="question">
+    <p>70. मानव शरीर की सबसे बड़ी ग्रंथि कौन-सी है?</p>
+    <div class="options">
+        <label>A) अग्न्याशय</label>
+        <label>B) थायरॉइड</label>
+        <label>C) यकृत</label>
+        <label>D) पिट्यूटरी</label>
+    </div>
+    <p class="answer">Ans: C) यकृत</p>
+</div>
+
+<div class="question">
+    <p>71. भारत का राष्ट्रीय फूल कौन-सा है?</p>
+    <div class="options">
+        <label>A) गुलाब</label>
+        <label>B) कमल</label>
+        <label>C) चमेली</label>
+        <label>D) सूरजमुखी</label>
+    </div>
+    <p class="answer">Ans: B) कमल</p>
+</div>
+
+<div class="question">
+    <p>72. ‘पंचतंत्र’ के लेखक कौन माने जाते हैं?</p>
+    <div class="options">
+        <label>A) कालिदास</label>
+        <label>B) विष्णु शर्मा</label>
+        <label>C) तुलसीदास</label>
+        <label>D) प्रेमचंद</label>
+    </div>
+    <p class="answer">Ans: B) विष्णु शर्मा</p>
+</div>
+
+<div class="question">
+    <p>73. भारत का राष्ट्रीय वृक्ष कौन-सा है?</p>
+    <div class="options">
+        <label>A) नीम</label>
+        <label>B) पीपल</label>
+        <label>C) बरगद</label>
+        <label>D) आम</label>
+    </div>
+    <p class="answer">Ans: C) बरगद</p>
+</div>
+
+<div class="question">
+    <p>74. पृथ्वी पर सबसे अधिक मात्रा में पाया जाने वाला धातु कौन-सा है?</p>
+    <div class="options">
+        <label>A) सोना</label>
+        <label>B) लोहा</label>
+        <label>C) एल्युमिनियम</label>
+        <label>D) तांबा</label>
+    </div>
+    <p class="answer">Ans: C) एल्युमिनियम</p>
+</div>
+
+<div class="question">
+    <p>75. ‘मिसाइल मैन ऑफ इंडिया’ किसे कहा जाता है?</p>
+    <div class="options">
+        <label>A) होमी भाभा</label>
+        <label>B) विक्रम साराभाई</label>
+        <label>C) ए.पी.जे. अब्दुल कलाम</label>
+        <label>D) सी.वी. रमन</label>
+    </div>
+    <p class="answer">Ans: C) ए.पी.जे. अब्दुल कलाम</p>
+</div>
+
+<div class="question">
+    <p>76. भारत की पहली महिला राज्यपाल कौन थीं?</p>
+    <div class="options">
+        <label>A) सरोजिनी नायडू</label>
+        <label>B) प्रतिभा पाटिल</label>
+        <label>C) इंदिरा गांधी</label>
+        <label>D) विजयलक्ष्मी पंडित</label>
+    </div>
+    <p class="answer">Ans: A) सरोजिनी नायडू</p>
+</div>
+
+<div class="question">
+    <p>77. विश्व का सबसे बड़ा स्तनपायी कौन-सा है?</p>
+    <div class="options">
+        <label>A) हाथी</label>
+        <label>B) ब्लू व्हेल</label>
+        <label>C) जिराफ</label>
+        <label>D) गैंडा</label>
+    </div>
+    <p class="answer">Ans: B) ब्लू व्हेल</p>
+</div>
+
+<div class="question">
+    <p>78. भारत का राष्ट्रीय जलीय जीव कौन-सा है?</p>
+    <div class="options">
+        <label>A) मगरमच्छ</label>
+        <label>B) शार्क</label>
+        <label>C) गंगा डॉल्फिन</label>
+        <label>D) कछुआ</label>
+    </div>
+    <p class="answer">Ans: C) गंगा डॉल्फिन</p>
+</div>
+
+<div class="question">
+    <p>79. ‘रामायण’ के लेखक कौन हैं?</p>
+    <div class="options">
+        <label>A) वाल्मीकि</label>
+        <label>B) तुलसीदास</label>
+        <label>C) व्यास</label>
+        <label>D) कालिदास</label>
+    </div>
+    <p class="answer">Ans: A) वाल्मीकि</p>
+</div>
+
+<div class="question">
+    <p>80. विश्व का सबसे बड़ा लोकतंत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) अमेरिका</label>
+        <label>B) रूस</label>
+        <label>C) भारत</label>
+        <label>D) जापान</label>
+    </div>
+    <p class="answer">Ans: C) भारत</p>
+</div>
+
+<div class="question">
+    <p>81. भारत का राष्ट्रीय खेल कौन-सा माना जाता है?</p>
+    <div class="options">
+        <label>A) क्रिकेट</label>
+        <label>B) फुटबॉल</label>
+        <label>C) हॉकी</label>
+        <label>D) कबड्डी</label>
+    </div>
+    <p class="answer">Ans: C) हॉकी</p>
+</div>
+
+<div class="question">
+    <p>82. मानव शरीर में कितनी हड्डियाँ होती हैं?</p>
+    <div class="options">
+        <label>A) 206</label>
+        <label>B) 208</label>
+        <label>C) 210</label>
+        <label>D) 212</label>
+    </div>
+    <p class="answer">Ans: A) 206</p>
+</div>
+
+<div class="question">
+    <p>83. भारत का पहला उपग्रह कौन-सा था?</p>
+    <div class="options">
+        <label>A) रोहिणी</label>
+        <label>B) आर्यभट्ट</label>
+        <label>C) भास्कर</label>
+        <label>D) चंद्रयान</label>
+    </div>
+    <p class="answer">Ans: B) आर्यभट्ट</p>
+</div>
+
+<div class="question">
+    <p>84. ‘सारे जहाँ से अच्छा’ किसने लिखा?</p>
+    <div class="options">
+        <label>A) मोहम्मद इकबाल</label>
+        <label>B) बंकिमचंद्र</label>
+        <label>C) रवींद्रनाथ टैगोर</label>
+        <label>D) प्रेमचंद</label>
+    </div>
+    <p class="answer">Ans: A) मोहम्मद इकबाल</p>
+</div>
+
+<div class="question">
+    <p>85. विश्व का सबसे बड़ा वन कौन-सा है?</p>
+    <div class="options">
+        <label>A) सुंदरवन</label>
+        <label>B) अमेज़न वन</label>
+        <label>C) गिर वन</label>
+        <label>D) काजीरंगा</label>
+    </div>
+    <p class="answer">Ans: B) अमेज़न वन</p>
+</div><div class="question">
+    <p>86. भारत की पहली महिला आईपीएस अधिकारी कौन थीं?</p>
+    <div class="options">
+        <label>A) किरण बेदी</label>
+        <label>B) इंदिरा गांधी</label>
+        <label>C) प्रतिभा पाटिल</label>
+        <label>D) सरोजिनी नायडू</label>
+    </div>
+    <p class="answer">Ans: A) किरण बेदी</p>
+</div>
+
+<div class="question">
+    <p>87. विश्व का सबसे बड़ा पर्वत कौन-सा है?</p>
+    <div class="options">
+        <label>A) एवरेस्ट</label>
+        <label>B) कंचनजंगा</label>
+        <label>C) अरावली</label>
+        <label>D) नंगा पर्वत</label>
+    </div>
+    <p class="answer">Ans: A) एवरेस्ट</p>
+</div>
+
+<div class="question">
+    <p>88. ‘गीतांजलि’ के लेखक कौन हैं?</p>
+    <div class="options">
+        <label>A) प्रेमचंद</label>
+        <label>B) रवींद्रनाथ टैगोर</label>
+        <label>C) महादेवी वर्मा</label>
+        <label>D) जयशंकर प्रसाद</label>
+    </div>
+    <p class="answer">Ans: B) रवींद्रनाथ टैगोर</p>
+</div>
+
+<div class="question">
+    <p>89. भारत का राष्ट्रीय गान कौन-सा है?</p>
+    <div class="options">
+        <label>A) वंदे मातरम्</label>
+        <label>B) जन गण मन</label>
+        <label>C) सारे जहाँ से अच्छा</label>
+        <label>D) ऐ मेरे वतन के लोगो</label>
+    </div>
+    <p class="answer">Ans: B) जन गण मन</p>
+</div>
+
+<div class="question">
+    <p>90. मानव शरीर का सबसे बड़ा अंग कौन-सा है?</p>
+    <div class="options">
+        <label>A) हृदय</label>
+        <label>B) यकृत</label>
+        <label>C) त्वचा</label>
+        <label>D) मस्तिष्क</label>
+    </div>
+    <p class="answer">Ans: C) त्वचा</p>
+</div>
+
+<div class="question">
+    <p>91. भारत में कुल कितने केंद्र शासित प्रदेश हैं?</p>
+    <div class="options">
+        <label>A) 6</label>
+        <label>B) 7</label>
+        <label>C) 8</label>
+        <label>D) 9</label>
+    </div>
+    <p class="answer">Ans: C) 8</p>
+</div>
+
+<div class="question">
+    <p>92. ‘भारत रत्न’ भारत का कौन-सा सम्मान है?</p>
+    <div class="options">
+        <label>A) सैन्य सम्मान</label>
+        <label>B) खेल सम्मान</label>
+        <label>C) सर्वोच्च नागरिक सम्मान</label>
+        <label>D) साहित्य सम्मान</label>
+    </div>
+    <p class="answer">Ans: C) सर्वोच्च नागरिक सम्मान</p>
+</div>
+
+<div class="question">
+    <p>93. विश्व का सबसे बड़ा नदी द्वीप कौन-सा है?</p>
+    <div class="options">
+        <label>A) माजुली</label>
+        <label>B) श्रीलंका</label>
+        <label>C) ग्रीनलैंड</label>
+        <label>D) अंडमान</label>
+    </div>
+    <p class="answer">Ans: A) माजुली</p>
+</div>
+
+<div class="question">
+    <p>94. भारत का राष्ट्रीय पशु कौन है?</p>
+    <div class="options">
+        <label>A) शेर</label>
+        <label>B) हाथी</label>
+        <label>C) बाघ</label>
+        <label>D) गैंडा</label>
+    </div>
+    <p class="answer">Ans: C) बाघ</p>
+</div>
+
+<div class="question">
+    <p>95. विश्व का सबसे लंबा रेलवे प्लेटफॉर्म कहाँ है?</p>
+    <div class="options">
+        <label>A) दिल्ली</label>
+        <label>B) गोरखपुर</label>
+        <label>C) हुबली</label>
+        <label>D) मुंबई</label>
+    </div>
+    <p class="answer">Ans: C) हुबली</p>
+</div>
+
+<div class="question">
+    <p>96. ‘मोनालिसा’ चित्र किसने बनाया?</p>
+    <div class="options">
+        <label>A) पिकासो</label>
+        <label>B) लियोनार्डो दा विंची</label>
+        <label>C) माइकल एंजेलो</label>
+        <label>D) वैन गॉग</label>
+    </div>
+    <p class="answer">Ans: B) लियोनार्डो दा विंची</p>
+</div>
+
+<div class="question">
+    <p>97. भारत का राष्ट्रीय फल कौन-सा है?</p>
+    <div class="options">
+        <label>A) केला</label>
+        <label>B) आम</label>
+        <label>C) सेब</label>
+        <label>D) संतरा</label>
+    </div>
+    <p class="answer">Ans: B) आम</p>
+</div>
+
+<div class="question">
+    <p>98. विश्व का सबसे बड़ा बंदरगाह कौन-सा है?</p>
+    <div class="options">
+        <label>A) मुंबई</label>
+        <label>B) सिंगापुर</label>
+        <label>C) शंघाई</label>
+        <label>D) दुबई</label>
+    </div>
+    <p class="answer">Ans: C) शंघाई</p>
+</div>
+
+<div class="question">
+    <p>99. ‘महाभारत’ के रचयिता कौन हैं?</p>
+    <div class="options">
+        <label>A) वाल्मीकि</label>
+        <label>B) व्यास</label>
+        <label>C) तुलसीदास</label>
+        <label>D) कालिदास</label>
+    </div>
+    <p class="answer">Ans: B) व्यास</p>
+</div>
+
+<div class="question">
+    <p>100. भारत की राष्ट्रीय नदी कौन-सी है?</p>
+    <div class="options">
+        <label>A) यमुना</label>
+        <label>B) गोदावरी</label>
+        <label>C) गंगा</label>
+        <label>D) नर्मदा</label>
+    </div>
+    <p class="answer">Ans: C) गंगा</p>
+</div>
+
+<div class="question">
+    <p>101. विश्व का सबसे बड़ा देश क्षेत्रफल की दृष्टि से कौन-सा है?</p>
+    <div class="options">
+        <label>A) चीन</label>
+        <label>B) अमेरिका</label>
+        <label>C) रूस</label>
+        <label>D) कनाडा</label>
+    </div>
+    <p class="answer">Ans: C) रूस</p>
+</div>
+
+<div class="question">
+    <p>102. भारत की पहली महिला मुख्यमंत्री कौन थीं?</p>
+    <div class="options">
+        <label>A) मायावती</label>
+        <label>B) सुचेता कृपलानी</label>
+        <label>C) जयललिता</label>
+        <label>D) ममता बनर्जी</label>
+    </div>
+    <p class="answer">Ans: B) सुचेता कृपलानी</p>
+</div>
+
+<div class="question">
+    <p>103. ‘गुरु नानक’ किस धर्म के संस्थापक थे?</p>
+    <div class="options">
+        <label>A) बौद्ध धर्म</label>
+        <label>B) जैन धर्म</label>
+        <label>C) सिख धर्म</label>
+        <label>D) पारसी धर्म</label>
+    </div>
+    <p class="answer">Ans: C) सिख धर्म</p>
+</div>
+
+<div class="question">
+    <p>104. भारत का सबसे बड़ा राज्य जनसंख्या की दृष्टि से कौन-सा है?</p>
+    <div class="options">
+        <label>A) बिहार</label>
+        <label>B) महाराष्ट्र</label>
+        <label>C) उत्तर प्रदेश</label>
+        <label>D) मध्य प्रदेश</label>
+    </div>
+    <p class="answer">Ans: C) उत्तर प्रदेश</p>
+</div>
+
+<div class="question">
+    <p>105. विश्व का सबसे लंबा पुल कौन-सा है?</p>
+    <div class="options">
+        <label>A) हावड़ा ब्रिज</label>
+        <label>B) बीजिंग ग्रैंड ब्रिज</label>
+        <label>C) गोल्डन गेट</label>
+        <label>D) बांद्रा-वर्ली सी लिंक</label>
+    </div>
+    <p class="answer">Ans: B) बीजिंग ग्रैंड ब्रिज</p>
+</div><div class="question">
+    <p>106. भारत का राष्ट्रीय जलीय जीव कौन-सा है?</p>
+    <div class="options">
+        <label>A) मगरमच्छ</label>
+        <label>B) गंगा डॉल्फिन</label>
+        <label>C) शार्क</label>
+        <label>D) कछुआ</label>
+    </div>
+    <p class="answer">Ans: B) गंगा डॉल्फिन</p>
+</div>
+
+<div class="question">
+    <p>107. ‘जय हिंद’ का नारा किसने दिया?</p>
+    <div class="options">
+        <label>A) महात्मा गांधी</label>
+        <label>B) सुभाष चंद्र बोस</label>
+        <label>C) भगत सिंह</label>
+        <label>D) जवाहरलाल नेहरू</label>
+    </div>
+    <p class="answer">Ans: B) सुभाष चंद्र बोस</p>
+</div>
+
+<div class="question">
+    <p>108. विश्व का सबसे बड़ा संग्रहालय कौन-सा है?</p>
+    <div class="options">
+        <label>A) लूव्र संग्रहालय</label>
+        <label>B) ब्रिटिश संग्रहालय</label>
+        <label>C) राष्ट्रीय संग्रहालय</label>
+        <label>D) भारतीय संग्रहालय</label>
+    </div>
+    <p class="answer">Ans: A) लूव्र संग्रहालय</p>
+</div>
+
+<div class="question">
+    <p>109. भारत की पहली महिला शिक्षिका कौन थीं?</p>
+    <div class="options">
+        <label>A) सरोजिनी नायडू</label>
+        <label>B) सावित्रीबाई फुले</label>
+        <label>C) इंदिरा गांधी</label>
+        <label>D) कल्पना चावला</label>
+    </div>
+    <p class="answer">Ans: B) सावित्रीबाई फुले</p>
+</div>
+
+<div class="question">
+    <p>110. सूर्य के सबसे निकट ग्रह कौन-सा है?</p>
+    <div class="options">
+        <label>A) शुक्र</label>
+        <label>B) पृथ्वी</label>
+        <label>C) बुध</label>
+        <label>D) मंगल</label>
+    </div>
+    <p class="answer">Ans: C) बुध</p>
+</div>
+
+<div class="question">
+    <p>111. भारत का राष्ट्रीय गीत कौन-सा है?</p>
+    <div class="options">
+        <label>A) जन गण मन</label>
+        <label>B) वंदे मातरम्</label>
+        <label>C) सारे जहाँ से अच्छा</label>
+        <label>D) ऐ मेरे वतन के लोगो</label>
+    </div>
+    <p class="answer">Ans: B) वंदे मातरम्</p>
+</div>
+
+<div class="question">
+    <p>112. विश्व का सबसे ऊँचा जानवर कौन-सा है?</p>
+    <div class="options">
+        <label>A) हाथी</label>
+        <label>B) जिराफ</label>
+        <label>C) ऊँट</label>
+        <label>D) घोड़ा</label>
+    </div>
+    <p class="answer">Ans: B) जिराफ</p>
+</div>
+
+<div class="question">
+    <p>113. भारत का पहला परमाणु परीक्षण कहाँ हुआ था?</p>
+    <div class="options">
+        <label>A) पोखरण</label>
+        <label>B) श्रीहरिकोटा</label>
+        <label>C) चंडीगढ़</label>
+        <label>D) जयपुर</label>
+    </div>
+    <p class="answer">Ans: A) पोखरण</p>
+</div>
+
+<div class="question">
+    <p>114. ‘इंकलाब जिंदाबाद’ का नारा किसने दिया?</p>
+    <div class="options">
+        <label>A) भगत सिंह</label>
+        <label>B) चंद्रशेखर आजाद</label>
+        <label>C) महात्मा गांधी</label>
+        <label>D) सुभाष चंद्र बोस</label>
+    </div>
+    <p class="answer">Ans: A) भगत सिंह</p>
+</div>
+
+<div class="question">
+    <p>115. विश्व का सबसे बड़ा मंदिर कौन-सा है?</p>
+    <div class="options">
+        <label>A) काशी विश्वनाथ</label>
+        <label>B) स्वर्ण मंदिर</label>
+        <label>C) अंकोरवाट</label>
+        <label>D) तिरुपति बालाजी</label>
+    </div>
+    <p class="answer">Ans: C) अंकोरवाट</p>
+</div>
+
+<div class="question">
+    <p>116. भारत का राष्ट्रीय पशु कौन-सा है?</p>
+    <div class="options">
+        <label>A) हाथी</label>
+        <label>B) बाघ</label>
+        <label>C) शेर</label>
+        <label>D) गैंडा</label>
+    </div>
+    <p class="answer">Ans: B) बाघ</p>
+</div>
+
+<div class="question">
+    <p>117. विश्व का सबसे बड़ा फूल कौन-सा है?</p>
+    <div class="options">
+        <label>A) कमल</label>
+        <label>B) गुलाब</label>
+        <label>C) रैफ्लेसिया</label>
+        <label>D) सूरजमुखी</label>
+    </div>
+    <p class="answer">Ans: C) रैफ्लेसिया</p>
+</div>
+
+<div class="question">
+    <p>118. ‘सत्यार्थ प्रकाश’ के लेखक कौन हैं?</p>
+    <div class="options">
+        <label>A) स्वामी विवेकानंद</label>
+        <label>B) स्वामी दयानंद सरस्वती</label>
+        <label>C) राजा राममोहन राय</label>
+        <label>D) बाल गंगाधर तिलक</label>
+    </div>
+    <p class="answer">Ans: B) स्वामी दयानंद सरस्वती</p>
+</div>
+
+<div class="question">
+    <p>119. भारत का राष्ट्रीय पक्षी कौन-सा है?</p>
+    <div class="options">
+        <label>A) हंस</label>
+        <label>B) कबूतर</label>
+        <label>C) मोर</label>
+        <label>D) तोता</label>
+    </div>
+    <p class="answer">Ans: C) मोर</p>
+</div>
+
+<div class="question">
+    <p>120. विश्व का सबसे बड़ा महाद्वीप कौन-सा है?</p>
+    <div class="options">
+        <label>A) अफ्रीका</label>
+        <label>B) एशिया</label>
+        <label>C) यूरोप</label>
+        <label>D) ऑस्ट्रेलिया</label>
+    </div>
+    <p class="answer">Ans: B) एशिया</p>
+</div>
+
+<div class="question">
+    <p>121. भारत में योजना आयोग की स्थापना कब हुई थी?</p>
+    <div class="options">
+        <label>A) 1947</label>
+        <label>B) 1950</label>
+        <label>C) 1952</label>
+        <label>D) 1960</label>
+    </div>
+    <p class="answer">Ans: B) 1950</p>
+</div>
+
+<div class="question">
+    <p>122. विश्व का सबसे बड़ा नदी डेल्टा कौन-सा है?</p>
+    <div class="options">
+        <label>A) सुंदरवन डेल्टा</label>
+        <label>B) नील डेल्टा</label>
+        <label>C) अमेज़न डेल्टा</label>
+        <label>D) गंगा डेल्टा</label>
+    </div>
+    <p class="answer">Ans: A) सुंदरवन डेल्टा</p>
+</div>
+
+<div class="question">
+    <p>123. ‘गीता रहस्य’ पुस्तक किसने लिखी?</p>
+    <div class="options">
+        <label>A) महात्मा गांधी</label>
+        <label>B) बाल गंगाधर तिलक</label>
+        <label>C) जवाहरलाल नेहरू</label>
+        <label>D) विनोबा भावे</label>
+    </div>
+    <p class="answer">Ans: B) बाल गंगाधर तिलक</p>
+</div>
+
+<div class="question">
+    <p>124. भारत का राष्ट्रीय वृक्ष कौन-सा है?</p>
+    <div class="options">
+        <label>A) नीम</label>
+        <label>B) पीपल</label>
+        <label>C) बरगद</label>
+        <label>D) आम</label>
+    </div>
+    <p class="answer">Ans: C) बरगद</p>
+</div>
+
+<div class="question">
+    <p>125. विश्व का सबसे लंबा नदी तंत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) गंगा</label>
+        <label>B) नील</label>
+        <label>C) अमेज़न</label>
+        <label>D) यांग्त्ज़ी</label>
+    </div>
+    <p class="answer">Ans: B) नील</p>
+</div><div class="question">
+    <p>126. भारत की पहली महिला राष्ट्रपति कौन थीं?</p>
+    <div class="options">
+        <label>A) इंदिरा गांधी</label>
+        <label>B) प्रतिभा पाटिल</label>
+        <label>C) द्रौपदी मुर्मू</label>
+        <label>D) सरोजिनी नायडू</label>
+    </div>
+    <p class="answer">Ans: B) प्रतिभा पाटिल</p>
+</div>
+
+<div class="question">
+    <p>127. ‘आर्यभट्ट’ कौन थे?</p>
+    <div class="options">
+        <label>A) कवि</label>
+        <label>B) वैज्ञानिक</label>
+        <label>C) गणितज्ञ एवं खगोलशास्त्री</label>
+        <label>D) राजा</label>
+    </div>
+    <p class="answer">Ans: C) गणितज्ञ एवं खगोलशास्त्री</p>
+</div>
+
+<div class="question">
+    <p>128. विश्व का सबसे गहरा महासागर कौन-सा है?</p>
+    <div class="options">
+        <label>A) हिंद महासागर</label>
+        <label>B) आर्कटिक महासागर</label>
+        <label>C) अटलांटिक महासागर</label>
+        <label>D) प्रशांत महासागर</label>
+    </div>
+    <p class="answer">Ans: D) प्रशांत महासागर</p>
+</div>
+
+<div class="question">
+    <p>129. भारत का राष्ट्रीय ध्वज कितने रंगों का होता है?</p>
+    <div class="options">
+        <label>A) 2</label>
+        <label>B) 3</label>
+        <label>C) 4</label>
+        <label>D) 5</label>
+    </div>
+    <p class="answer">Ans: B) 3</p>
+</div>
+
+<div class="question">
+    <p>130. ‘भारत का लौह पुरुष’ किसे कहा जाता है?</p>
+    <div class="options">
+        <label>A) महात्मा गांधी</label>
+        <label>B) जवाहरलाल नेहरू</label>
+        <label>C) सरदार वल्लभभाई पटेल</label>
+        <label>D) सुभाष चंद्र बोस</label>
+    </div>
+    <p class="answer">Ans: C) सरदार वल्लभभाई पटेल</p>
+</div>
+
+<div class="question">
+    <p>131. विश्व का सबसे बड़ा ज्वालामुखी कौन-सा है?</p>
+    <div class="options">
+        <label>A) फुजीयामा</label>
+        <label>B) मौना लोआ</label>
+        <label>C) विसुवियस</label>
+        <label>D) क्राकाटोआ</label>
+    </div>
+    <p class="answer">Ans: B) मौना लोआ</p>
+</div>
+
+<div class="question">
+    <p>132. भारत का राष्ट्रीय कैलेंडर कौन-सा है?</p>
+    <div class="options">
+        <label>A) विक्रम संवत</label>
+        <label>B) शक संवत</label>
+        <label>C) हिजरी संवत</label>
+        <label>D) ग्रेगोरियन कैलेंडर</label>
+    </div>
+    <p class="answer">Ans: B) शक संवत</p>
+</div>
+
+<div class="question">
+    <p>133. ‘दास कैपिटल’ पुस्तक किसने लिखी?</p>
+    <div class="options">
+        <label>A) कार्ल मार्क्स</label>
+        <label>B) लेनिन</label>
+        <label>C) रूसो</label>
+        <label>D) प्लेटो</label>
+    </div>
+    <p class="answer">Ans: A) कार्ल मार्क्स</p>
+</div>
+
+<div class="question">
+    <p>134. विश्व का सबसे बड़ा मरुस्थल कौन-सा है?</p>
+    <div class="options">
+        <label>A) सहारा</label>
+        <label>B) गोबी</label>
+        <label>C) थार</label>
+        <label>D) कालाहारी</label>
+    </div>
+    <p class="answer">Ans: A) सहारा</p>
+</div>
+
+<div class="question">
+    <p>135. भारत की पहली महिला राज्यपाल कौन थीं?</p>
+    <div class="options">
+        <label>A) प्रतिभा पाटिल</label>
+        <label>B) इंदिरा गांधी</label>
+        <label>C) सरोजिनी नायडू</label>
+        <label>D) मीरा कुमार</label>
+    </div>
+    <p class="answer">Ans: C) सरोजिनी नायडू</p>
+</div>
+
+<div class="question">
+    <p>136. ‘रामचरितमानस’ किस भाषा में लिखा गया है?</p>
+    <div class="options">
+        <label>A) संस्कृत</label>
+        <label>B) हिंदी</label>
+        <label>C) अवधी</label>
+        <label>D) ब्रज</label>
+    </div>
+    <p class="answer">Ans: C) अवधी</p>
+</div>
+
+<div class="question">
+    <p>137. विश्व का सबसे बड़ा पुस्तकालय कौन-सा है?</p>
+    <div class="options">
+        <label>A) ब्रिटिश लाइब्रेरी</label>
+        <label>B) लाइब्रेरी ऑफ कांग्रेस</label>
+        <label>C) नेशनल लाइब्रेरी</label>
+        <label>D) दिल्ली पब्लिक लाइब्रेरी</label>
+    </div>
+    <p class="answer">Ans: B) लाइब्रेरी ऑफ कांग्रेस</p>
+</div>
+
+<div class="question">
+    <p>138. भारत का राष्ट्रीय पशु कौन-सा है?</p>
+    <div class="options">
+        <label>A) शेर</label>
+        <label>B) हाथी</label>
+        <label>C) बाघ</label>
+        <label>D) गैंडा</label>
+    </div>
+    <p class="answer">Ans: C) बाघ</p>
+</div>
+
+<div class="question">
+    <p>139. ‘स्वराज मेरा जन्मसिद्ध अधिकार है’ किसने कहा?</p>
+    <div class="options">
+        <label>A) महात्मा गांधी</label>
+        <label>B) बाल गंगाधर तिलक</label>
+        <label>C) भगत सिंह</label>
+        <label>D) सुभाष चंद्र बोस</label>
+    </div>
+    <p class="answer">Ans: B) बाल गंगाधर तिलक</p>
+</div>
+
+<div class="question">
+    <p>140. विश्व का सबसे बड़ा जीवित पक्षी कौन-सा है?</p>
+    <div class="options">
+        <label>A) मोर</label>
+        <label>B) शुतुरमुर्ग</label>
+        <label>C) बाज</label>
+        <label>D) हंस</label>
+    </div>
+    <p class="answer">Ans: B) शुतुरमुर्ग</p>
+</div>
+
+<div class="question">
+    <p>141. भारत का राष्ट्रीय पुष्प कौन-सा है?</p>
+    <div class="options">
+        <label>A) गुलाब</label>
+        <label>B) कमल</label>
+        <label>C) चमेली</label>
+        <label>D) सूरजमुखी</label>
+    </div>
+    <p class="answer">Ans: B) कमल</p>
+</div>
+
+<div class="question">
+    <p>142. ‘मेघदूत’ के रचयिता कौन हैं?</p>
+    <div class="options">
+        <label>A) कालिदास</label>
+        <label>B) तुलसीदास</label>
+        <label>C) सूरदास</label>
+        <label>D) प्रेमचंद</label>
+    </div>
+    <p class="answer">Ans: A) कालिदास</p>
+</div>
+
+<div class="question">
+    <p>143. विश्व का सबसे बड़ा जलप्रपात कौन-सा है?</p>
+    <div class="options">
+        <label>A) नियाग्रा</label>
+        <label>B) विक्टोरिया</label>
+        <label>C) एंजेल फॉल्स</label>
+        <label>D) जोग फॉल्स</label>
+    </div>
+    <p class="answer">Ans: C) एंजेल फॉल्स</p>
+</div>
+
+<div class="question">
+    <p>144. भारत का पहला परमाणु रिएक्टर कौन-सा था?</p>
+    <div class="options">
+        <label>A) अप्सरा</label>
+        <label>B) ध्रुव</label>
+        <label>C) कामिनी</label>
+        <label>D) चक्र</label>
+    </div>
+    <p class="answer">Ans: A) अप्सरा</p>
+</div>
+
+<div class="question">
+    <p>145. विश्व का सबसे बड़ा नदी तंत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) नील</label>
+        <label>B) अमेज़न</label>
+        <label>C) गंगा</label>
+        <label>D) यांग्त्ज़ी</label>
+    </div>
+    <p class="answer">Ans: B) अमेज़न</p>
+</div><div class="question">
+    <p>146. भारत का राष्ट्रीय पक्षी कौन-सा है?</p>
+    <div class="options">
+        <label>A) कबूतर</label>
+        <label>B) मोर</label>
+        <label>C) हंस</label>
+        <label>D) तोता</label>
+    </div>
+    <p class="answer">Ans: B) मोर</p>
+</div>
+
+<div class="question">
+    <p>147. ‘पेनिसिलिन’ की खोज किसने की?</p>
+    <div class="options">
+        <label>A) न्यूटन</label>
+        <label>B) आइंस्टीन</label>
+        <label>C) अलेक्जेंडर फ्लेमिंग</label>
+        <label>D) एडिसन</label>
+    </div>
+    <p class="answer">Ans: C) अलेक्जेंडर फ्लेमिंग</p>
+</div>
+
+<div class="question">
+    <p>148. विश्व का सबसे बड़ा देश जनसंख्या की दृष्टि से कौन-सा है?</p>
+    <div class="options">
+        <label>A) भारत</label>
+        <label>B) चीन</label>
+        <label>C) अमेरिका</label>
+        <label>D) रूस</label>
+    </div>
+    <p class="answer">Ans: A) भारत</p>
+</div>
+
+<div class="question">
+    <p>149. भारत का राष्ट्रीय गान किसने लिखा?</p>
+    <div class="options">
+        <label>A) बंकिमचंद्र चट्टोपाध्याय</label>
+        <label>B) प्रेमचंद</label>
+        <label>C) रवींद्रनाथ टैगोर</label>
+        <label>D) मैथिलीशरण गुप्त</label>
+    </div>
+    <p class="answer">Ans: C) रवींद्रनाथ टैगोर</p>
+</div>
+
+<div class="question">
+    <p>150. विश्व का सबसे बड़ा द्वीप कौन-सा है?</p>
+    <div class="options">
+        <label>A) मेडागास्कर</label>
+        <label>B) ग्रीनलैंड</label>
+        <label>C) श्रीलंका</label>
+        <label>D) जापान</label>
+    </div>
+    <p class="answer">Ans: B) ग्रीनलैंड</p>
+</div>
+
+<div class="question">
+    <p>151. भारत का राष्ट्रीय वृक्ष कौन-सा है?</p>
+    <div class="options">
+        <label>A) नीम</label>
+        <label>B) पीपल</label>
+        <label>C) बरगद</label>
+        <label>D) आम</label>
+    </div>
+    <p class="answer">Ans: C) बरगद</p>
+</div>
+
+<div class="question">
+    <p>152. ‘भारत छोड़ो आंदोलन’ कब शुरू हुआ था?</p>
+    <div class="options">
+        <label>A) 1940</label>
+        <label>B) 1941</label>
+        <label>C) 1942</label>
+        <label>D) 1945</label>
+    </div>
+    <p class="answer">Ans: C) 1942</p>
+</div>
+
+<div class="question">
+    <p>153. विश्व का सबसे बड़ा महाद्वीप कौन-सा है?</p>
+    <div class="options">
+        <label>A) अफ्रीका</label>
+        <label>B) यूरोप</label>
+        <label>C) एशिया</label>
+        <label>D) ऑस्ट्रेलिया</label>
+    </div>
+    <p class="answer">Ans: C) एशिया</p>
+</div>
+
+<div class="question">
+    <p>154. भारत का राष्ट्रीय फल कौन-सा है?</p>
+    <div class="options">
+        <label>A) केला</label>
+        <label>B) आम</label>
+        <label>C) सेब</label>
+        <label>D) अंगूर</label>
+    </div>
+    <p class="answer">Ans: B) आम</p>
+</div>
+
+<div class="question">
+    <p>155. ‘माय एक्सपेरिमेंट्स विद ट्रुथ’ किसकी आत्मकथा है?</p>
+    <div class="options">
+        <label>A) जवाहरलाल नेहरू</label>
+        <label>B) सुभाष चंद्र बोस</label>
+        <label>C) महात्मा गांधी</label>
+        <label>D) भगत सिंह</label>
+    </div>
+    <p class="answer">Ans: C) महात्मा गांधी</p>
+</div>
+
+<div class="question">
+    <p>156. विश्व का सबसे बड़ा स्तनधारी कौन-सा है?</p>
+    <div class="options">
+        <label>A) हाथी</label>
+        <label>B) ब्लू व्हेल</label>
+        <label>C) जिराफ</label>
+        <label>D) गैंडा</label>
+    </div>
+    <p class="answer">Ans: B) ब्लू व्हेल</p>
+</div>
+
+<div class="question">
+    <p>157. भारत का पहला उपग्रह कौन-सा था?</p>
+    <div class="options">
+        <label>A) भास्कर</label>
+        <label>B) रोहिणी</label>
+        <label>C) आर्यभट्ट</label>
+        <label>D) चंद्रयान</label>
+    </div>
+    <p class="answer">Ans: C) आर्यभट्ट</p>
+</div>
+
+<div class="question">
+    <p>158. ‘विंग्स ऑफ फायर’ पुस्तक किसने लिखी?</p>
+    <div class="options">
+        <label>A) ए.पी.जे. अब्दुल कलाम</label>
+        <label>B) जवाहरलाल नेहरू</label>
+        <label>C) विक्रम साराभाई</label>
+        <label>D) होमी भाभा</label>
+    </div>
+    <p class="answer">Ans: A) ए.पी.जे. अब्दुल कलाम</p>
+</div>
+
+<div class="question">
+    <p>159. विश्व का सबसे ऊँचा जलप्रपात कौन-सा है?</p>
+    <div class="options">
+        <label>A) नियाग्रा</label>
+        <label>B) विक्टोरिया</label>
+        <label>C) एंजेल फॉल्स</label>
+        <label>D) जोग फॉल्स</label>
+    </div>
+    <p class="answer">Ans: C) एंजेल फॉल्स</p>
+</div>
+
+<div class="question">
+    <p>160. भारत का राष्ट्रीय जलीय जीव कौन-सा है?</p>
+    <div class="options">
+        <label>A) मगरमच्छ</label>
+        <label>B) शार्क</label>
+        <label>C) गंगा डॉल्फिन</label>
+        <label>D) कछुआ</label>
+    </div>
+    <p class="answer">Ans: C) गंगा डॉल्फिन</p>
+</div>
+
+<div class="question">
+    <p>161. ‘जन गण मन’ पहली बार कब गाया गया था?</p>
+    <div class="options">
+        <label>A) 1910</label>
+        <label>B) 1911</label>
+        <label>C) 1915</label>
+        <label>D) 1920</label>
+    </div>
+    <p class="answer">Ans: B) 1911</p>
+</div>
+
+<div class="question">
+    <p>162. विश्व का सबसे बड़ा रेगिस्तान कौन-सा है?</p>
+    <div class="options">
+        <label>A) थार</label>
+        <label>B) गोबी</label>
+        <label>C) सहारा</label>
+        <label>D) कालाहारी</label>
+    </div>
+    <p class="answer">Ans: C) सहारा</p>
+</div>
+
+<div class="question">
+    <p>163. भारत का राष्ट्रीय खेल कौन-सा माना जाता है?</p>
+    <div class="options">
+        <label>A) क्रिकेट</label>
+        <label>B) हॉकी</label>
+        <label>C) फुटबॉल</label>
+        <label>D) कबड्डी</label>
+    </div>
+    <p class="answer">Ans: B) हॉकी</p>
+</div>
+
+<div class="question">
+    <p>164. ‘रामचरितमानस’ के रचयिता कौन हैं?</p>
+    <div class="options">
+        <label>A) वाल्मीकि</label>
+        <label>B) कालिदास</label>
+        <label>C) तुलसीदास</label>
+        <label>D) सूरदास</label>
+    </div>
+    <p class="answer">Ans: C) तुलसीदास</p>
+</div>
+
+<div class="question">
+    <p>165. विश्व का सबसे तेज़ दौड़ने वाला जानवर कौन-सा है?</p>
+    <div class="options">
+        <label>A) शेर</label>
+        <label>B) घोड़ा</label>
+        <label>C) चीता</label>
+        <label>D) हिरण</label>
+    </div>
+    <p class="answer">Ans: C) चीता</p>
+</div><div class="question">
+    <p>166. भारत का सबसे स्वच्छ शहर कौन-सा माना गया है?</p>
+    <div class="options">
+        <label>A) भोपाल</label>
+        <label>B) इंदौर</label>
+        <label>C) दिल्ली</label>
+        <label>D) जयपुर</label>
+    </div>
+    <p class="answer">Ans: B) इंदौर</p>
+</div>
+
+<div class="question">
+    <p>167. ‘ऑपरेशन फ्लड’ किससे संबंधित है?</p>
+    <div class="options">
+        <label>A) हरित क्रांति</label>
+        <label>B) दुग्ध उत्पादन</label>
+        <label>C) अंतरिक्ष मिशन</label>
+        <label>D) जल संरक्षण</label>
+    </div>
+    <p class="answer">Ans: B) दुग्ध उत्पादन</p>
+</div>
+
+<div class="question">
+    <p>168. भारत का सबसे लंबा राष्ट्रीय राजमार्ग कौन-सा है?</p>
+    <div class="options">
+        <label>A) NH-44</label>
+        <label>B) NH-27</label>
+        <label>C) NH-19</label>
+        <label>D) NH-16</label>
+    </div>
+    <p class="answer">Ans: A) NH-44</p>
+</div>
+
+<div class="question">
+    <p>169. चंद्रयान-3 का लैंडर क्या कहलाता है?</p>
+    <div class="options">
+        <label>A) विक्रम</label>
+        <label>B) प्रज्ञान</label>
+        <label>C) रोहिणी</label>
+        <label>D) आर्यभट्ट</label>
+    </div>
+    <p class="answer">Ans: A) विक्रम</p>
+</div>
+
+<div class="question">
+    <p>170. भारत की सबसे लंबी नदी कौन-सी है?</p>
+    <div class="options">
+        <label>A) गंगा</label>
+        <label>B) गोदावरी</label>
+        <label>C) कृष्णा</label>
+        <label>D) नर्मदा</label>
+    </div>
+    <p class="answer">Ans: A) गंगा</p>
+</div>
+
+<div class="question">
+    <p>171. ‘जननी सुरक्षा योजना’ किससे संबंधित है?</p>
+    <div class="options">
+        <label>A) शिक्षा</label>
+        <label>B) मातृ स्वास्थ्य</label>
+        <label>C) कृषि</label>
+        <label>D) खेल</label>
+    </div>
+    <p class="answer">Ans: B) मातृ स्वास्थ्य</p>
+</div>
+
+<div class="question">
+    <p>172. भारत में PIN Code प्रणाली कब शुरू हुई?</p>
+    <div class="options">
+        <label>A) 1950</label>
+        <label>B) 1965</label>
+        <label>C) 1972</label>
+        <label>D) 1980</label>
+    </div>
+    <p class="answer">Ans: C) 1972</p>
+</div>
+
+<div class="question">
+    <p>173. विश्व का सबसे बड़ा लोकतंत्र कौन-सा है?</p>
+    <div class="options">
+        <label>A) अमेरिका</label>
+        <label>B) रूस</label>
+        <label>C) भारत</label>
+        <label>D) जापान</label>
+    </div>
+    <p class="answer">Ans: C) भारत</p>
+</div>
+
+<div class="question">
+    <p>174. भारतीय सेना दिवस कब मनाया जाता है?</p>
+    <div class="options">
+        <label>A) 15 जनवरी</label>
+        <label>B) 26 जनवरी</label>
+        <label>C) 10 मार्च</label>
+        <label>D) 5 जून</label>
+    </div>
+    <p class="answer">Ans: A) 15 जनवरी</p>
+</div>
+
+<div class="question">
+    <p>175. ‘गोल्डन रेवोल्यूशन’ किससे संबंधित है?</p>
+    <div class="options">
+        <label>A) दूध</label>
+        <label>B) फल एवं बागवानी</label>
+        <label>C) पेट्रोलियम</label>
+        <label>D) मछली पालन</label>
+    </div>
+    <p class="answer">Ans: B) फल एवं बागवानी</p>
+</div>
+
+<div class="question">
+    <p>176. भारत का सबसे ऊँचा जलप्रपात कौन-सा है?</p>
+    <div class="options">
+        <label>A) जोग फॉल्स</label>
+        <label>B) दूधसागर</label>
+        <label>C) कुंचिकल फॉल्स</label>
+        <label>D) चित्रकोट</label>
+    </div>
+    <p class="answer">Ans: C) कुंचिकल फॉल्स</p>
+</div>
+
+<div class="question">
+    <p>177. ‘ब्लू रेवोल्यूशन’ किससे संबंधित है?</p>
+    <div class="options">
+        <label>A) मत्स्य पालन</label>
+        <label>B) दुग्ध उत्पादन</label>
+        <label>C) हरित क्रांति</label>
+        <label>D) सूचना तकनीक</label>
+    </div>
+    <p class="answer">Ans: A) मत्स्य पालन</p>
+</div>
+
+<div class="question">
+    <p>178. भारत का सबसे बड़ा क्रिकेट स्टेडियम कौन-सा है?</p>
+    <div class="options">
+        <label>A) वानखेड़े</label>
+        <label>B) ईडन गार्डन्स</label>
+        <label>C) नरेंद्र मोदी स्टेडियम</label>
+        <label>D) चेपॉक</label>
+    </div>
+    <p class="answer">Ans: C) नरेंद्र मोदी स्टेडियम</p>
+</div>
+
+<div class="question">
+    <p>179. ‘हरित क्रांति’ के जनक भारत में किसे कहा जाता है?</p>
+    <div class="options">
+        <label>A) एम.एस. स्वामीनाथन</label>
+        <label>B) वर्गीज कुरियन</label>
+        <label>C) होमी भाभा</label>
+        <label>D) विक्रम साराभाई</label>
+    </div>
+    <p class="answer">Ans: A) एम.एस. स्वामीनाथन</p>
+</div>
+
+<div class="question">
+    <p>180. भारत का पहला डिजिटल राज्य कौन-सा है?</p>
+    <div class="options">
+        <label>A) गुजरात</label>
+        <label>B) केरल</label>
+        <label>C) महाराष्ट्र</label>
+        <label>D) तमिलनाडु</label>
+    </div>
+    <p class="answer">Ans: B) केरल</p>
+</div>
+
+<div class="question">
+    <p>181. ‘श्वेत क्रांति’ के जनक कौन हैं?</p>
+    <div class="options">
+        <label>A) वर्गीज कुरियन</label>
+        <label>B) एम.एस. स्वामीनाथन</label>
+        <label>C) ए.पी.जे. अब्दुल कलाम</label>
+        <label>D) होमी भाभा</label>
+    </div>
+    <p class="answer">Ans: A) वर्गीज कुरियन</p>
+</div>
+
+<div class="question">
+    <p>182. भारत का सबसे बड़ा बंदरगाह कौन-सा है?</p>
+    <div class="options">
+        <label>A) मुंबई पोर्ट</label>
+        <label>B) कांडला पोर्ट</label>
+        <label>C) विशाखापट्टनम पोर्ट</label>
+        <label>D) चेन्नई पोर्ट</label>
+    </div>
+    <p class="answer">Ans: B) कांडला पोर्ट</p>
+</div>
+
+<div class="question">
+    <p>183. ‘प्रोजेक्ट टाइगर’ कब शुरू हुआ?</p>
+    <div class="options">
+        <label>A) 1965</label>
+        <label>B) 1973</label>
+        <label>C) 1980</label>
+        <label>D) 1990</label>
+    </div>
+    <p class="answer">Ans: B) 1973</p>
+</div>
+
+<div class="question">
+    <p>184. ‘ऑपरेशन ग्रीन’ किससे संबंधित है?</p>
+    <div class="options">
+        <label>A) टमाटर, प्याज, आलू</label>
+        <label>B) दूध</label>
+        <label>C) मछली पालन</label>
+        <label>D) रेलवे</label>
+    </div>
+    <p class="answer">Ans: A) टमाटर, प्याज, आलू</p>
+</div>
+
+<div class="question">
+    <p>185. भारत की पहली मेट्रो रेल कहाँ चली?</p>
+    <div class="options">
+        <label>A) दिल्ली</label>
+        <label>B) मुंबई</label>
+        <label>C) कोलकाता</label>
+        <label>D) चेन्नई</label>
+    </div>
+    <p class="answer">Ans: C) कोलकाता</p>
+</div>
+
+<div class="question">
+    <p>186. ‘काला सोना’ किसे कहा जाता है?</p>
+    <div class="options">
+        <label>A) पेट्रोलियम</label>
+        <label>B) कोयला</label>
+        <label>C) लोहा</label>
+        <label>D) हीरा</label>
+    </div>
+    <p class="answer">Ans: B) कोयला</p>
+</div>
+
+<div class="question">
+    <p>187. भारत का सबसे बड़ा मरुस्थल कौन-सा है?</p>
+    <div class="options">
+        <label>A) सहारा</label>
+        <label>B) गोबी</label>
+        <label>C) थार</label>
+        <label>D) कालाहारी</label>
+    </div>
+    <p class="answer">Ans: C) थार</p>
+</div>
+
+<div class="question">
+    <p>188. ‘राष्ट्रीय विज्ञान दिवस’ कब मनाया जाता है?</p>
+    <div class="options">
+        <label>A) 28 फरवरी</label>
+        <label>B) 5 जून</label>
+        <label>C) 15 अगस्त</label>
+        <label>D) 26 जनवरी</label>
+    </div>
+    <p class="answer">Ans: A) 28 फरवरी</p>
+</div>
+
+<div class="question">
+    <p>189. भारत का पहला सुपर कंप्यूटर कौन-सा था?</p>
+    <div class="options">
+        <label>A) PARAM 8000</label>
+        <label>B) रोबोट</label>
+        <label>C) आर्यभट्ट</label>
+        <label>D) विक्रम</label>
+    </div>
+    <p class="answer">Ans: A) PARAM 8000</p>
+</div>
+
+<div class="question">
+    <p>190. ‘पीली क्रांति’ किससे संबंधित है?</p>
+    <div class="options">
+        <label>A) तेल उत्पादन</label>
+        <label>B) दूध</label>
+        <label>C) मछली पालन</label>
+        <label>D) चाय</label>
+    </div>
+    <p class="answer">Ans: A) तेल उत्पादन</p>
+</div>
+
+<div class="question">
+    <p>191. भारत का सबसे बड़ा गुरुद्वारा कौन-सा है?</p>
+    <div class="options">
+        <label>A) स्वर्ण मंदिर</label>
+        <label>B) बंगला साहिब</label>
+        <label>C) पटना साहिब</label>
+        <label>D) हेमकुंड साहिब</label>
+    </div>
+    <p class="answer">Ans: A) स्वर्ण मंदिर</p>
+</div>
+
+<div class="question">
+    <p>192. ‘राष्ट्रीय युवा दिवस’ कब मनाया जाता है?</p>
+    <div class="options">
+        <label>A) 12 जनवरी</label>
+        <label>B) 15 अगस्त</label>
+        <label>C) 26 जनवरी</label>
+        <label>D) 5 सितंबर</label>
+    </div>
+    <p class="answer">Ans: A) 12 जनवरी</p>
+</div>
+
+<div class="question">
+    <p>193. भारत का पहला AIIMS कहाँ स्थापित हुआ?</p>
+    <div class="options">
+        <label>A) भोपाल</label>
+        <label>B) दिल्ली</label>
+        <label>C) पटना</label>
+        <label>D) रायपुर</label>
+    </div>
+    <p class="answer">Ans: B) दिल्ली</p>
+</div>
+
+<div class="question">
+    <p>194. ‘राष्ट्रीय खेल दिवस’ कब मनाया जाता है?</p>
+    <div class="options">
+        <label>A) 29 अगस्त</label>
+        <label>B) 15 अगस्त</label>
+        <label>C) 26 जनवरी</label>
+        <label>D) 5 सितंबर</label>
+    </div>
+    <p class="answer">Ans: A) 29 अगस्त</p>
+</div>
+
+<div class="question">
+    <p>195. भारत का सबसे लंबा बांध कौन-सा है?</p>
+    <div class="options">
+        <label>A) हीराकुंड बांध</label>
+        <label>B) भाखड़ा नांगल</label>
+        <label>C) टिहरी बांध</label>
+        <label>D) सरदार सरोवर</label>
+    </div>
+    <p class="answer">Ans: A) हीराकुंड बांध</p>
+</div>
+
+<div class="question">
+    <p>196. ‘रेड प्लैनेट’ किस ग्रह को कहा जाता है?</p>
+    <div class="options">
+        <label>A) शुक्र</label>
+        <label>B) बुध</label>
+        <label>C) मंगल</label>
+        <label>D) शनि</label>
+    </div>
+    <p class="answer">Ans: C) मंगल</p>
+</div>
+
+<div class="question">
+    <p>197. भारत का पहला राष्ट्रीय उद्यान कौन-सा है?</p>
+    <div class="options">
+        <label>A) कान्हा</label>
+        <label>B) जिम कॉर्बेट</label>
+        <label>C) रणथंभौर</label>
+        <label>D) काजीरंगा</label>
+    </div>
+    <p class="answer">Ans: B) जिम कॉर्बेट</p>
+</div>
+
+<div class="question">
+    <p>198. ‘विश्व पर्यावरण दिवस’ कब मनाया जाता है?</p>
+    <div class="options">
+        <label>A) 5 जून</label>
+        <label>B) 10 जून</label>
+        <label>C) 15 अगस्त</label>
+        <label>D) 2 अक्टूबर</label>
+    </div>
+    <p class="answer">Ans: A) 5 जून</p>
+</div>
+
+<div class="question">
+    <p>199. ‘भारत का मैनचेस्टर’ किस शहर को कहा जाता है?</p>
+    <div class="options">
+        <label>A) मुंबई</label>
+        <label>B) अहमदाबाद</label>
+        <label>C) कानपुर</label>
+        <label>D) सूरत</label>
+    </div>
+    <p class="answer">Ans: B) अहमदाबाद</p>
+</div>
+
+<div class="question">
+    <p>200. भारत का सबसे बड़ा राज्य क्षेत्रफल की दृष्टि से कौन-सा है?</p>
+    <div class="options">
+        <label>A) मध्य प्रदेश</label>
+        <label>B) महाराष्ट्र</label>
+        <label>C) राजस्थान</label>
+        <label>D) उत्तर प्रदेश</label>
+    </div>
+    <p class="answer">Ans: C) राजस्थान</p>
+</div>
+
+
+
+    <div style="display: flex; justify-content: space-between;">
+
+    <!-- Show/Hide Button (Left) -->
+    <button onclick="toggleAnswers(this)">Show Answers</button>
+
+     <button onclick="prevPage()">Previous</button>
+
+    <!-- Next Button (Right) -->
+    <button onclick="goNext()">Next</button>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script1.js"></script>
+    <style>
+
+
+
+.quiz-container {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.question {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.answer {
+    color: green;
+    font-weight: bold;
+    display: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+let currentPage = 0;
+let perPage = 5;
+let questions;
+
+window.onload = function() {
+    questions = document.getElementsByClassName("question");
+    showPage(); // 👈 ab yahan call hoga (DOM load ke baad)
+};
+
+function showPage() {
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].style.display = "none";
+    }
+
+    let start = currentPage * perPage;
+
+    for (let i = start; i < start + perPage; i++) {
+        if (questions[i]) {
+            questions[i].style.display = "block";
+        }
+    }
+}
+
+function goNext() {
+    if ((currentPage + 1) * perPage < questions.length) {
+        currentPage++;
+        showPage();
+    }
+}
+
+function prevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        showPage();
+    }
+}
+
+function toggleAnswers(btn) {
+    let answers = document.querySelectorAll(".answer");
+
+    if (btn.innerText === "Show Answers") {
+        answers.forEach(ans => ans.style.display = "block");
+        btn.innerText = "Hide Answers";
+    } else {
+        answers.forEach(ans => ans.style.display = "none");
+        btn.innerText = "Show Answers";
+    }
+}
+</script>
+
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">EduSite</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Hindi</a></li>
+        <li><a href="mcqenglish.html">English</a></li>
+        <li><a href="mcqmaths.html">Maths</a></li>
+        <li><a href="mcqscience.html">Science</a></li>
+        <li><a href="mcqgk.html">general knowledge</a></li>
+        <li><a href="mcqcggk.html">Cg Gk</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="quiz-container">
+
+    <div class="question">
+        <p>1. “फल” किस प्रकार का शब्द है?</p>
+        <div class="options">
+            <label>A) संज्ञा</label>
+            <label>B) क्रिया</label>
+            <label>C) विशेषण</label>
+            <label>D) सर्वनाम</label>
+        </div>
+        <p class="answer">Ans: A) संज्ञा</p>
+    </div>
+
+    <div class="question">
+        <p>2. “सुंदर” क्या है?</p>
+        <div class="options">
+            <label>A) संज्ञा</label>
+            <label>B) विशेषण</label>
+            <label>C) क्रिया</label>
+            <label>D) सर्वनाम</label>
+        </div>
+        <p class="answer">Ans: B) विशेषण</p>
+    </div>
+
+    <div class="question">
+        <p>3. “मैं स्कूल जाता हूँ” में क्रिया क्या है?</p>
+        <div class="options">
+            <label>A) मैं</label>
+            <label>B) स्कूल</label>
+            <label>C) जाता</label>
+            <label>D) हूँ</label>
+        </div>
+        <p class="answer">Ans: C) जाता</p>
+    </div>
+
+    <div class="question">
+        <p>4. “राम” क्या है?</p>
+        <div class="options">
+            <label>A) सर्वनाम</label>
+            <label>B) संज्ञा</label>
+            <label>C) क्रिया</label>
+            <label>D) विशेषण</label>
+        </div>
+        <p class="answer">Ans: B) संज्ञा</p>
+    </div>
+    <div class="question">
+<p>5. “लड़का” किस लिंग का शब्द है?</p>
+<div class="options">
+<label>A) स्त्रीलिंग</label>
+<label>B) पुल्लिंग</label>
+<label>C) नपुंसकलिंग</label>
+<label>D) इनमें से कोई नहीं</label>
+</div>
+<p class="answer">Ans: B</p>
+</div>
+
+<!-- Q2 -->
+<div class="question">
+<p>6. “खाना” क्या है?</p>
+<div class="options">
+<label>A) संज्ञा</label>
+<label>B) क्रिया</label>
+<label>C) विशेषण</label>
+<label>D) सर्वनाम</label>
+</div>
+<p class="answer">Ans: B</p>
+</div>
+
+<!-- Q3 -->
+<div class="question">
+<p>7. “तेज़” किस प्रकार का शब्द है?</p>
+<div class="options">
+<label>A) क्रिया</label>
+<label>B) संज्ञा</label>
+<label>C) विशेषण</label>
+<label>D) सर्वनाम</label>
+</div>
+<p class="answer">Ans: C</p>
+</div>
+
+<!-- Q4 -->
+<div class="question">
+<p>8. “वे” कौन सा सर्वनाम है?</p>
+<div class="options">
+<label>A) पुरुषवाचक</label>
+<label>B) निश्चयवाचक</label>
+<label>C) प्रश्नवाचक</label>
+<label>D) संबंधवाचक</label>
+</div>
+<p class="answer">Ans: A</p>
+</div>
+
+<!-- Q5 -->
+<div class="question">
+<p>9. “किताब” क्या है?</p>
+<div class="options">
+<label>A) संज्ञा</label>
+<label>B) क्रिया</label>
+<label>C) विशेषण</label>
+<label>D) अव्यय</label>
+</div>
+<p class="answer">Ans: A</p>
+</div>
+
+<!-- Q6 -->
+<div class="question">
+<p>10. “सुंदर लड़की” में “सुंदर” क्या है?</p>
+<div class="options">
+<label>A) संज्ञा</label>
+<label>B) क्रिया</label>
+<label>C) विशेषण</label>
+<label>D) सर्वनाम</label>
+</div>
+<p class="answer">Ans: C</p>
+</div>
+
+<!-- Q7 -->
+<div class="question">
+<p>11. “राम दौड़ता है” में क्रिया क्या है?</p>
+<div class="options">
+<label>A) राम</label>
+<label>B) दौड़ता</label>
+<label>C) है</label>
+<label>D) दोनों B और C</label>
+</div>
+<p class="answer">Ans: D</p>
+</div>
+
+<!-- Q8 -->
+<div class="question">
+<p>12. “हम” कौन सा शब्द है?</p>
+<div class="options">
+<label>A) संज्ञा</label>
+<label>B) सर्वनाम</label>
+<label>C) क्रिया</label>
+<label>D) विशेषण</label>
+</div>
+<p class="answer">Ans: B</p>
+</div>
+
+<!-- Q9 -->
+<div class="question">
+<p>13. “नीला आसमान” में “नीला” क्या है?</p>
+<div class="options">
+<label>A) संज्ञा</label>
+<label>B) विशेषण</label>
+<label>C) क्रिया</label>
+<label>D) सर्वनाम</label>
+</div>
+<p class="answer">Ans: B</p>
+</div>
+
+<!-- Q10 -->
+<div class="question">
+<p>14. “बच्चे खेल रहे हैं” में क्रिया क्या है?</p>
+<div class="options">
+<label>A) बच्चे</label>
+<label>B) खेल</label>
+<label>C) रहे हैं</label>
+<label>D) दोनों B और C</label>
+</div>
+<p class="answer">Ans: D</p>
+</div>
+
+<!-- Q11 -->
+<div class="question">
+<p>15. “जल” का पर्यायवाची शब्द क्या है?</p>
+<div class="options">
+<label>A) आग</label>
+<label>B) पानी</label>
+<label>C) हवा</label>
+<label>D) धूप</label>
+</div>
+<p class="answer">Ans: B</p>
+</div>
+
+<!-- Q12 -->
+<div class="question">
+<p>16. “दिन” का विलोम शब्द क्या है?</p>
+<div class="options">
+<label>A) रात</label>
+<label>B) शाम</label>
+<label>C) सुबह</label>
+<label>D) दोपहर</label>
+</div>
+<p class="answer">Ans: A</p>
+</div>
+
+<!-- Q13 -->
+<div class="question">
+<p>17. “अच्छा” का विलोम क्या है?</p>
+<div class="options">
+<label>A) बुरा</label>
+<label>B) बड़ा</label>
+<label>C) छोटा</label>
+<label>D) लंबा</label>
+</div>
+<p class="answer">Ans: A</p>
+</div>
+
+<!-- Q14 -->
+<div class="question">
+<p>18. “बहुत” क्या है?</p>
+<div class="options">
+<label>A) विशेषण</label>
+<label>B) क्रिया</label>
+<label>C) संज्ञा</label>
+<label>D) सर्वनाम</label>
+</div>
+<p class="answer">Ans: A</p>
+</div>
+
+<!-- Q15 -->
+<div class="question">
+<p>19. “धीरे” क्या है?</p>
+<div class="options">
+<label>A) संज्ञा</label>
+<label>B) क्रिया</label>
+<label>C) क्रिया-विशेषण</label>
+<label>D) सर्वनाम</label>
+</div>
+<p class="answer">Ans: C</p>
+</div>
+<div class="question">
+    <p>20. तत्सम शब्द कौन-सा है?</p>
+    <div class="options">
+        <label>A) आग</label>
+        <label>B) अग्नि</label>
+        <label>C) पानी</label>
+        <label>D) दूध</label>
+    </div>
+    <p class="answer">Ans: B) अग्नि</p>
+</div>
+
+<div class="question">
+    <p>21. कर्ता प्रकट न हो तो?</p>
+    <div class="options">
+        <label>A) सकर्मक</label>
+        <label>B) अकर्मक</label>
+        <label>C) अपूर्ण</label>
+        <label>D) भाववाच्य</label>
+    </div>
+    <p class="answer">Ans: D) भाववाच्य</p>
+</div>
+
+<div class="question">
+    <p>22. 'राम ने सीता को फल दिया'?</p>
+    <div class="options">
+        <label>A) अकर्मक</label>
+        <label>B) सकर्मक</label>
+        <label>C) मिश्र</label>
+        <label>D) संयुक्त</label>
+    </div>
+    <p class="answer">Ans: B) सकर्मक</p>
+</div>
+
+<div class="question">
+    <p>23. समास शब्द?</p>
+    <div class="options">
+        <label>A) राजपुत्र</label>
+        <label>B) बहुत अच्छा</label>
+        <label>C) तेजी से</label>
+        <label>D) वह गया</label>
+    </div>
+    <p class="answer">Ans: A) राजपुत्र</p>
+</div>
+
+<div class="question">
+    <p>24. 'जलज' में समास?</p>
+    <div class="options">
+        <label>A) द्वंद्व</label>
+        <label>B) कर्मधारय</label>
+        <label>C) बहुव्रीहि</label>
+        <label>D) तत्पुरुष</label>
+    </div>
+    <p class="answer">Ans: D) तत्पुरुष</p>
+</div>
+
+<div class="question">
+    <p>25. जो कभी न मरे?</p>
+    <div class="options">
+        <label>A) अमर</label>
+        <label>B) मृत</label>
+        <label>C) जीवित</label>
+        <label>D) अजर</label>
+    </div>
+    <p class="answer">Ans: A) अमर</p>
+</div>
+
+<div class="question">
+    <p>26. विशेषण शब्द?</p>
+    <div class="options">
+        <label>A) दौड़ना</label>
+        <label>B) सुंदर</label>
+        <label>C) लड़का</label>
+        <label>D) खेल</label>
+    </div>
+    <p class="answer">Ans: B) सुंदर</p>
+</div>
+
+<div class="question">
+    <p>27. 'धीरे-धीरे' क्या है?</p>
+    <div class="options">
+        <label>A) संज्ञा</label>
+        <label>B) विशेषण</label>
+        <label>C) क्रिया विशेषण</label>
+        <label>D) सर्वनाम</label>
+    </div>
+    <p class="answer">Ans: C) क्रिया विशेषण</p>
+</div>
+
+<div class="question">
+    <p>28. संयुक्त वाक्य?</p>
+    <div class="options">
+        <label>A) वह आया</label>
+        <label>B) वह खाता है</label>
+        <label>C) वह आया और चला गया</label>
+        <label>D) वह अच्छा है</label>
+    </div>
+    <p class="answer">Ans: C) वह आया और चला गया</p>
+</div>
+
+<div class="question">
+    <p>29. 'अतिथि' का विलोम?</p>
+    <div class="options">
+        <label>A) मेहमान</label>
+        <label>B) यजमान</label>
+        <label>C) दोस्त</label>
+        <label>D) शत्रु</label>
+    </div>
+    <p class="answer">Ans: B) यजमान</p>
+</div>
+
+<div class="question">
+    <p>30. संधि से बना शब्द?</p>
+    <div class="options">
+        <label>A) विद्यालय</label>
+        <label>B) माता-पिता</label>
+        <label>C) पुस्तक</label>
+        <label>D) अध्यापक</label>
+    </div>
+    <p class="answer">Ans: A) विद्यालय</p>
+</div>
+
+<div class="question">
+    <p>31. विद्या + आलय = ?</p>
+    <div class="options">
+        <label>A) विद्यालय</label>
+        <label>B) विदालय</label>
+        <label>C) विदालय</label>
+        <label>D) विद्द्यालय</label>
+    </div>
+    <p class="answer">Ans: A) विद्यालय</p>
+</div>
+<div class="question">
+    <p>32. ‘गगन’ शब्द का पर्यायवाची क्या है?</p>
+    <div class="options">
+        <label>A) पृथ्वी</label>
+        <label>B) आकाश</label>
+        <label>C) जल</label>
+        <label>D) अग्नि</label>
+    </div>
+    <p class="answer">Ans: B) आकाश</p>
+</div>
+
+<div class="question">
+    <p>33. ‘निम्न में से कौन-सा शब्द सर्वनाम है?’</p>
+    <div class="options">
+        <label>A) वह</label>
+        <label>B) लड़का</label>
+        <label>C) सुंदर</label>
+        <label>D) दौड़ना</label>
+    </div>
+    <p class="answer">Ans: A) वह</p>
+</div>
+
+<div class="question">
+    <p>34. ‘राम पढ़ रहा है’ में काल कौन-सा है?</p>
+    <div class="options">
+        <label>A) भूतकाल</label>
+        <label>B) वर्तमान काल</label>
+        <label>C) भविष्य काल</label>
+        <label>D) कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: B) वर्तमान काल</p>
+</div>
+
+<div class="question">
+    <p>35. ‘निम्न में से कौन-सा शब्द क्रिया है?’</p>
+    <div class="options">
+        <label>A) खेलना</label>
+        <label>B) सुंदर</label>
+        <label>C) लड़का</label>
+        <label>D) घर</label>
+    </div>
+    <p class="answer">Ans: A) खेलना</p>
+</div>
+
+<div class="question">
+    <p>36. ‘विद्वान’ शब्द में कौन-सा प्रत्यय है?</p>
+    <div class="options">
+        <label>A) आन</label>
+        <label>B) मान</label>
+        <label>C) वान</label>
+        <label>D) दान</label>
+    </div>
+    <p class="answer">Ans: C) वान</p>
+</div>
+
+<div class="question">
+    <p>37. ‘निम्न में से कौन-सा शब्द बहुवचन है?’</p>
+    <div class="options">
+        <label>A) लड़का</label>
+        <label>B) लड़की</label>
+        <label>C) लड़के</label>
+        <label>D) बालक</label>
+    </div>
+    <p class="answer">Ans: C) लड़के</p>
+</div>
+
+<div class="question">
+    <p>38. ‘वह बहुत तेज दौड़ता है’ में ‘बहुत’ क्या है?</p>
+    <div class="options">
+        <label>A) विशेषण</label>
+        <label>B) क्रिया</label>
+        <label>C) क्रिया विशेषण</label>
+        <label>D) संज्ञा</label>
+    </div>
+    <p class="answer">Ans: C) क्रिया विशेषण</p>
+</div>
+
+<div class="question">
+    <p>39. ‘निम्न में से कौन-सा शब्द संज्ञा है?’</p>
+    <div class="options">
+        <label>A) सुंदर</label>
+        <label>B) दौड़ना</label>
+        <label>C) किताब</label>
+        <label>D) जल्दी</label>
+    </div>
+    <p class="answer">Ans: C) किताब</p>
+</div>
+
+<div class="question">
+    <p>40. ‘अमृत’ का विलोम क्या है?</p>
+    <div class="options">
+        <label>A) विष</label>
+        <label>B) जल</label>
+        <label>C) दूध</label>
+        <label>D) रस</label>
+    </div>
+    <p class="answer">Ans: A) विष</p>
+</div>
+
+<div class="question">
+    <p>41. ‘निम्न में से कौन-सा शब्द विशेषण है?’</p>
+    <div class="options">
+        <label>A) मीठा</label>
+        <label>B) पानी</label>
+        <label>C) चलना</label>
+        <label>D) बच्चा</label>
+    </div>
+    <p class="answer">Ans: A) मीठा</p>
+</div>
+
+<div class="question">
+    <p>42. ‘वह स्कूल जाएगा’ में काल कौन-सा है?</p>
+    <div class="options">
+        <label>A) भूतकाल</label>
+        <label>B) वर्तमान काल</label>
+        <label>C) भविष्य काल</label>
+        <label>D) कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: C) भविष्य काल</p>
+</div>
+
+<div class="question">
+    <p>43. ‘निम्न में से कौन-सा शब्द पुल्लिंग है?’</p>
+    <div class="options">
+        <label>A) लड़की</label>
+        <label>B) माता</label>
+        <label>C) राजा</label>
+        <label>D) बहन</label>
+    </div>
+    <p class="answer">Ans: C) राजा</p>
+</div>
+
+<div class="question">
+    <p>44. ‘सुंदरता’ में कौन-सा प्रत्यय है?</p>
+    <div class="options">
+        <label>A) रता</label>
+        <label>B) ता</label>
+        <label>C) दरता</label>
+        <label>D) त</label>
+    </div>
+    <p class="answer">Ans: B) ता</p>
+</div>
+
+<div class="question">
+    <p>45. ‘निम्न में से कौन-सा शब्द स्त्रीलिंग है?’</p>
+    <div class="options">
+        <label>A) बालक</label>
+        <label>B) शिक्षक</label>
+        <label>C) गाय</label>
+        <label>D) राजा</label>
+    </div>
+    <p class="answer">Ans: C) गाय</p>
+</div>
+
+<div class="question">
+    <p>46. ‘निम्न में से कौन-सा शब्द क्रिया विशेषण है?’</p>
+    <div class="options">
+        <label>A) धीरे</label>
+        <label>B) लड़का</label>
+        <label>C) सुंदर</label>
+        <label>D) खेल</label>
+    </div>
+    <p class="answer">Ans: A) धीरे</p>
+</div>
+
+<div class="question">
+    <p>47. ‘जल’ का पर्यायवाची क्या है?</p>
+    <div class="options">
+        <label>A) पानी</label>
+        <label>B) अग्नि</label>
+        <label>C) वायु</label>
+        <label>D) भूमि</label>
+    </div>
+    <p class="answer">Ans: A) पानी</p>
+</div>
+
+<div class="question">
+    <p>48. ‘निम्न में से कौन-सा शब्द विलोम है?’</p>
+    <div class="options">
+        <label>A) दिन - रात</label>
+        <label>B) पानी - जल</label>
+        <label>C) बड़ा - विशाल</label>
+        <label>D) तेज - शीघ्र</label>
+    </div>
+    <p class="answer">Ans: A) दिन - रात</p>
+</div>
+
+<div class="question">
+    <p>49. ‘निम्न में से कौन-सा शब्द समास है?’</p>
+    <div class="options">
+        <label>A) माता-पिता</label>
+        <label>B) बहुत बड़ा</label>
+        <label>C) तेजी से</label>
+        <label>D) वह गया</label>
+    </div>
+    <p class="answer">Ans: A) माता-पिता</p>
+</div>
+
+<div class="question">
+    <p>50. ‘निम्न में से कौन-सा शब्द संधि से बना है?’</p>
+    <div class="options">
+        <label>A) महात्मा</label>
+        <label>B) घर</label>
+        <label>C) बच्चा</label>
+        <label>D) खेल</label>
+    </div>
+    <p class="answer">Ans: A) महात्मा</p>
+</div>
+<div class="question">
+    <p>51. ‘निम्न में से कौन-सा शब्द तद्भव है?’</p>
+    <div class="options">
+        <label>A) नेत्र</label>
+        <label>B) नयन</label>
+        <label>C) आँख</label>
+        <label>D) दृष्टि</label>
+    </div>
+    <p class="answer">Ans: C) आँख</p>
+</div>
+
+<div class="question">
+    <p>52. ‘पुस्तक’ शब्द का लिंग क्या है?</p>
+    <div class="options">
+        <label>A) पुल्लिंग</label>
+        <label>B) स्त्रीलिंग</label>
+        <label>C) नपुंसक</label>
+        <label>D) कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: B) स्त्रीलिंग</p>
+</div>
+
+<div class="question">
+    <p>53. ‘निम्न में से कौन-सा शब्द विशेषण है?’</p>
+    <div class="options">
+        <label>A) लाल</label>
+        <label>B) दौड़ना</label>
+        <label>C) लड़का</label>
+        <label>D) पानी</label>
+    </div>
+    <p class="answer">Ans: A) लाल</p>
+</div>
+
+<div class="question">
+    <p>54. ‘वह धीरे बोलता है’ में ‘धीरे’ क्या है?</p>
+    <div class="options">
+        <label>A) संज्ञा</label>
+        <label>B) विशेषण</label>
+        <label>C) क्रिया विशेषण</label>
+        <label>D) सर्वनाम</label>
+    </div>
+    <p class="answer">Ans: C) क्रिया विशेषण</p>
+</div>
+
+<div class="question">
+    <p>55. ‘निम्न में से कौन-सा शब्द संज्ञा है?’</p>
+    <div class="options">
+        <label>A) चलना</label>
+        <label>B) किताब</label>
+        <label>C) सुंदर</label>
+        <label>D) तेज</label>
+    </div>
+    <p class="answer">Ans: B) किताब</p>
+</div>
+
+<div class="question">
+    <p>56. ‘अंधकार’ का विलोम क्या है?</p>
+    <div class="options">
+        <label>A) छाया</label>
+        <label>B) प्रकाश</label>
+        <label>C) रात</label>
+        <label>D) धूप</label>
+    </div>
+    <p class="answer">Ans: B) प्रकाश</p>
+</div>
+
+<div class="question">
+    <p>57. ‘निम्न में से कौन-सा शब्द बहुवचन है?’</p>
+    <div class="options">
+        <label>A) बच्चा</label>
+        <label>B) बच्चे</label>
+        <label>C) लड़की</label>
+        <label>D) बालक</label>
+    </div>
+    <p class="answer">Ans: B) बच्चे</p>
+</div>
+
+<div class="question">
+    <p>58. ‘वह स्कूल गया’ में काल कौन-सा है?</p>
+    <div class="options">
+        <label>A) भूतकाल</label>
+        <label>B) वर्तमान</label>
+        <label>C) भविष्य</label>
+        <label>D) कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: A) भूतकाल</p>
+</div>
+
+<div class="question">
+    <p>59. ‘निम्न में से कौन-सा शब्द सर्वनाम है?’</p>
+    <div class="options">
+        <label>A) राम</label>
+        <label>B) वह</label>
+        <label>C) सुंदर</label>
+        <label>D) खेल</label>
+    </div>
+    <p class="answer">Ans: B) वह</p>
+</div>
+
+<div class="question">
+    <p>60. ‘मीठा’ शब्द क्या है?</p>
+    <div class="options">
+        <label>A) संज्ञा</label>
+        <label>B) विशेषण</label>
+        <label>C) क्रिया</label>
+        <label>D) सर्वनाम</label>
+    </div>
+    <p class="answer">Ans: B) विशेषण</p>
+</div>
+
+<!-- Continue same pattern -->
+
+<div class="question">
+    <p>61. ‘जल’ का पर्यायवाची क्या है?</p>
+    <div class="options">
+        <label>A) पानी</label>
+        <label>B) अग्नि</label>
+        <label>C) वायु</label>
+        <label>D) पृथ्वी</label>
+    </div>
+    <p class="answer">Ans: A) पानी</p>
+</div>
+
+<div class="question">
+    <p>62. ‘निम्न में से कौन-सा शब्द पुल्लिंग है?’</p>
+    <div class="options">
+        <label>A) माता</label>
+        <label>B) बहन</label>
+        <label>C) राजा</label>
+        <label>D) गाय</label>
+    </div>
+    <p class="answer">Ans: C) राजा</p>
+</div>
+
+<div class="question">
+    <p>63. ‘सुंदरता’ में प्रत्यय क्या है?</p>
+    <div class="options">
+        <label>A) रता</label>
+        <label>B) ता</label>
+        <label>C) दर</label>
+        <label>D) त</label>
+    </div>
+    <p class="answer">Ans: B) ता</p>
+</div>
+
+<div class="question">
+    <p>64. ‘निम्न में से कौन-सा शब्द क्रिया है?’</p>
+    <div class="options">
+        <label>A) दौड़ना</label>
+        <label>B) सुंदर</label>
+        <label>C) घर</label>
+        <label>D) पानी</label>
+    </div>
+    <p class="answer">Ans: A) दौड़ना</p>
+</div>
+
+<div class="question">
+    <p>65. ‘वह तेज दौड़ता है’ में ‘तेज’ क्या है?</p>
+    <div class="options">
+        <label>A) संज्ञा</label>
+        <label>B) विशेषण</label>
+        <label>C) क्रिया</label>
+        <label>D) सर्वनाम</label>
+    </div>
+    <p class="answer">Ans: B) विशेषण</p>
+</div>
+
+<div class="question">
+    <p>66. ‘दिन’ का विलोम क्या है?</p>
+    <div class="options">
+        <label>A) प्रकाश</label>
+        <label>B) रात</label>
+        <label>C) अंधेरा</label>
+        <label>D) सूरज</label>
+    </div>
+    <p class="answer">Ans: B) रात</p>
+</div>
+
+<div class="question">
+    <p>67. ‘निम्न में से कौन-सा शब्द स्त्रीलिंग है?’</p>
+    <div class="options">
+        <label>A) बालक</label>
+        <label>B) राजा</label>
+        <label>C) लड़की</label>
+        <label>D) शिक्षक</label>
+    </div>
+    <p class="answer">Ans: C) लड़की</p>
+</div>
+
+<div class="question">
+    <p>68. ‘वह खा रहा है’ में काल कौन-सा है?</p>
+    <div class="options">
+        <label>A) भूतकाल</label>
+        <label>B) वर्तमान काल</label>
+        <label>C) भविष्य काल</label>
+        <label>D) कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: B) वर्तमान काल</p>
+</div>
+
+<div class="question">
+    <p>69. ‘निम्न में से कौन-सा शब्द संज्ञा है?’</p>
+    <div class="options">
+        <label>A) खेल</label>
+        <label>B) सुंदर</label>
+        <label>C) जल्दी</label>
+        <label>D) दौड़ना</label>
+    </div>
+    <p class="answer">Ans: A) खेल</p>
+</div>
+
+<div class="question">
+    <p>70. ‘अच्छा’ शब्द क्या है?</p>
+    <div class="options">
+        <label>A) संज्ञा</label>
+        <label>B) विशेषण</label>
+        <label>C) क्रिया</label>
+        <label>D) सर्वनाम</label>
+    </div>
+    <p class="answer">Ans: B) विशेषण</p>
+</div>
+
+<!-- You can continue similarly up to 100 -->
+ <div class="question">
+    <p>71. ‘निम्न में से कौन-सा शब्द सर्वनाम है?’</p>
+    <div class="options">
+        <label>A) राम</label>
+        <label>B) वह</label>
+        <label>C) सुंदर</label>
+        <label>D) दौड़ना</label>
+    </div>
+    <p class="answer">Ans: B) वह</p>
+</div>
+
+<div class="question">
+    <p>72. ‘पुस्तकें’ शब्द क्या है?</p>
+    <div class="options">
+        <label>A) एकवचन</label>
+        <label>B) बहुवचन</label>
+        <label>C) विशेषण</label>
+        <label>D) क्रिया</label>
+    </div>
+    <p class="answer">Ans: B) बहुवचन</p>
+</div>
+
+<div class="question">
+    <p>73. ‘मीठा’ शब्द किस प्रकार का है?</p>
+    <div class="options">
+        <label>A) संज्ञा</label>
+        <label>B) विशेषण</label>
+        <label>C) क्रिया</label>
+        <label>D) सर्वनाम</label>
+    </div>
+    <p class="answer">Ans: B) विशेषण</p>
+</div>
+
+<div class="question">
+    <p>74. ‘वह दौड़ रहा है’ में काल कौन-सा है?</p>
+    <div class="options">
+        <label>A) भूतकाल</label>
+        <label>B) वर्तमान काल</label>
+        <label>C) भविष्य काल</label>
+        <label>D) कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: B) वर्तमान काल</p>
+</div>
+
+<div class="question">
+    <p>75. ‘निम्न में से कौन-सा शब्द संज्ञा है?’</p>
+    <div class="options">
+        <label>A) तेज</label>
+        <label>B) दौड़ना</label>
+        <label>C) पानी</label>
+        <label>D) जल्दी</label>
+    </div>
+    <p class="answer">Ans: C) पानी</p>
+</div>
+
+<div class="question">
+    <p>76. ‘अंधेरा’ का विलोम क्या है?</p>
+    <div class="options">
+        <label>A) रात</label>
+        <label>B) प्रकाश</label>
+        <label>C) छाया</label>
+        <label>D) दिन</label>
+    </div>
+    <p class="answer">Ans: B) प्रकाश</p>
+</div>
+
+<div class="question">
+    <p>77. ‘निम्न में से कौन-सा शब्द क्रिया है?’</p>
+    <div class="options">
+        <label>A) खेलना</label>
+        <label>B) सुंदर</label>
+        <label>C) घर</label>
+        <label>D) बच्चा</label>
+    </div>
+    <p class="answer">Ans: A) खेलना</p>
+</div>
+
+<div class="question">
+    <p>78. ‘वह बहुत धीरे चलता है’ में ‘धीरे’ क्या है?</p>
+    <div class="options">
+        <label>A) संज्ञा</label>
+        <label>B) विशेषण</label>
+        <label>C) क्रिया विशेषण</label>
+        <label>D) सर्वनाम</label>
+    </div>
+    <p class="answer">Ans: C) क्रिया विशेषण</p>
+</div>
+
+<div class="question">
+    <p>79. ‘निम्न में से कौन-सा शब्द पुल्लिंग है?’</p>
+    <div class="options">
+        <label>A) लड़की</label>
+        <label>B) माता</label>
+        <label>C) राजा</label>
+        <label>D) बहन</label>
+    </div>
+    <p class="answer">Ans: C) राजा</p>
+</div>
+
+<div class="question">
+    <p>80. ‘गाय’ शब्द का लिंग क्या है?</p>
+    <div class="options">
+        <label>A) पुल्लिंग</label>
+        <label>B) स्त्रीलिंग</label>
+        <label>C) नपुंसक</label>
+        <label>D) कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: B) स्त्रीलिंग</p>
+</div>
+
+<div class="question">
+    <p>81. ‘निम्न में से कौन-सा शब्द विशेषण है?’</p>
+    <div class="options">
+        <label>A) लाल</label>
+        <label>B) पानी</label>
+        <label>C) खेल</label>
+        <label>D) दौड़ना</label>
+    </div>
+    <p class="answer">Ans: A) लाल</p>
+</div>
+
+<div class="question">
+    <p>82. ‘वह स्कूल गया’ में काल कौन-सा है?</p>
+    <div class="options">
+        <label>A) भूतकाल</label>
+        <label>B) वर्तमान</label>
+        <label>C) भविष्य</label>
+        <label>D) कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: A) भूतकाल</p>
+</div>
+
+<div class="question">
+    <p>83. ‘निम्न में से कौन-सा शब्द बहुवचन है?’</p>
+    <div class="options">
+        <label>A) बच्चा</label>
+        <label>B) बच्चे</label>
+        <label>C) लड़की</label>
+        <label>D) बालक</label>
+    </div>
+    <p class="answer">Ans: B) बच्चे</p>
+</div>
+
+<div class="question">
+    <p>84. ‘सुंदरता’ में प्रत्यय क्या है?</p>
+    <div class="options">
+        <label>A) रता</label>
+        <label>B) ता</label>
+        <label>C) दर</label>
+        <label>D) त</label>
+    </div>
+    <p class="answer">Ans: B) ता</p>
+</div>
+
+<div class="question">
+    <p>85. ‘जल’ का पर्यायवाची क्या है?</p>
+    <div class="options">
+        <label>A) पानी</label>
+        <label>B) अग्नि</label>
+        <label>C) वायु</label>
+        <label>D) पृथ्वी</label>
+    </div>
+    <p class="answer">Ans: A) पानी</p>
+</div>
+
+<div class="question">
+    <p>86. ‘दिन’ का विलोम क्या है?</p>
+    <div class="options">
+        <label>A) रात</label>
+        <label>B) प्रकाश</label>
+        <label>C) सूरज</label>
+        <label>D) छाया</label>
+    </div>
+    <p class="answer">Ans: A) रात</p>
+</div>
+
+<div class="question">
+    <p>87. ‘निम्न में से कौन-सा शब्द संज्ञा है?’</p>
+    <div class="options">
+        <label>A) खेल</label>
+        <label>B) सुंदर</label>
+        <label>C) जल्दी</label>
+        <label>D) दौड़ना</label>
+    </div>
+    <p class="answer">Ans: A) खेल</p>
+</div>
+
+<div class="question">
+    <p>88. ‘अच्छा’ शब्द क्या है?</p>
+    <div class="options">
+        <label>A) संज्ञा</label>
+        <label>B) विशेषण</label>
+        <label>C) क्रिया</label>
+        <label>D) सर्वनाम</label>
+    </div>
+    <p class="answer">Ans: B) विशेषण</p>
+</div>
+
+<div class="question">
+    <p>89. ‘निम्न में से कौन-सा शब्द क्रिया है?’</p>
+    <div class="options">
+        <label>A) दौड़ना</label>
+        <label>B) सुंदर</label>
+        <label>C) घर</label>
+        <label>D) बच्चा</label>
+    </div>
+    <p class="answer">Ans: A) दौड़ना</p>
+</div>
+
+<div class="question">
+    <p>90. ‘वह खा रहा है’ में काल कौन-सा है?</p>
+    <div class="options">
+        <label>A) भूतकाल</label>
+        <label>B) वर्तमान काल</label>
+        <label>C) भविष्य काल</label>
+        <label>D) कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: B) वर्तमान काल</p>
+</div>
+
+<div class="question">
+    <p>91. ‘निम्न में से कौन-सा शब्द स्त्रीलिंग है?’</p>
+    <div class="options">
+        <label>A) बालक</label>
+        <label>B) राजा</label>
+        <label>C) लड़की</label>
+        <label>D) शिक्षक</label>
+    </div>
+    <p class="answer">Ans: C) लड़की</p>
+</div>
+
+<div class="question">
+    <p>92. ‘मीठा’ शब्द क्या है?</p>
+    <div class="options">
+        <label>A) संज्ञा</label>
+        <label>B) विशेषण</label>
+        <label>C) क्रिया</label>
+        <label>D) सर्वनाम</label>
+    </div>
+    <p class="answer">Ans: B) विशेषण</p>
+</div>
+
+<div class="question">
+    <p>93. ‘निम्न में से कौन-सा शब्द सर्वनाम है?’</p>
+    <div class="options">
+        <label>A) वह</label>
+        <label>B) राम</label>
+        <label>C) सुंदर</label>
+        <label>D) खेल</label>
+    </div>
+    <p class="answer">Ans: A) वह</p>
+</div>
+
+<div class="question">
+    <p>94. ‘वह स्कूल जाएगा’ में काल कौन-सा है?</p>
+    <div class="options">
+        <label>A) भूतकाल</label>
+        <label>B) वर्तमान काल</label>
+        <label>C) भविष्य काल</label>
+        <label>D) कोई नहीं</label>
+    </div>
+    <p class="answer">Ans: C) भविष्य काल</p>
+</div>
+
+<div class="question">
+    <p>95. ‘निम्न में से कौन-सा शब्द बहुवचन है?’</p>
+    <div class="options">
+        <label>A) बच्चा</label>
+        <label>B) बच्चे</label>
+        <label>C) लड़की</label>
+        <label>D) बालक</label>
+    </div>
+    <p class="answer">Ans: B) बच्चे</p>
+</div>
+
+<div class="question">
+    <p>96. ‘अंधकार’ का विलोम क्या है?</p>
+    <div class="options">
+        <label>A) प्रकाश</label>
+        <label>B) छाया</label>
+        <label>C) रात</label>
+        <label>D) अंधेरा</label>
+    </div>
+    <p class="answer">Ans: A) प्रकाश</p>
+</div>
+
+<div class="question">
+    <p>97. ‘निम्न में से कौन-सा शब्द विशेषण है?’</p>
+    <div class="options">
+        <label>A) सुंदर</label>
+        <label>B) घर</label>
+        <label>C) पानी</label>
+        <label>D) दौड़ना</label>
+    </div>
+    <p class="answer">Ans: A) सुंदर</p>
+</div>
+
+<div class="question">
+    <p>98. ‘जल’ का पर्यायवाची क्या है?</p>
+    <div class="options">
+        <label>A) पानी</label>
+        <label>B) अग्नि</label>
+        <label>C) वायु</label>
+        <label>D) पृथ्वी</label>
+    </div>
+    <p class="answer">Ans: A) पानी</p>
+</div>
+
+<div class="question">
+    <p>99. ‘दिन’ का विलोम क्या है?</p>
+    <div class="options">
+        <label>A) रात</label>
+        <label>B) प्रकाश</label>
+        <label>C) सूरज</label>
+        <label>D) छाया</label>
+    </div>
+    <p class="answer">Ans: A) रात</p>
+</div>
+
+<div class="question">
+    <p>100. ‘निम्न में से कौन-सा शब्द संज्ञा है?’</p>
+    <div class="options">
+        <label>A) खेल</label>
+        <label>B) सुंदर</label>
+        <label>C) जल्दी</label>
+        <label>D) दौड़ना</label>
+    </div>
+    <p class="answer">Ans: A) खेल</p>
+</div>
+
+
+    <div style="display: flex; justify-content: space-between;">
+
+    <!-- Show/Hide Button (Left) -->
+    <button onclick="toggleAnswers(this)">Show Answers</button>
+
+     <button onclick="prevPage()">Previous</button>
+
+    <!-- Next Button (Right) -->
+    <button onclick="goNext()">Next</button>
+
+</div>
+
+</div>
+</body>
+</html>
